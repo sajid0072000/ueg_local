@@ -1,0 +1,9 @@
+<h2>Analytics Dashboard</h2>
+<div>
+  <label for="analyticsTypeSelector">Choose Analytics Type:</label>
+  <select id="analyticsTypeSelector" (change)="onAnalyticsTypeChange($event)">
+    <option value="revenue" selected>Revenue</option>
+  </select>
+</div>
+
+<div #analyticsContainer></div>

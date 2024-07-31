@@ -1,0 +1,100 @@
+<main role="main" class="main-body-sty mt-3">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="top_scne">
+        <div class="top_scne_in">
+          <h1 class="add_heading_text">Job</h1>
+          <button class="btn btn-edtng-add" *ngIf="!jobId">Creating</button>
+          <button class="btn btn-edtng-add" *ngIf="jobId">Editing</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content-add">
+    <div class="main-content-inner">
+      <div class="row">
+        <div class="mb-3 col-md-12">
+          <label class="form-label lebel-text">Job Name</label>
+          <input type="text" class="form-control input-text" [(ngModel)]="job.JobName" name="JobName" required>
+          <span class="error-msg" *ngIf="jobNameErr">Job Name required</span>
+        </div>
+
+        <div class="form-group">
+          <label for="topic">Topic</label>
+          <select id="topic" [(ngModel)]="job.Topic" name="Topic" class="form-control" required (change)="onTopicChange()">
+            <option *ngFor="let category of categories" [value]="category.categoriesId">{{ category.name }}</option>
+          </select>
+        </div>
+
+        <div class="mb-3 col-md-12">
+          <label class="form-label lebel-text">Colour</label>
+          <input type="color" class="form-control input-text" [(ngModel)]="job.Colour" name="Colour" required>
+        </div>
+
+        <div class="mb-3 col-md-12">
+          <label class="form-label lebel-text">Description</label>
+          <textarea class="form-control input-text" [(ngModel)]="job.Description" name="Description" required></textarea>
+        </div>
+
+        <div class="mb-3 col-md-12">
+          <label class="form-label lebel-text">Charge Rate</label>
+          <input type="number" class="form-control input-text" [(ngModel)]="job.ChargeRate" name="ChargeRate" required>
+        </div>
+
+        <div class="mb-3 col-md-12">
+          <label class="form-label lebel-text">Tutor Rate</label>
+          <input type="number" class="form-control input-text" [(ngModel)]="job.TutorRate" name="TutorRate" required>
+        </div>
+
+        <div class="mb-3 col-md-12">
+          <label class="form-label lebel-text">Client</label>
+          <select [(ngModel)]="job.ClientId" class="form-control" (change)="onClientChange()">
+            <option *ngFor="let client of clients" [value]="client.id">
+              {{ client.firstName }} {{ client.lastName }}
+            </option>
+          </select>
+        </div>
+
+        <div class="mb-3 col-md-12">
+          <label class="form-label lebel-text">Child</label>
+          <select [(ngModel)]="job.ChildId" class="form-control">
+            <option *ngFor="let child of children" [value]="child.id">
+              {{ child.childName }}
+            </option>
+          </select>
+        </div>
+
+        <div class="mb-3 col-md-12">
+          <label class="form-label lebel-text">Educator</label>
+          <select [(ngModel)]="job.EducatorId" class="form-control">
+            <option *ngFor="let educator of educators" [value]="educator.id">
+              {{ educator.name }}
+            </option>
+          </select>
+        </div>
+
+        <div class="mb-3 col-md-12">
+          <label class="form-label lebel-text">Report Required</label>
+          <input type="checkbox" [(ngModel)]="job.ReportRequired" name="ReportRequired">
+        </div>
+
+        <div class="mb-3 col-md-12">
+          <label class="form-label lebel-text">Status</label>
+          <select class="form-select" [(ngModel)]="job.Status" name="Status" required>
+            <option value="1">Open</option>
+            <option value="2">In-Progress</option>
+            <option value="3">Finished</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-secne" style="text-align: center;">
+    <button class="cancel-button btn btn-primary" (click)="goBack()">Cancel</button>
+    <button class="submit-button btn btn-primary" *ngIf="!jobId" (click)="addJob()">Save</button>
+    <button class="submit-button btn btn-primary" *ngIf="jobId" (click)="updateJob()">Save</button>
+  </div>
+  <a class="mt-2 a-back" style="color: #0366d6; cursor: pointer;" (click)="goBack()">Back to List</a>
+</main>

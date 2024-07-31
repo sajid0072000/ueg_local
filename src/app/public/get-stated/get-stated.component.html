@@ -1,0 +1,282 @@
+<div class="get-started container">
+    <button type="button" class="close" data-bs-dismiss="get-started" aria-label="Close"
+        (click)="closeGetStarted()"><span aria-hidden="true">×</span></button>
+    <div class="geststardedOne" *ngIf="!getStartedOne">
+        <div class="row">
+            <div class="col-lg-12 pl-4 pt-4">
+                <p class="get-started-title">What type of education are you looking for?</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 p-2" *ngFor="let data of categoryTypeArr" (click)="openDesignSecond(data)">
+                <div id="getStartedEd1" class="m-2 sector-item">
+                    <div class="single-sector-icon">
+                        <img [src]="this.common.imgCheck(data.courseicon)">
+                    </div>
+                    <p class="sector-title">{{data.name}}</p>
+                    <p class="sector-content">{{data.shortheader}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="getstartedTwo" *ngIf="getStartedTwo">
+        <div class="row">
+            <div class="col-lg-12 pl-4 pt-4">
+                <p class="get-started-title">Please indicate your preference below:</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 p-2">
+                <div id="getStartedLe1" class="m-2 sector-item">
+                    <div class="sector-icon" (click)="openGetStartedThreeModal(1)">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1316 1252">
+                            <g id="noun_Teacher_380172" transform="translate(-2 -2.5)">
+                                <g id="Group_68109" data-name="Group 68109" transform="translate(2 2.5)">
+                                    <rect id="Rectangle_510" data-name="Rectangle 510" width="1304" height="131"
+                                        transform="translate(0 1121)" fill="#0b154b"></rect>
+                                    <ellipse id="Ellipse_134" data-name="Ellipse 134" cx="117" cy="130.5" rx="117"
+                                        ry="130.5" transform="translate(548 261)" fill="#0b154b"></ellipse>
+                                    <path id="Path_1786" data-name="Path 1786"
+                                        d="M2,2.5v987H1318V2.5ZM1186.4,857.9H923.2c0-72.38-32.9-138.18-78.96-184.24S732.38,594.7,660,594.7s-138.18,26.32-184.24,78.96C429.7,719.72,396.8,785.52,396.8,857.9H133.6V134.1H1186.4Z"
+                                        transform="translate(-2 -2.5)" fill="#0b154b"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <p class="sector-content">1-1 Lessons</p>
+                </div>
+            </div>
+            <div class="col-md-4 p-2">
+                <div id="getStartedLe2" class="m-2 sector-item">
+                    <div class="sector-icon" (click)="openGetStartedThreeModal(2)">
+                        <svg id="Group_68914" data-name="Group 68914" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 876.404 593.599">
+                            <circle id="Ellipse_148" data-name="Ellipse 148" cx="79.508" cy="79.508" r="79.508"
+                                transform="translate(55.113 101.192)" fill="#0b154b"></circle>
+                            <path id="Path_3372" data-name="Path 3372"
+                                d="M210.208,248.373v-5.421c0-48.789,15.359-93.06,40.657-130.1C227.375,74,184.91,48.7,136.121,48.7,62.034,48.7,1.5,109.235,1.5,183.321v42.464C33.122,244.759,82.815,256.5,136.121,256.5A464.725,464.725,0,0,0,210.208,248.373Z"
+                                transform="translate(-1.5 235.902)" fill="#0b154b"></path>
+                            <circle id="Ellipse_149" data-name="Ellipse 149" cx="79.508" cy="79.508" r="79.508"
+                                transform="translate(662.265 101.192)" fill="#0b154b"></circle>
+                            <path id="Path_3373" data-name="Path 3373"
+                                d="M185.644,48.6A135.174,135.174,0,0,0,70.9,112.749c25.3,37.043,40.657,82.218,40.657,130.1v5.421c22.588,5.421,47.886,8.132,74.087,8.132,53.307,0,103-11.745,134.621-30.719V183.221C321.169,109.135,259.731,48.6,185.644,48.6Z"
+                                transform="translate(556.128 235.099)" fill="#0b154b"></path>
+                            <path id="Path_3374" data-name="Path 3374"
+                                d="M283.859,140.979c0-68.666-56.017-123.779-123.779-123.779S36.3,73.217,36.3,140.979c0,68.666,56.017,123.779,123.779,123.779S283.859,209.645,283.859,140.979Z"
+                                transform="translate(278.118 -17.2)" fill="#0b154b"></path>
+                            <path id="Path_3375" data-name="Path 3375"
+                                d="M440.9,254.2c0-113.841-93.06-206.9-206.9-206.9S27.1,140.36,27.1,254.2v65.955c47.885,30.719,124.683,48.789,206.9,48.789s159.016-18.07,206.9-48.789Z"
+                                transform="translate(204.196 224.653)" fill="#0b154b"></path>
+                        </svg>
+                    </div>
+                    <p class="sector-content">Group Lessons (up to 8)</p>
+                </div>
+            </div>
+            <div class="col-md-4 p-2">
+                <div id="getStartedLe3" class="m-2 sector-item">
+                    <div class="sector-icon" (click)="openGetStartedThreeModal(3)">
+                        <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                            height="24" viewBox="0 0 18.451 24">
+                            <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                                <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                                    d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                                    transform="translate(-293.5 -199.7)"></path>
+                            </g>
+                            <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                                <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                                    d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                                    transform="translate(-256 -331)"></path>
+                            </g>
+                        </svg>
+                    </div>
+                    <p class="sector-content">No preference</p>
+                </div>
+            </div>
+        </div>
+        <div class="get-started get-started-footer btn-grid mt-4">
+            <div class="grid-col-1 grid-row-1">
+                <button class="btn btn-blue" style="text-align: start;" data-name="get-started-back" data-back-step="1"
+                    (click)="secondBack()">Back</button>
+            </div>
+            <div class="grid-col-2 grid-row-1 ml-auto">
+            </div>
+        </div>
+    </div>
+    <div class="getStartedThree" *ngIf="getStartedThree">
+        <div class="row">
+            <div class="col-lg-12 pl-4 pt-4">
+                <p class="get-started-title">Who is the course for?</p>
+            </div>
+        </div> 
+        <div class="row">
+            <div class="col-md-4 p-2">
+                <div id="getStartedWho1" class="m-2 sector-item">
+                    <div class="sector-icon" (click)="openGetStartedFour(1)">
+                        <svg id="Group_68916" data-name="Group 68916" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 852.881 856.508">
+                            <circle id="Ellipse_150" data-name="Ellipse 150" cx="125" cy="125" r="125"
+                                transform="translate(301.927)" fill="#0b154b"></circle>
+                            <path id="Path_3377" data-name="Path 3377"
+                                d="M849.185,499.492,665.036,148.324c-102.781-188.432-372.581-188.432-475.362,0L5.525,499.492C-11.6,529.47,14.09,563.73,48.351,563.73H296.738c25.7,0,42.825-17.13,42.825-42.825s-17.13-42.825-42.825-42.825H211.087v-244.1c0-4.283,8.565-8.565,12.848-8.565L378.106,302.5c4.283,4.283,4.283,4.283,4.283,8.565v244.1c0,4.283,4.283,8.565,8.565,8.565h68.521c4.283,0,8.565-4.282,8.565-8.565V311.06c0-4.283,0-4.283,4.283-8.565l154.171-77.086c4.283-4.283,12.848,0,12.848,8.565v244.1H553.69c-25.7,0-42.825,17.13-42.825,42.825S528,563.73,553.69,563.73H806.36A46.055,46.055,0,0,0,849.185,499.492Z"
+                                transform="translate(-0.073 292.778)" fill="#0b154b"></path>
+                        </svg>
+                    </div>
+                    <p class="sector-content" style="margin-left: 18px;">Myself</p>
+                </div>
+            </div>
+            <div class="col-md-4 p-2">
+                <div id="getStartedWho2" class="m-2 sector-item">
+                    <div class="sector-icon" (click)="openGetStartedFour(2)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1005" height="688.438"
+                            viewBox="0 0 1005 688.438">
+                            <g id="noun_student_2992483" transform="translate(-81.619 -189.247)">
+                                <g id="Group_68915" data-name="Group 68915" transform="translate(81.618 189.247)">
+                                    <path id="Path_3376" data-name="Path 3376"
+                                        d="M104.178,362.625,572.391,191.31a34.323,34.323,0,0,1,23.44,0l468.228,171.315c30.336,11,29.822,53.762,0,64.615l-158.2,57.894L905.9,733.71a34.465,34.465,0,0,1-24.572,33l-287,108.759a34.274,34.274,0,0,1-26.557-.97L284.537,765.738a34.281,34.281,0,0,1-22.028-32.028l-.177-248.591-48.468-17.734v321.5c0,45.307-68.908,45.307-68.908,0V442.166L104.178,427.24C73.842,416.241,74.356,373.493,104.178,362.625Z"
+                                        transform="translate(-81.618 -189.247)" fill="#0b154b"></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <p class="sector-content" style="margin-left: 17px;">Student</p>
+                </div>
+            </div>
+            <div class="col-md-4 p-2">
+                <div id="getStartedWho3" class="m-2 sector-item">
+                    <div class="sector-icon" (click)="openGetStartedFour(3)">
+                        <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                            height="24" viewBox="0 0 18.451 24">
+                            <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                                <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                                    d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                                    transform="translate(-293.5 -199.7)"></path>
+                            </g>
+                            <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                                <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                                    d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                                    transform="translate(-256 -331)"></path>
+                            </g>
+                        </svg>
+                    </div>
+                    <p class="sector-content">Someone Else</p>
+                </div>
+            </div>
+        </div>
+        <div class="get-started get-started-footer btn-grid mt-4">
+            <div class="grid-col-1 grid-row-1">
+                <button class="btn btn-blue" data-name="get-started-back" data-back-step="1"
+                    (click)="thirdBack()">Back</button>
+            </div>
+            <div class="grid-col-2 grid-row-1 ml-auto">
+            </div>
+        </div>
+    </div>
+    <div *ngIf="getStartedFour">
+        <div class="row">
+            <div class="col-lg-12 pl-4 pt-4">
+                <div *ngIf="spinner == true">
+                    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+                </div>
+                <p class="get-started-title">What is your availability for lessons?</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 pl-4 pt-4">
+                <select name="timezone_offset" id="lstTimezone" class="span5 mb-3 content w-100" [(ngModel)]="zoneid">
+                    <option *ngFor="let data of getTimeZoneList" [value]="data.id">({{data.time_zone}}
+                        {{data.time}})&nbsp;&nbsp;{{data.zone}}</option>
+                </select>
+            </div>
+        </div>
+
+        <table class="table no-border">
+            <tr>
+                <th>&nbsp;</th>
+                <th *ngFor="let key of dayKey;"> {{key}} </th>
+            </tr>
+            <tr *ngFor="let obj of scheduleArr; let i = index" class="mt-2">
+                <td>
+                    <div style="margin: 0;padding: 0;font-weight: bold;">{{obj.session}}</div>
+                    <div style="margin: 0;padding: 0;font-weight: 100;">
+                        {{obj.time}}
+                    </div>
+                </td>
+                <td *ngFor="let d of obj.daysList" (click)="getCheck(d, obj)">
+                    <div class="availability-box " [ngClass]="{'availability-active': d.isActive === true}">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18.451" height="24" viewBox="0 0 18.451 24">
+                            <g transform="translate(3.474 0)">
+                                <path class="cls-1"
+                                    d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                                    transform="translate(-293.5 -199.7)"></path>
+                            </g>
+                            <g transform="translate(0 12.487)">
+                                <path class="cls-1"
+                                    d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                                    transform="translate(-256 -331)"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <span class="error-msg" *ngIf="scheduleErr">Schedule required</span>
+        <div class="get-started get-started-footer btn-grid">
+            <div class="grid-col-1 grid-row-1">
+                <button class="btn btn-blue" data-name="get-started-back" data-back-step="1"
+                    (click)="fourthBack()">Back</button>
+            </div>
+            <div class="grid-col-2 grid-row-1 ml-auto">
+                <button class="btn btn-yellow" id="nextBtn" data-name="get-started-next" (click)="openGetStartedFive()"
+                    style="float: right;">Next</button>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="getStartedFive">
+        <p class="get-started-title">Please fill in the details below:</p>
+        <div class="row">
+            <div class="col-lg-3 pb-3">
+                <label class="content mb-2">First Name</label>
+                <input type="text" id="getContactFName" class="form-control" placeholder="First Name"
+                    [(ngModel)]="firstname" (keypress)="onKeyPressFirstName($event)">
+                <span class="error-msg" *ngIf="firstnameErr">First name required</span>
+                <span class="error-msg" *ngIf="validFirstnameErr && firstnameErr==false">Valid first name
+                    required</span>
+            </div>
+            <div class="col-lg-3 pb-3">
+                <label class="content mb-2">Last Name</label>
+                <input type="text" id="getContactLName" class="form-control" placeholder="Last Name"
+                    [(ngModel)]="lastname" (keypress)="onKeyPresslastName($event)">
+                <span class="error-msg" *ngIf="lastnameErr">Last name required</span>
+                <span class="error-msg" *ngIf="validLastnameErr && lastnameErr==false">Valid last name required</span>
+            </div>
+            <div class="col-lg-6 pb-3">
+                <label class="content mb-2">Phone Number</label>
+                <input type="text" id="getContactNumber" class="form-control" placeholder="Phone Number"
+                    [(ngModel)]="phonenumber" (keypress)="onKeyPressMobile($event)" (keyup)="mobileFun()">
+                <span class="error-msg" *ngIf="phonenumberErr">Phone number required</span>
+                <span class="error-msg" *ngIf="validPhonenumberErr && phonenumberErr==false">Valid phone number
+                    required</span>
+
+            </div>
+            <div class="col-lg-12 pb-3 mt-2">
+                <label class="content mb-2">Email</label>
+                <input type="email" id="getContactEmail" class="form-control" placeholder="Email" [(ngModel)]="email"
+                    (keyup)="emailFun()">
+                <span class="error-msg" *ngIf="emailErr">Email required</span>
+                <span class="error-msg" *ngIf="validEmailErr">Valid email required</span>
+
+            </div>
+
+        </div>
+        <div class="get-started get-started-footer btn-grid">
+            <div class="grid-col-1 grid-row-1">
+                <button class="btn btn-blue" data-name="get-started-back" data-back-step="1"
+                    (click)="fithBack()">Back</button>
+            </div>
+            <div class="grid-col-2 grid-row-1 ml-auto">
+                <button class="btn btn-yellow" id="submitBtn" (click)="onsubmit()" style="float: right;">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>

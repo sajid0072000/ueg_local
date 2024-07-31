@@ -1,0 +1,124 @@
+<div class="resource_package payment_page">
+    <div class="container-fluid bg-light-blue py-2">
+        <div class="resource_package_inr">
+            <div class="row align-items-start">
+                <div class="col-lg-12">
+                    <div class="payment_page_inner">
+                        <div class="start-larning">
+                            <div class="row">
+                                <div class="col-lg-12 pb-3">
+                                    <h5 class="modal-title">START LEARNING TODAY</h5>
+                                    <hr class="big-blue">
+                                </div>
+                                <div class="col-lg-6 pb-3">
+                                    <label class="content">First Name</label>
+                                    <input type="text" id="mefn" name="ContactFirstName" class="form-control" placeholder="First Name" required="">
+                                </div>
+                                <div class="col-lg-6 pb-3">
+                                    <label class="content">Last Name</label>
+                                    <input type="text" id="meln" name="ContactLastName" class="form-control" placeholder="Last Name" required="">
+                                </div>
+                                <div class="col-lg-6 pb-3">
+                                    <label class="content">Phone</label>
+                                    <input type="text" id="memobile" name="ContactNumber" class="form-control" placeholder="Phone" required="">
+                                </div>
+                                <div class="col-lg-6 pb-3">
+                                    <label class="content">Email</label>
+                                    <input type="email" id="meemail" name="ContactEmail" class="form-control" placeholder="Email" required="">
+                                </div>
+                                <div class="col-lg-6 pb-3">
+                                    <label class="content">Date of Birth</label>
+                                    <label class="optional-content">Optional</label>
+                                    <input type="date" id="medob" name="ContactDOB" class="form-control" placeholder="Date of Birth">
+                                </div>
+                                <div class="col-lg-12 pb-3">
+                                    <label class="content">Address</label>
+                                    <label class="optional-content">Optional</label>
+                                    <input type="text" id="meaddress" name="ContactAdd" class="form-control" placeholder="Address">
+                                </div>
+                                <div class="col-lg-12 pb-3">
+                                    <label class="content">Message</label>
+                                    <label class="optional-content">Optional</label>
+                                    <textarea name="ContactMessage" id="memessage" class="form-control" required="" placeholder="Message"></textarea>
+                                </div>
+                                <div class="col-lg-12 d-flex stack-row align-items-baseline">
+                                    <input type="checkbox" name="gdprSubmit" required="" style="margin-top: 1rem;">
+                                    <p class="content submit-text" style="padding-left: .5rem;">By clicking Submit I
+                                        agree
+                                        to UEG's Terms &amp; Conditions and Privacy Policy, and I agree to abide by
+                                        the Code
+                                        of Conduct</p>
+                                </div>
+                            </div>
+                            <div class="start-larning-pric">
+                                <h3>SUBSCRIPTION INCLUDES</h3>
+                                <strong>£18</strong>
+                                <span>PER USER, MONTH</span>
+                                <p>Access to all our pre-recordedcourses</p>
+                            </div>
+                        </div>
+
+
+                        <div class="payment_div">
+                            <button class="btn buy_gpay enrol-btn">Buy with GPay</button>
+                            <div class="paymnt_detail">
+                                <ul>
+                                    <li>
+                                        <label>Email</label>
+                                        <input type="text" class="form-control" placeholder="test@test.com">
+                                    </li>
+                                    <li>
+                                        <label>Card Number</label>
+                                        <input type="text" class="form-control" placeholder="1234 5678 9012 3456">
+                                        <img class="card_optn" src="assets/img/card-opt.png">
+                                    </li>
+                                    <li>
+                                        <div class="exp_cvv d-flex">
+                                            <div class="exp_cvv_in">
+                                                <label>Expiration</label>
+                                                <input type="text" class="form-control" placeholder="MM/YY">
+                                            </div>
+                                            <div class="exp_cvv_in">
+                                                <label>CVV</label>
+                                                <input type="text" class="form-control" placeholder="CVV">
+
+                                            </div>
+                                        </div>
+
+                                    </li>
+                                    <li>
+                                        <label>Name on Card</label>
+                                        <input type="text" class="form-control" placeholder="Name  on Card">
+                                    </li>
+
+                                    <li>
+                                        <div class="cunty_zip d-flex">
+                                            <div class="sel_country">
+                                                <label>Country</label>
+                                                <select class="form-select">
+                                                    <option>United States</option>
+                                                </select>
+                                            </div>
+                                            <div class="zip_dv">
+                                                <label>Zip</label>
+                                                <input type="text" class="form-control" placeholder="123456">
+                                            </div>
+                                        </div>
+
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="add_bskt">
+                                <button class="btn enrol-btn btn-pay" (click)="goto('/subscription-success')">Pay</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!--/main slider carousel-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,2178 @@
+<!-- main contain -->
+<div class="" style="position: relative;">
+<div class="banner home-banner" [ngStyle]="{'background-image': 'url('+bannerImg+')'} ">
+  <div class="home-banner-blue-arrow">
+    <img class="display-off-mobile" src="assets/img/blue-round-triangle.png">
+            <img class="display-on-mobile" src="assets/img/blue-round-triangle-mobile.png">
+  </div>
+  <div class="container home-banner-text">
+    <div class="row">
+      <div class="col-lg-6 home-banner-left">
+        <h1>USING UEG</h1>
+        <div class="home-banner-header-divider"></div>
+        <h2>
+          We work with schools and other organisations in the UK, creating
+          bespoke Education packages and curricula.
+        </h2>
+        <button (click)="this.common.getStarted()" class="btn btn-yellow">
+          GET STARTED
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="container-flex banner get-started" id="get-started-banner" style="display: none">
+  <div class="container home-banner-container banner-container">
+    <div class="row home-banner-content banner-content">
+      <div class="modal-body" id="step-one" data-step="1">
+        <p class="get-started-title">
+          What type of education are you looking for?
+        </p>
+        <div class="row">
+          <div class="col-md-4 sector-single">
+            <div class="single-sector-menu-item href-hover sector-box sector align-items-center"
+              data-value="Academic Development">
+              <div class="single-sector-content">
+                <p class="sector-title">Academic Development</p>
+                <p class="sector-content">
+                  Ace Exams and Intellectual Pursuits
+                </p>
+              </div>
+              <div class="single-sector-icon">
+                <svg id="academic-development" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.36 19.92">
+                  <g id="Group_695" data-name="Group 695">
+                    <g id="Group_694" data-name="Group 694">
+                      <rect id="Rectangle_350" data-name="Rectangle 350" x="8.45" y="5.83" width="2.82" height="2.82"
+                        style="fill: #09f"></rect>
+                      <g id="Group_692" data-name="Group 692">
+                        <rect id="Rectangle_351" data-name="Rectangle 351" x="8.45" y="8.65" width="2.82" height="2.82"
+                          style="fill: #0f73cb"></rect>
+                        <rect id="Rectangle_352" data-name="Rectangle 352" x="8.45" y="11.47" width="2.82" height="2.82"
+                          style="fill: #09f"></rect>
+                      </g>
+                      <rect id="Rectangle_353" data-name="Rectangle 353" x="8.45" y="14.29" width="2.82" height="2.82"
+                        style="fill: #0059b1"></rect>
+                      <path id="Path_1638" data-name="Path 1638" d="M11.27,3h2.82V5.83H11.27Z" style="fill: #57daff">
+                      </path>
+                      <rect id="Rectangle_355" data-name="Rectangle 355" x="11.27" y="5.83" width="2.82" height="2.82"
+                        style="fill: #00b1ff"></rect>
+                      <g id="Group_693" data-name="Group 693">
+                        <rect id="Rectangle_356" data-name="Rectangle 356" x="11.27" y="8.65" width="2.82" height="2.82"
+                          style="fill: #005eb1"></rect>
+                        <rect id="Rectangle_357" data-name="Rectangle 357" x="11.27" y="11.47" width="2.82"
+                          height="2.82" style="fill: #00b9ff"></rect>
+                      </g>
+                      <rect id="Rectangle_358" data-name="Rectangle 358" x="11.27" y="14.29" width="2.82" height="2.82"
+                        style="fill: #2372ad"></rect>
+                      <rect id="Rectangle_359" data-name="Rectangle 359" x="14.09" y="3.01" width="2.82" height="2.82"
+                        style="fill: #35d2fe"></rect>
+                      <path id="Rectangle_360" data-name="Rectangle 360" d="M19.73.2h0V3H16.91A2.81,2.81,0,0,1,19.73.2Z"
+                        style="fill: #5ddbff"></path>
+                      <rect id="Rectangle_361" data-name="Rectangle 361" x="19.73" y="3.01" width="2.82" height="2.82"
+                        style="fill: #00b1ff"></rect>
+                      <rect id="Rectangle_362" data-name="Rectangle 362" x="14.09" y="5.83" width="2.82" height="2.82"
+                        style="fill: #00c2ff"></rect>
+                      <rect id="Rectangle_363" data-name="Rectangle 363" x="14.09" y="8.65" width="2.82" height="2.82"
+                        style="fill: #09f"></rect>
+                      <rect id="Rectangle_364" data-name="Rectangle 364" x="14.09" y="11.47" width="2.82" height="2.82"
+                        style="fill: #169ce2"></rect>
+                      <path id="Rectangle_365" data-name="Rectangle 365"
+                        d="M16.91,8.65h2.82a2.82,2.82,0,0,1-2.82,2.82h0Z" style="fill: #00b9ff"></path>
+                      <rect id="Rectangle_366" data-name="Rectangle 366" x="16.91" y="5.83" width="2.82" height="2.82"
+                        style="fill: #57daff"></rect>
+                      <path id="Rectangle_367" data-name="Rectangle 367"
+                        d="M19.73,5.83h2.82a2.82,2.82,0,0,1-2.82,2.82h0Z" style="fill: #00c2ff"></path>
+                      <path id="Rectangle_368" data-name="Rectangle 368" d="M22.55,0h2.81a2.81,2.81,0,0,1-2.8,2.82h0Z"
+                        style="fill: #00b9ff"></path>
+                      <path id="Rectangle_369" data-name="Rectangle 369"
+                        d="M14.09,14.29h2.82A2.81,2.81,0,0,1,14.1,17.1h0Z" style="fill: #09f"></path>
+                      <path id="Path_1635" data-name="Path 1635" d="M11.27,17.1H8.45v2.82A2.83,2.83,0,0,1,11.27,17.1Z"
+                        style="fill: #0f73cb"></path>
+                      <path id="Path_1636" data-name="Path 1636" d="M11.27,3A2.83,2.83,0,0,0,8.45,5.83h2.82Z"
+                        style="fill: #00c2ff"></path>
+                      <path id="Path_1637" data-name="Path 1637"
+                        d="M5.64,3H0V17.1H5.64a2.83,2.83,0,0,1,2.81,2.82V5.83A2.82,2.82,0,0,0,5.64,3Z"
+                        style="fill: #0b154b"></path>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 sector-single">
+            <div class="single-sector-menu-item href-hover sector-box sector align-items-center"
+              data-value="Skill Acquisition">
+              <div class="single-sector-content">
+                <p class="sector-title">Skill Acquisition</p>
+                <p class="sector-content">Master Transferable Skills</p>
+              </div>
+              <div class="single-sector-icon">
+                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.36 19.92">
+                  <g id="Group_695" data-name="Group 695">
+                    <g id="Group_694" data-name="Group 694">
+                      <rect id="Rectangle_350" data-name="Rectangle 350" x="8.45" y="5.83" width="2.82" height="2.82"
+                        style="fill: #ffb88f"></rect>
+                      <g id="Group_692" data-name="Group 692">
+                        <rect id="Rectangle_351" data-name="Rectangle 351" x="8.45" y="8.65" width="2.82" height="2.82"
+                          style="fill: #fe9f69"></rect>
+                        <rect id="Rectangle_352" data-name="Rectangle 352" x="8.45" y="11.47" width="2.82" height="2.82"
+                          style="fill: #ffad7e"></rect>
+                      </g>
+                      <rect id="Rectangle_353" data-name="Rectangle 353" x="8.45" y="14.29" width="2.82" height="2.82"
+                        style="fill: #fb9257"></rect>
+                      <path id="Path_1638" data-name="Path 1638" d="M11.27,3h2.82V5.83H11.27Z" style="fill: #fc7e36">
+                      </path>
+                      <rect id="Rectangle_355" data-name="Rectangle 355" x="11.27" y="5.83" width="2.82" height="2.82"
+                        style="fill: #fb9257"></rect>
+                      <g id="Group_693" data-name="Group 693">
+                        <rect id="Rectangle_356" data-name="Rectangle 356" x="11.27" y="8.65" width="2.82" height="2.82"
+                          style="fill: #fc833e"></rect>
+                        <rect id="Rectangle_357" data-name="Rectangle 357" x="11.27" y="11.47" width="2.82"
+                          height="2.82" style="fill: #fb9257"></rect>
+                      </g>
+                      <rect id="Rectangle_358" data-name="Rectangle 358" x="11.27" y="14.29" width="2.82" height="2.82"
+                        style="fill: #fc7e36"></rect>
+                      <rect id="Rectangle_359" data-name="Rectangle 359" x="14.09" y="3.01" width="2.82" height="2.82"
+                        style="fill: #fb9257"></rect>
+                      <path id="Rectangle_360" data-name="Rectangle 360" d="M19.73.2h0V3H16.91A2.81,2.81,0,0,1,19.73.2Z"
+                        style="fill: #b24100"></path>
+                      <rect id="Rectangle_361" data-name="Rectangle 361" x="19.73" y="3.01" width="2.82" height="2.82"
+                        style="fill: #e96e28"></rect>
+                      <rect id="Rectangle_362" data-name="Rectangle 362" x="14.09" y="5.83" width="2.82" height="2.82"
+                        style="fill: #fc833e"></rect>
+                      <rect id="Rectangle_363" data-name="Rectangle 363" x="14.09" y="8.65" width="2.82" height="2.82"
+                        style="fill: #e96e28"></rect>
+                      <rect id="Rectangle_364" data-name="Rectangle 364" x="14.09" y="11.47" width="2.82" height="2.82"
+                        style="fill: #fc7e36"></rect>
+                      <path id="Rectangle_365" data-name="Rectangle 365"
+                        d="M16.91,8.65h2.82a2.82,2.82,0,0,1-2.82,2.82h0Z" style="fill: #b24100"></path>
+                      <rect id="Rectangle_366" data-name="Rectangle 366" x="16.91" y="5.83" width="2.82" height="2.82"
+                        style="fill: #e96e28"></rect>
+                      <path id="Rectangle_367" data-name="Rectangle 367"
+                        d="M19.73,5.83h2.82a2.82,2.82,0,0,1-2.82,2.82h0Z" style="fill: #be4500"></path>
+                      <path id="Rectangle_368" data-name="Rectangle 368" d="M22.55,0h2.81a2.81,2.81,0,0,1-2.8,2.82h0Z"
+                        style="fill: #be4500"></path>
+                      <path id="Rectangle_369" data-name="Rectangle 369"
+                        d="M14.09,14.29h2.82A2.81,2.81,0,0,1,14.1,17.1h0Z" style="fill: #e96e28"></path>
+                      <path id="Path_1635" data-name="Path 1635" d="M11.27,17.1H8.45v2.82A2.83,2.83,0,0,1,11.27,17.1Z"
+                        style="fill: #fc833e"></path>
+                      <path id="Path_1636" data-name="Path 1636" d="M11.27,3A2.83,2.83,0,0,0,8.45,5.83h2.82Z"
+                        style="fill: #ffad7e"></path>
+                      <path id="Path_1637" data-name="Path 1637"
+                        d="M5.64,3H0V17.1H5.64a2.83,2.83,0,0,1,2.81,2.82V5.83A2.82,2.82,0,0,0,5.64,3Z"
+                        style="fill: #e96e28"></path>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 sector-single">
+            <div class="single-sector-menu-item href-hover sector-box sector align-items-center"
+              data-value="Professional Learning">
+              <div class="single-sector-content">
+                <p class="sector-title">Professional Learning</p>
+                <p class="sector-content">Plan your Career Path</p>
+              </div>
+              <div class="single-sector-icon">
+                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.36 19.92">
+                  <g id="Group_695" data-name="Group 695">
+                    <g id="Group_694" data-name="Group 694">
+                      <rect id="Rectangle_350" data-name="Rectangle 350" x="8.45" y="5.83" width="2.82" height="2.82"
+                        style="fill: #f9d90a"></rect>
+                      <g id="Group_692" data-name="Group 692">
+                        <rect id="Rectangle_351" data-name="Rectangle 351" x="8.45" y="8.65" width="2.82" height="2.82"
+                          style="fill: #ffdc00"></rect>
+                        <rect id="Rectangle_352" data-name="Rectangle 352" x="8.45" y="11.47" width="2.82" height="2.82"
+                          style="fill: #ffe648"></rect>
+                      </g>
+                      <rect id="Rectangle_353" data-name="Rectangle 353" x="8.45" y="14.29" width="2.82" height="2.82"
+                        style="fill: #ffdc00"></rect>
+                      <path id="Path_1638" data-name="Path 1638" d="M11.27,3h2.82V5.83H11.27Z" style="fill: #f9cc5b">
+                      </path>
+                      <rect id="Rectangle_355" data-name="Rectangle 355" x="11.27" y="5.83" width="2.82" height="2.82"
+                        style="fill: #fee85c"></rect>
+                      <g id="Group_693" data-name="Group 693">
+                        <rect id="Rectangle_356" data-name="Rectangle 356" x="11.27" y="8.65" width="2.82" height="2.82"
+                          style="fill: #fc0"></rect>
+                        <rect id="Rectangle_357" data-name="Rectangle 357" x="11.27" y="11.47" width="2.82"
+                          height="2.82" style="fill: #f6c74e"></rect>
+                      </g>
+                      <rect id="Rectangle_358" data-name="Rectangle 358" x="11.27" y="14.29" width="2.82" height="2.82"
+                        style="fill: #dcc117"></rect>
+                      <rect id="Rectangle_359" data-name="Rectangle 359" x="14.09" y="3.01" width="2.82" height="2.82"
+                        style="fill: #fee85c"></rect>
+                      <path id="Rectangle_360" data-name="Rectangle 360" d="M19.73.2h0V3H16.91A2.81,2.81,0,0,1,19.73.2Z"
+                        style="fill: #f6c74e"></path>
+                      <rect id="Rectangle_361" data-name="Rectangle 361" x="19.73" y="3.01" width="2.82" height="2.82"
+                        style="fill: #f2d415"></rect>
+                      <rect id="Rectangle_362" data-name="Rectangle 362" x="14.09" y="5.83" width="2.82" height="2.82"
+                        style="fill: #e9ca00"></rect>
+                      <rect id="Rectangle_363" data-name="Rectangle 363" x="14.09" y="8.65" width="2.82" height="2.82"
+                        style="fill: #f2d415"></rect>
+                      <rect id="Rectangle_364" data-name="Rectangle 364" x="14.09" y="11.47" width="2.82" height="2.82"
+                        style="fill: #dcc117"></rect>
+                      <path id="Rectangle_365" data-name="Rectangle 365"
+                        d="M16.91,8.65h2.82a2.82,2.82,0,0,1-2.82,2.82h0Z" style="fill: #f6c74e"></path>
+                      <rect id="Rectangle_366" data-name="Rectangle 366" x="16.91" y="5.83" width="2.82" height="2.82"
+                        style="fill: #f2d415"></rect>
+                      <path id="Rectangle_367" data-name="Rectangle 367"
+                        d="M19.73,5.83h2.82a2.82,2.82,0,0,1-2.82,2.82h0Z" style="fill: #f3af04"></path>
+                      <path id="Rectangle_368" data-name="Rectangle 368" d="M22.55,0h2.81a2.81,2.81,0,0,1-2.8,2.82h0Z"
+                        style="fill: #f3af04"></path>
+                      <path id="Rectangle_369" data-name="Rectangle 369"
+                        d="M14.09,14.29h2.82A2.81,2.81,0,0,1,14.1,17.1h0Z" style="fill: #f2d415"></path>
+                      <path id="Path_1635" data-name="Path 1635" d="M11.27,17.1H8.45v2.82A2.83,2.83,0,0,1,11.27,17.1Z"
+                        style="fill: #e9ca00"></path>
+                      <path id="Path_1636" data-name="Path 1636" d="M11.27,3A2.83,2.83,0,0,0,8.45,5.83h2.82Z"
+                        style="fill: #fee85c"></path>
+                      <path id="Path_1637" data-name="Path 1637"
+                        d="M5.64,3H0V17.1H5.64a2.83,2.83,0,0,1,2.81,2.82V5.83A2.82,2.82,0,0,0,5.64,3Z"
+                        style="fill: #f3af04"></path>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 sector-single">
+            <div class="single-sector-menu-item href-hover sector-box sector align-items-center" data-value="Wellbeing">
+              <div class="single-sector-content">
+                <p class="sector-title">Wellbeing</p>
+                <p class="sector-content">Nuture your Mind</p>
+              </div>
+              <div class="single-sector-icon">
+                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.36 19.92">
+                  <g id="Group_695" data-name="Group 695">
+                    <g id="Group_694" data-name="Group 694">
+                      <rect id="Rectangle_350" data-name="Rectangle 350" x="8.45" y="5.83" width="2.82" height="2.82"
+                        style="fill: #87d644"></rect>
+                      <g id="Group_692" data-name="Group 692">
+                        <rect id="Rectangle_351" data-name="Rectangle 351" x="8.45" y="8.65" width="2.82" height="2.82"
+                          style="fill: #b5eb6b"></rect>
+                        <rect id="Rectangle_352" data-name="Rectangle 352" x="8.45" y="11.47" width="2.82" height="2.82"
+                          style="fill: #9bdc3b"></rect>
+                      </g>
+                      <rect id="Rectangle_353" data-name="Rectangle 353" x="8.45" y="14.29" width="2.82" height="2.82"
+                        style="fill: #9ed454"></rect>
+                      <path id="Path_1638" data-name="Path 1638" d="M11.27,3h2.82V5.83H11.27Z" style="fill: #8ccc0b">
+                      </path>
+                      <rect id="Rectangle_355" data-name="Rectangle 355" x="11.27" y="5.83" width="2.82" height="2.82"
+                        style="fill: #9ed454"></rect>
+                      <g id="Group_693" data-name="Group 693">
+                        <rect id="Rectangle_356" data-name="Rectangle 356" x="11.27" y="8.65" width="2.82" height="2.82"
+                          style="fill: #7cb82a"></rect>
+                        <rect id="Rectangle_357" data-name="Rectangle 357" x="11.27" y="11.47" width="2.82"
+                          height="2.82" style="fill: #9ed454"></rect>
+                      </g>
+                      <rect id="Rectangle_358" data-name="Rectangle 358" x="11.27" y="14.29" width="2.82" height="2.82"
+                        style="fill: #7cb82a"></rect>
+                      <rect id="Rectangle_359" data-name="Rectangle 359" x="14.09" y="3.01" width="2.82" height="2.82"
+                        style="fill: #7cb82a"></rect>
+                      <path id="Rectangle_360" data-name="Rectangle 360" d="M19.73.2h0V3H16.91A2.81,2.81,0,0,1,19.73.2Z"
+                        style="fill: #7cb82a"></path>
+                      <rect id="Rectangle_361" data-name="Rectangle 361" x="19.73" y="3.01" width="2.82" height="2.82"
+                        style="fill: #62a10c"></rect>
+                      <rect id="Rectangle_362" data-name="Rectangle 362" x="14.09" y="5.83" width="2.82" height="2.82"
+                        style="fill: #84b542"></rect>
+                      <rect id="Rectangle_363" data-name="Rectangle 363" x="14.09" y="8.65" width="2.82" height="2.82"
+                        style="fill: #518708"></rect>
+                      <rect id="Rectangle_364" data-name="Rectangle 364" x="14.09" y="11.47" width="2.82" height="2.82"
+                        style="fill: #84b542"></rect>
+                      <path id="Rectangle_365" data-name="Rectangle 365"
+                        d="M16.91,8.65h2.82a2.82,2.82,0,0,1-2.82,2.82h0Z" style="fill: #7cb82a"></path>
+                      <rect id="Rectangle_366" data-name="Rectangle 366" x="16.91" y="5.83" width="2.82" height="2.82"
+                        style="fill: #62a10c"></rect>
+                      <path id="Rectangle_367" data-name="Rectangle 367"
+                        d="M19.73,5.83h2.82a2.82,2.82,0,0,1-2.82,2.82h0Z" style="fill: #4c8400"></path>
+                      <path id="Rectangle_368" data-name="Rectangle 368" d="M22.55,0h2.81a2.81,2.81,0,0,1-2.8,2.82h0Z"
+                        style="fill: #4c8400"></path>
+                      <path id="Rectangle_369" data-name="Rectangle 369"
+                        d="M14.09,14.29h2.82A2.81,2.81,0,0,1,14.1,17.1h0Z" style="fill: #518708"></path>
+                      <path id="Path_1635" data-name="Path 1635" d="M11.27,17.1H8.45v2.82A2.83,2.83,0,0,1,11.27,17.1Z"
+                        style="fill: #7cb82a"></path>
+                      <path id="Path_1636" data-name="Path 1636" d="M11.27,3A2.83,2.83,0,0,0,8.45,5.83h2.82Z"
+                        style="fill: #9ed454"></path>
+                      <path id="Path_1637" data-name="Path 1637"
+                        d="M5.64,3H0V17.1H5.64a2.83,2.83,0,0,1,2.81,2.82V5.83A2.82,2.82,0,0,0,5.64,3Z"
+                        style="fill: #7cb82a"></path>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 sector-single">
+            <div class="single-sector-menu-item href-hover sector-box sector align-items-center"
+              data-value="Undergraduate">
+              <div class="single-sector-content">
+                <p class="sector-title">Undergraduate</p>
+                <p class="sector-content">Courses from University Students</p>
+              </div>
+              <div class="single-sector-icon">
+                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.36 19.92">
+                  <g id="Group_695" data-name="Group 695">
+                    <g id="Group_694" data-name="Group 694">
+                      <rect id="Rectangle_350" data-name="Rectangle 350" x="8.45" y="5.83" width="2.82" height="2.82"
+                        style="fill: #808397"></rect>
+                      <g id="Group_692" data-name="Group 692">
+                        <rect id="Rectangle_351" data-name="Rectangle 351" x="8.45" y="8.65" width="2.82" height="2.82"
+                          style="fill: #b1b3be"></rect>
+                        <rect id="Rectangle_352" data-name="Rectangle 352" x="8.45" y="11.47" width="2.82" height="2.82"
+                          style="fill: #9397ae"></rect>
+                      </g>
+                      <rect id="Rectangle_353" data-name="Rectangle 353" x="8.45" y="14.29" width="2.82" height="2.82"
+                        style="fill: #727797"></rect>
+                      <path id="Path_1638" data-name="Path 1638" d="M11.27,3h2.82V5.83H11.27Z" style="fill: #777c97">
+                      </path>
+                      <rect id="Rectangle_355" data-name="Rectangle 355" x="11.27" y="5.83" width="2.82" height="2.82"
+                        style="fill: #9093aa"></rect>
+                      <g id="Group_693" data-name="Group 693">
+                        <rect id="Rectangle_356" data-name="Rectangle 356" x="11.27" y="8.65" width="2.82" height="2.82"
+                          style="fill: #6d728e"></rect>
+                        <rect id="Rectangle_357" data-name="Rectangle 357" x="11.27" y="11.47" width="2.82"
+                          height="2.82" style="fill: #7d84aa"></rect>
+                      </g>
+                      <rect id="Rectangle_358" data-name="Rectangle 358" x="11.27" y="14.29" width="2.82" height="2.82"
+                        style="fill: #565c81"></rect>
+                      <rect id="Rectangle_359" data-name="Rectangle 359" x="14.09" y="3.01" width="2.82" height="2.82"
+                        style="fill: #6d728e"></rect>
+                      <path id="Rectangle_360" data-name="Rectangle 360" d="M19.73.2h0V3H16.91A2.81,2.81,0,0,1,19.73.2Z"
+                        style="fill: #7d84aa"></path>
+                      <rect id="Rectangle_361" data-name="Rectangle 361" x="19.73" y="3.01" width="2.82" height="2.82"
+                        style="fill: #686d87"></rect>
+                      <rect id="Rectangle_362" data-name="Rectangle 362" x="14.09" y="5.83" width="2.82" height="2.82"
+                        style="fill: #68719b"></rect>
+                      <rect id="Rectangle_363" data-name="Rectangle 363" x="14.09" y="8.65" width="2.82" height="2.82"
+                        style="fill: #424764"></rect>
+                      <rect id="Rectangle_364" data-name="Rectangle 364" x="14.09" y="11.47" width="2.82" height="2.82"
+                        style="fill: #69708e"></rect>
+                      <path id="Rectangle_365" data-name="Rectangle 365"
+                        d="M16.91,8.65h2.82a2.82,2.82,0,0,1-2.82,2.82h0Z" style="fill: #68719b"></path>
+                      <rect id="Rectangle_366" data-name="Rectangle 366" x="16.91" y="5.83" width="2.82" height="2.82"
+                        style="fill: #696e8d"></rect>
+                      <path id="Rectangle_367" data-name="Rectangle 367"
+                        d="M19.73,5.83h2.82a2.82,2.82,0,0,1-2.82,2.82h0Z" style="fill: #4c5481"></path>
+                      <path id="Rectangle_368" data-name="Rectangle 368" d="M22.55,0h2.81a2.81,2.81,0,0,1-2.8,2.82h0Z"
+                        style="fill: #33385a"></path>
+                      <path id="Rectangle_369" data-name="Rectangle 369"
+                        d="M14.09,14.29h2.82A2.81,2.81,0,0,1,14.1,17.1h0Z" style="fill: #353d6d"></path>
+                      <path id="Path_1635" data-name="Path 1635" d="M11.27,17.1H8.45v2.82A2.83,2.83,0,0,1,11.27,17.1Z"
+                        style="fill: #464c74"></path>
+                      <path id="Path_1636" data-name="Path 1636" d="M11.27,3A2.83,2.83,0,0,0,8.45,5.83h2.82Z"
+                        style="fill: #909298"></path>
+                      <path id="Path_1637" data-name="Path 1637"
+                        d="M5.64,3H0V17.1H5.64a2.83,2.83,0,0,1,2.81,2.82V5.83A2.82,2.82,0,0,0,5.64,3Z"
+                        style="fill: #545870"></path>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- step-one.end -->
+      <!-- step-two.start -->
+      <div class="modal-body" id="step-two" data-step="2" style="display: none">
+        <p class="get-started-title">Please indicate your preference below:</p>
+        <div class="row">
+          <div class="col-md-4 sector-single">
+            <div class="sector-box type" data-value="1-1 Lessons">
+              <div class="sector-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1316 1252">
+                  <g id="noun_Teacher_380172" transform="translate(-2 -2.5)">
+                    <g id="Group_68109" data-name="Group 68109" transform="translate(2 2.5)">
+                      <rect id="Rectangle_510" data-name="Rectangle 510" width="1304" height="131"
+                        transform="translate(0 1121)" fill="#0b154b"></rect>
+                      <ellipse id="Ellipse_134" data-name="Ellipse 134" cx="117" cy="130.5" rx="117" ry="130.5"
+                        transform="translate(548 261)" fill="#0b154b"></ellipse>
+                      <path id="Path_1786" data-name="Path 1786"
+                        d="M2,2.5v987H1318V2.5ZM1186.4,857.9H923.2c0-72.38-32.9-138.18-78.96-184.24S732.38,594.7,660,594.7s-138.18,26.32-184.24,78.96C429.7,719.72,396.8,785.52,396.8,857.9H133.6V134.1H1186.4Z"
+                        transform="translate(-2 -2.5)" fill="#0b154b"></path>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+              <p class="sector-box-content">1-1 Lessons</p>
+            </div>
+          </div>
+
+          <div class="col-md-4 sector-single">
+            <div class="sector-box type" data-value="Group Lessons">
+              <div class="sector-icon">
+                <svg id="Group_68914" data-name="Group 68914" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 876.404 593.599">
+                  <circle id="Ellipse_148" data-name="Ellipse 148" cx="79.508" cy="79.508" r="79.508"
+                    transform="translate(55.113 101.192)" fill="#0b154b"></circle>
+                  <path id="Path_3372" data-name="Path 3372"
+                    d="M210.208,248.373v-5.421c0-48.789,15.359-93.06,40.657-130.1C227.375,74,184.91,48.7,136.121,48.7,62.034,48.7,1.5,109.235,1.5,183.321v42.464C33.122,244.759,82.815,256.5,136.121,256.5A464.725,464.725,0,0,0,210.208,248.373Z"
+                    transform="translate(-1.5 235.902)" fill="#0b154b"></path>
+                  <circle id="Ellipse_149" data-name="Ellipse 149" cx="79.508" cy="79.508" r="79.508"
+                    transform="translate(662.265 101.192)" fill="#0b154b"></circle>
+                  <path id="Path_3373" data-name="Path 3373"
+                    d="M185.644,48.6A135.174,135.174,0,0,0,70.9,112.749c25.3,37.043,40.657,82.218,40.657,130.1v5.421c22.588,5.421,47.886,8.132,74.087,8.132,53.307,0,103-11.745,134.621-30.719V183.221C321.169,109.135,259.731,48.6,185.644,48.6Z"
+                    transform="translate(556.128 235.099)" fill="#0b154b"></path>
+                  <path id="Path_3374" data-name="Path 3374"
+                    d="M283.859,140.979c0-68.666-56.017-123.779-123.779-123.779S36.3,73.217,36.3,140.979c0,68.666,56.017,123.779,123.779,123.779S283.859,209.645,283.859,140.979Z"
+                    transform="translate(278.118 -17.2)" fill="#0b154b"></path>
+                  <path id="Path_3375" data-name="Path 3375"
+                    d="M440.9,254.2c0-113.841-93.06-206.9-206.9-206.9S27.1,140.36,27.1,254.2v65.955c47.885,30.719,124.683,48.789,206.9,48.789s159.016-18.07,206.9-48.789Z"
+                    transform="translate(204.196 224.653)" fill="#0b154b"></path>
+                </svg>
+              </div>
+              <p class="sector-box-content">Group Lessons (up to 8)</p>
+            </div>
+          </div>
+
+          <div class="col-md-4 sector-single">
+            <div class="sector-box type" data-value="No Preference">
+              <div class="sector-icon">
+                <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                  height="24" viewBox="0 0 18.451 24">
+                  <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                    <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                      d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                      transform="translate(-293.5 -199.7)"></path>
+                  </g>
+                  <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                    <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                      d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                      transform="translate(-256 -331)"></path>
+                  </g>
+                </svg>
+              </div>
+              <p class="sector-box-content">No Preference</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- step-two.end -->
+      <!-- step-three.start -->
+      <div class="modal-body" id="step-three" data-step="3" style="display: none">
+        <p class="get-started-title">Who is the course for?</p>
+        <div class="row">
+          <div class="col-md-4 sector-single">
+            <div class="sector-box who" data-value="Myself">
+              <div class="sector-icon">
+                <svg id="Group_68916" data-name="Group 68916" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 852.881 856.508">
+                  <circle id="Ellipse_150" data-name="Ellipse 150" cx="125" cy="125" r="125"
+                    transform="translate(301.927)" fill="#0b154b"></circle>
+                  <path id="Path_3377" data-name="Path 3377"
+                    d="M849.185,499.492,665.036,148.324c-102.781-188.432-372.581-188.432-475.362,0L5.525,499.492C-11.6,529.47,14.09,563.73,48.351,563.73H296.738c25.7,0,42.825-17.13,42.825-42.825s-17.13-42.825-42.825-42.825H211.087v-244.1c0-4.283,8.565-8.565,12.848-8.565L378.106,302.5c4.283,4.283,4.283,4.283,4.283,8.565v244.1c0,4.283,4.283,8.565,8.565,8.565h68.521c4.283,0,8.565-4.282,8.565-8.565V311.06c0-4.283,0-4.283,4.283-8.565l154.171-77.086c4.283-4.283,12.848,0,12.848,8.565v244.1H553.69c-25.7,0-42.825,17.13-42.825,42.825S528,563.73,553.69,563.73H806.36A46.055,46.055,0,0,0,849.185,499.492Z"
+                    transform="translate(-0.073 292.778)" fill="#0b154b"></path>
+                </svg>
+              </div>
+              <p class="sector-box-content">Myself</p>
+            </div>
+          </div>
+
+          <div class="col-md-4 sector-single">
+            <div class="sector-box who" data-value="Student">
+              <div class="sector-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1005" height="688.438" viewBox="0 0 1005 688.438">
+                  <g id="noun_student_2992483" transform="translate(-81.619 -189.247)">
+                    <g id="Group_68915" data-name="Group 68915" transform="translate(81.618 189.247)">
+                      <path id="Path_3376" data-name="Path 3376"
+                        d="M104.178,362.625,572.391,191.31a34.323,34.323,0,0,1,23.44,0l468.228,171.315c30.336,11,29.822,53.762,0,64.615l-158.2,57.894L905.9,733.71a34.465,34.465,0,0,1-24.572,33l-287,108.759a34.274,34.274,0,0,1-26.557-.97L284.537,765.738a34.281,34.281,0,0,1-22.028-32.028l-.177-248.591-48.468-17.734v321.5c0,45.307-68.908,45.307-68.908,0V442.166L104.178,427.24C73.842,416.241,74.356,373.493,104.178,362.625Z"
+                        transform="translate(-81.618 -189.247)" fill="#0b154b"></path>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+              <p class="sector-box-content">Student</p>
+            </div>
+          </div>
+
+          <div class="col-md-4 sector-single">
+            <div class="sector-box who" data-value="Someone Else">
+              <div class="sector-icon">
+                <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                  height="24" viewBox="0 0 18.451 24">
+                  <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                    <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                      d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                      transform="translate(-293.5 -199.7)"></path>
+                  </g>
+                  <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                    <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                      d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                      transform="translate(-256 -331)"></path>
+                  </g>
+                </svg>
+              </div>
+              <p class="sector-box-content">Someone Else</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- step-three.end -->
+      <!-- step-four.start -->
+      <div class="modal-body" id="step-four" data-step="4" style="display: none">
+        <p class="get-started-title">Please fill in the details below:</p>
+        <div class="row">
+          <div class="col-lg-3 pb-3">
+            <input type="text" id="getContactFName" class="form-control" placeholder="First Name" required="" />
+          </div>
+          <div class="col-lg-3 pb-3">
+            <input type="text" id="getContactLName" class="form-control" placeholder="Last Name" required="" />
+          </div>
+          <div class="col-lg-6 pb-3">
+            <input type="text" id="getContactNumber" class="form-control" placeholder="Number" />
+          </div>
+          <div class="col-lg-12 pb-3">
+            <input type="email" id="getContactEmail" class="form-control" placeholder="Email" required="" />
+          </div>
+          <div class="w-100 p-2"></div>
+          <div class="col-lg-12">
+            <p class="content text-red" id="errorMsg" style="color: red !important"></p>
+          </div>
+        </div>
+      </div>
+      <!-- step-four.end -->
+      <!-- step-five.start -->
+      <div class="modal-body" id="step-five" data-step="5" style="display: none">
+        <p class="get-started-title">What is your availability for lessons?</p>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <select name="timezone_offset" id="timezone-offset" class="span5 mb-3 content w-100">
+              <option value="-12:00">(GMT -12:00) Eniwetok, Kwajalein</option>
+              <option value="-11:00">(GMT -11:00) Midway Island, Samoa</option>
+              <option value="-10:00">(GMT -10:00) Hawaii</option>
+              <option value="-09:50">(GMT -9:30) Taiohae</option>
+              <option value="-09:00">(GMT -9:00) Alaska</option>
+              <option value="-08:00">
+                (GMT -8:00) Pacific Time (US &amp; Canada)
+              </option>
+              <option value="-07:00">
+                (GMT -7:00) Mountain Time (US &amp; Canada)
+              </option>
+              <option value="-06:00">
+                (GMT -6:00) Central Time (US &amp; Canada), Mexico City
+              </option>
+              <option value="-05:00">
+                (GMT -5:00) Eastern Time (US &amp; Canada), Bogota, Lima
+              </option>
+              <option value="-04:50">(GMT -4:30) Caracas</option>
+              <option value="-04:00">
+                (GMT -4:00) Atlantic Time (Canada), Caracas, La Paz
+              </option>
+              <option value="-03:50">(GMT -3:30) Newfoundland</option>
+              <option value="-03:00">
+                (GMT -3:00) Brazil, Buenos Aires, Georgetown
+              </option>
+              <option value="-02:00">(GMT -2:00) Mid-Atlantic</option>
+              <option value="-01:00">
+                (GMT -1:00) Azores, Cape Verde Islands
+              </option>
+              <option value="+00:00" selected="selected">
+                (GMT) Western Europe Time, London, Lisbon, Casablanca
+              </option>
+              <option value="+01:00">
+                (GMT +1:00) Brussels, Copenhagen, Madrid, Paris
+              </option>
+              <option value="+02:00">
+                (GMT +2:00) Kaliningrad, South Africa
+              </option>
+              <option value="+03:00">
+                (GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg
+              </option>
+              <option value="+03:50">(GMT +3:30) Tehran</option>
+              <option value="+04:00">
+                (GMT +4:00) Abu Dhabi, Muscat, Baku, Tbilisi
+              </option>
+              <option value="+04:50">(GMT +4:30) Kabul</option>
+              <option value="+05:00">
+                (GMT +5:00) Ekaterinburg, Islamabad, Karachi, Tashkent
+              </option>
+              <option value="+05:50">
+                (GMT +5:30) Bombay, Calcutta, Madras, New Delhi
+              </option>
+              <option value="+05:75">(GMT +5:45) Kathmandu, Pokhara</option>
+              <option value="+06:00">(GMT +6:00) Almaty, Dhaka, Colombo</option>
+              <option value="+06:50">(GMT +6:30) Yangon, Mandalay</option>
+              <option value="+07:00">
+                (GMT +7:00) Bangkok, Hanoi, Jakarta
+              </option>
+              <option value="+08:00">
+                (GMT +8:00) Beijing, Perth, Singapore, Hong Kong
+              </option>
+              <option value="+08:75">(GMT +8:45) Eucla</option>
+              <option value="+09:00">
+                (GMT +9:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk
+              </option>
+              <option value="+09:50">(GMT +9:30) Adelaide, Darwin</option>
+              <option value="+10:00">
+                (GMT +10:00) Eastern Australia, Guam, Vladivostok
+              </option>
+              <option value="+10:50">(GMT +10:30) Lord Howe Island</option>
+              <option value="+11:00">
+                (GMT +11:00) Magadan, Solomon Islands, New Caledonia
+              </option>
+              <option value="+11:50">(GMT +11:30) Norfolk Island</option>
+              <option value="+12:00">
+                (GMT +12:00) Auckland, Wellington, Fiji, Kamchatka
+              </option>
+              <option value="+12:75">(GMT +12:45) Chatham Islands</option>
+              <option value="+13:00">(GMT +13:00) Apia, Nukualofa</option>
+              <option value="+14:00">(GMT +14:00) Line Islands, Tokelau</option>
+            </select>
+          </div>
+        </div>
+        <div class="availability-grid">
+          <div class="availability-col grid-col-1 grid-row-1">&nbsp;</div>
+          <div class="availability-col item grid-col-2 grid-row-1">Mon</div>
+          <div class="availability-col item grid-col-3 grid-row-1">Tue</div>
+          <div class="availability-col item grid-col-4 grid-row-1">Wed</div>
+          <div class="availability-col item grid-col-5 grid-row-1">Thur</div>
+          <div class="availability-col item grid-col-6 grid-row-1">Fri</div>
+          <div class="availability-col item grid-col-7 grid-row-1">Sat</div>
+          <div class="availability-col item grid-col-8 grid-row-1">Sun</div>
+
+          <div class="w-100"></div>
+
+          <div class="availability-col grid-col-1 grid-row-2">
+            <p class="availability-time">
+              Morning<br /><span class="extra">Before Noon</span>
+            </p>
+          </div>
+
+          <div class="availability-col item grid-col-2 grid-row-2">
+            <div class="availability-box" data-day="Monday" data-time="Morning">
+              <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                height="24" viewBox="0 0 18.451 24">
+                <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                  <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                    d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                    transform="translate(-293.5 -199.7)"></path>
+                </g>
+                <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                  <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                    d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                    transform="translate(-256 -331)"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="availability-col item grid-col-3 grid-row-2">
+            <div class="availability-box" data-day="Tuesday" data-time="Morning">
+              <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                height="24" viewBox="0 0 18.451 24">
+                <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                  <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                    d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                    transform="translate(-293.5 -199.7)"></path>
+                </g>
+                <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                  <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                    d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                    transform="translate(-256 -331)"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="availability-col item grid-col-4 grid-row-2">
+            <div class="availability-box" data-day="Wednesday" data-time="Morning">
+              <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                height="24" viewBox="0 0 18.451 24">
+                <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                  <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                    d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                    transform="translate(-293.5 -199.7)"></path>
+                </g>
+                <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                  <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                    d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                    transform="translate(-256 -331)"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="availability-col item grid-col-5 grid-row-2">
+            <div class="availability-box" data-day="Thursday" data-time="Morning">
+              <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                height="24" viewBox="0 0 18.451 24">
+                <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                  <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                    d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                    transform="translate(-293.5 -199.7)"></path>
+                </g>
+                <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                  <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                    d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                    transform="translate(-256 -331)"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="availability-col item grid-col-6 grid-row-2">
+            <div class="availability-box" data-day="Friday" data-time="Morning">
+              <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                height="24" viewBox="0 0 18.451 24">
+                <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                  <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                    d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                    transform="translate(-293.5 -199.7)"></path>
+                </g>
+                <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                  <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                    d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                    transform="translate(-256 -331)"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="availability-col item grid-col-7 grid-row-2">
+            <div class="availability-box" data-day="Saturday" data-time="Morning">
+              <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                height="24" viewBox="0 0 18.451 24">
+                <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                  <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                    d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                    transform="translate(-293.5 -199.7)"></path>
+                </g>
+                <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                  <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                    d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                    transform="translate(-256 -331)"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="availability-col item grid-col-8 grid-row-2">
+            <div class="availability-box" data-day="Sunday" data-time="Morning">
+              <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                height="24" viewBox="0 0 18.451 24">
+                <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                  <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                    d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                    transform="translate(-293.5 -199.7)"></path>
+                </g>
+                <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                  <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                    d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                    transform="translate(-256 -331)"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="availability-col grid-col-1 grid-row-3">
+            <p class="availability-time">
+              Afternoon <br /><span class="extra">12pm - 5pm</span>
+            </p>
+          </div>
+
+          <div class="availability-col item grid-col-2 grid-row-3">
+            <div class="availability-box" data-day="Monday" data-time="Afternoon">
+              <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                height="24" viewBox="0 0 18.451 24">
+                <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                  <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                    d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                    transform="translate(-293.5 -199.7)"></path>
+                </g>
+                <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                  <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                    d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                    transform="translate(-256 -331)"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="availability-col item grid-col-3 grid-row-3">
+            <div class="availability-box" data-day="Tuesday" data-time="Afternoon">
+              <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                height="24" viewBox="0 0 18.451 24">
+                <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                  <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                    d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                    transform="translate(-293.5 -199.7)"></path>
+                </g>
+                <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                  <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                    d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                    transform="translate(-256 -331)"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="availability-col item grid-col-4 grid-row-3">
+            <div class="availability-box" data-day="Wednesday" data-time="Afternoon">
+              <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                height="24" viewBox="0 0 18.451 24">
+                <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                  <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                    d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                    transform="translate(-293.5 -199.7)"></path>
+                </g>
+                <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                  <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                    d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                    transform="translate(-256 -331)"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="availability-col item grid-col-5 grid-row-3">
+            <div class="availability-box" data-day="Thursday" data-time="Afternoon">
+              <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                height="24" viewBox="0 0 18.451 24">
+                <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                  <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                    d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                    transform="translate(-293.5 -199.7)"></path>
+                </g>
+                <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                  <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                    d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                    transform="translate(-256 -331)"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="availability-col item grid-col-6 grid-row-3">
+            <div class="availability-box" data-day="Friday" data-time="Afternoon">
+              <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                height="24" viewBox="0 0 18.451 24">
+                <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                  <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                    d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                    transform="translate(-293.5 -199.7)"></path>
+                </g>
+                <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                  <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                    d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                    transform="translate(-256 -331)"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="availability-col item grid-col-7 grid-row-3">
+            <div class="availability-box" data-day="Saturday" data-time="Afternoon">
+              <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                height="24" viewBox="0 0 18.451 24">
+                <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                  <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                    d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                    transform="translate(-293.5 -199.7)"></path>
+                </g>
+                <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                  <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                    d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                    transform="translate(-256 -331)"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="availability-col item grid-col-8 grid-row-3">
+            <div class="availability-box" data-day="Sunday" data-time="Afternoon">
+              <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                height="24" viewBox="0 0 18.451 24">
+                <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                  <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                    d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                    transform="translate(-293.5 -199.7)"></path>
+                </g>
+                <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                  <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                    d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                    transform="translate(-256 -331)"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="availability-col grid-col-1 grid-row-4">
+            <p class="availability-time">
+              Evening <br /><span class="extra">After 5pm</span>
+            </p>
+          </div>
+
+          <div class="availability-col item grid-col-2 grid-row-4">
+            <div class="availability-box" data-day="Monday" data-time="Evening">
+              <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                height="24" viewBox="0 0 18.451 24">
+                <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                  <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                    d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                    transform="translate(-293.5 -199.7)"></path>
+                </g>
+                <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                  <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                    d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                    transform="translate(-256 -331)"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="availability-col item grid-col-3 grid-row-4">
+            <div class="availability-box" data-day="Tuesday" data-time="Evening">
+              <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                height="24" viewBox="0 0 18.451 24">
+                <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                  <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                    d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                    transform="translate(-293.5 -199.7)"></path>
+                </g>
+                <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                  <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                    d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                    transform="translate(-256 -331)"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="availability-col item grid-col-4 grid-row-4">
+            <div class="availability-box" data-day="Wednesday" data-time="Evening">
+              <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                height="24" viewBox="0 0 18.451 24">
+                <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                  <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                    d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                    transform="translate(-293.5 -199.7)"></path>
+                </g>
+                <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                  <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                    d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                    transform="translate(-256 -331)"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="availability-col item grid-col-5 grid-row-4">
+            <div class="availability-box" data-day="Thursday" data-time="Evening">
+              <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                height="24" viewBox="0 0 18.451 24">
+                <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                  <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                    d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                    transform="translate(-293.5 -199.7)"></path>
+                </g>
+                <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                  <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                    d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                    transform="translate(-256 -331)"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="availability-col item grid-col-6 grid-row-4">
+            <div class="availability-box" data-day="Friday" data-time="Evening">
+              <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                height="24" viewBox="0 0 18.451 24">
+                <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                  <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                    d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                    transform="translate(-293.5 -199.7)"></path>
+                </g>
+                <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                  <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                    d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                    transform="translate(-256 -331)"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="availability-col item grid-col-7 grid-row-4">
+            <div class="availability-box" data-day="Saturday" data-time="Evening">
+              <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                height="24" viewBox="0 0 18.451 24">
+                <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                  <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                    d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                    transform="translate(-293.5 -199.7)"></path>
+                </g>
+                <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                  <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                    d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                    transform="translate(-256 -331)"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="availability-col item grid-col-8 grid-row-4">
+            <div class="availability-box" data-day="Sunday" data-time="Evening">
+              <svg id="Group_68115" data-name="Group 68115" xmlns="http://www.w3.org/2000/svg" width="18.451"
+                height="24" viewBox="0 0 18.451 24">
+                <g id="Group_68110" data-name="Group 68110" transform="translate(3.474 0)">
+                  <path id="Path_1787" data-name="Path 1787" class="cls-1"
+                    d="M293.5,205.456a5.756,5.756,0,1,0,5.757-5.756A5.749,5.749,0,0,0,293.5,205.456Z"
+                    transform="translate(-293.5 -199.7)"></path>
+                </g>
+                <g id="Group_68112" data-name="Group 68112" transform="translate(0 12.487)">
+                  <path id="Path_1789" data-name="Path 1789" class="cls-1"
+                    d="M265.23,331a9.416,9.416,0,0,0-9.23,9.59v1.922h18.451V340.59A9.427,9.427,0,0,0,265.23,331Z"
+                    transform="translate(-256 -331)"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+      <!-- summary.start -->
+      <div class="modal-body" id="summary" data-step="6" style="display: none">
+        <div class="row">
+          <div class="top-nav" style="display: flex">
+            <p class="get-started-title">Great! We'll be in touch.</p>
+            <i data-feather="x"></i>
+          </div>
+        </div>
+        <div class="bg-light-blue" id="summary" style="padding: 1rem">
+          <h4 class="title">Details</h4>
+          <hr class="big-blue" />
+
+          <div class="d-grid grid-temp-col-2" style="margin-top: 2rem; column-gap: 1.5rem">
+            <div class="grid-temp-row-3">
+              <div class="grid-item flex-direction-row">
+                <div class="grid-icon d-flex justify-content-center">
+                  <img width="40%" id="courseSectorImg" />
+                </div>
+                <div class="grid-text" style="margin-left: 1rem">
+                  <p class="content light" style="margin-bottom: 0; font-weight: 300">
+                    Course Sector
+                  </p>
+                  <p class="content" id="courseSector" style="
+                      margin-bottom: 0;
+                      font-size: 1.3rem;
+                      font-weight: 600;
+                    "></p>
+                </div>
+              </div>
+
+              <div class="grid-item d-flex flex-direction-row pt-4">
+                <div class="grid-icon d-flex justify-content-center small">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1316 1252">
+                    <g id="noun_Teacher_380172" transform="translate(-2 -2.5)">
+                      <g id="Group_68109" data-name="Group 68109" transform="translate(2 2.5)">
+                        <rect id="Rectangle_510" data-name="Rectangle 510" width="1304" height="131"
+                          transform="translate(0 1121)" fill="#0b154b"></rect>
+                        <ellipse id="Ellipse_134" data-name="Ellipse 134" cx="117" cy="130.5" rx="117" ry="130.5"
+                          transform="translate(548 261)" fill="#0b154b"></ellipse>
+                        <path id="Path_1786" data-name="Path 1786"
+                          d="M2,2.5v987H1318V2.5ZM1186.4,857.9H923.2c0-72.38-32.9-138.18-78.96-184.24S732.38,594.7,660,594.7s-138.18,26.32-184.24,78.96C429.7,719.72,396.8,785.52,396.8,857.9H133.6V134.1H1186.4Z"
+                          transform="translate(-2 -2.5)" fill="#0b154b"></path>
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+                <div class="grid-text" style="margin-left: 1rem">
+                  <p class="content light" style="margin-bottom: 0; font-weight: 300">
+                    Course Preference
+                  </p>
+                  <p class="content" style="
+                      margin-bottom: 0;
+                      font-size: 1.3rem;
+                      font-weight: 600;
+                    " id="coursePreference"></p>
+                </div>
+              </div>
+
+              <div class="grid-item d-flex flex-direction-row pt-4">
+                <div class="grid-icon d-flex justify-content-center small">
+                  <svg id="Group_68916" data-name="Group 68916" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 852.881 856.508">
+                    <circle id="Ellipse_150" data-name="Ellipse 150" cx="125" cy="125" r="125"
+                      transform="translate(301.927)" fill="#0b154b"></circle>
+                    <path id="Path_3377" data-name="Path 3377"
+                      d="M849.185,499.492,665.036,148.324c-102.781-188.432-372.581-188.432-475.362,0L5.525,499.492C-11.6,529.47,14.09,563.73,48.351,563.73H296.738c25.7,0,42.825-17.13,42.825-42.825s-17.13-42.825-42.825-42.825H211.087v-244.1c0-4.283,8.565-8.565,12.848-8.565L378.106,302.5c4.283,4.283,4.283,4.283,4.283,8.565v244.1c0,4.283,4.283,8.565,8.565,8.565h68.521c4.283,0,8.565-4.282,8.565-8.565V311.06c0-4.283,0-4.283,4.283-8.565l154.171-77.086c4.283-4.283,12.848,0,12.848,8.565v244.1H553.69c-25.7,0-42.825,17.13-42.825,42.825S528,563.73,553.69,563.73H806.36A46.055,46.055,0,0,0,849.185,499.492Z"
+                      transform="translate(-0.073 292.778)" fill="#0b154b"></path>
+                  </svg>
+                </div>
+                <div class="grid-text" style="margin-left: 1rem">
+                  <p class="content light" style="margin-bottom: 0; font-weight: 300">
+                    Who is the course for?
+                  </p>
+                  <p class="content" id="courseFor" style="
+                      margin-bottom: 0;
+                      font-size: 1.3rem;
+                      font-weight: 600;
+                    "></p>
+                </div>
+              </div>
+            </div>
+            <div class="grid-temp-row-2">
+              <div class="grid-item">
+                <p class="content light" style="margin-bottom: 0; font-weight: 300">
+                  Availability
+                </p>
+                <div class="avaliability" id="avaliability"></div>
+              </div>
+              <div class="grid-row pt-4">
+                <p class="content light share-icons pt-2" style="margin-bottom: 0; font-weight: 300">
+                  Invite a friend to enrol
+                </p>
+                <div class="avaliability" id="avaliability">
+                  <p class="content pt-3" style="margin-bottom: 0">
+                    <a target="_blank"
+                      href="https://www.facebook.com/sharer/sharer.php?u=https%3A//unioneducationgroup.com/"
+                      class="share-icon"><i data-feather="facebook"></i></a>
+                    <a target="_blank"
+                      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A//unioneducationgroup.com/&amp;title=UEG%20Blog&amp;summary=&amp;source="
+                      class="share-icon"><i data-feather="linkedin"></i></a>
+                    <a target="_blank" href="https://twitter.com/intent/tweet?text=https%3A//unioneducationgroup.com/"
+                      class="share-icon"><i data-feather="twitter"></i></a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div class="get-started btn-grid">
+          <div class="grid-col-1 grid-row-1">
+            <button class="btn btn-blue" id="backbtn" data-back-step="1" style="display: none">
+              Back
+            </button>
+          </div>
+          <div class="grid-col-2 grid-row-1 ml-auto">
+            <button class="btn btn-yellow" id="submitBtn" style="display: none">
+              Submit
+            </button>
+            <button class="btn btn-yellow" id="nextBtn" style="display: none">
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pagination container-flex">
+  <div class="container">
+    <div class="row d-flex align-items-center justify-content-center text-center">
+      <nav class="w-100">
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button"
+            role="tab" aria-controls="nav-home" aria-selected="true">1-on-1 online learning</a>
+          <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button"
+            role="tab" aria-controls="nav-profile" aria-selected="false">Group Online Learning</a>
+          <a class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button"
+            role="tab" aria-controls="nav-contact" aria-selected="false">in-person education</a>
+          <a class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-school" type="button"
+            role="tab" aria-controls="nav-school" aria-selected="false">School at Home</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+    <div class="container-flex bg-white content-section">
+      <div class="container virtual-class-container">
+        <div class="row d-flex align-items-center justify-content-center">
+          <div class="col-lg-6 virtual-class-img-container pt-2 pb-2">
+            <img class="image virtual-class-img" src="assets/img/usingueg.png" />
+          </div>
+          <div class="col-lg-6 d-flex justify-content-center align-items-center">
+            <div class="content">
+              <h3 class="title">1-on-1 online learning</h3>
+              <div class="spacer">
+                <hr class="big-blue" />
+              </div>
+              <p class="content" style="font-size: 20px">
+                <b>Select Educators for 1-1 online</b>
+                <br />
+              </p>
+              <ul class="disc-class">
+                <li class="content">
+                  For 1-1 lessons, you may want to begin by browsing our
+                  Educator profiles first.
+                </li>
+                <li class="content">
+                  Look at one or more of our five departments to find the right
+                  option for you: Academic Development, Skill Acquisition,
+                  Professional Learning and Wellbeing.
+                </li>
+                <li class="content">
+                  Take time to figure out which Educators fit your requirements
+                  before you start learning.
+                </li>
+                <li class="content">
+                  Each Educator is available for standard 1-1 lessons, or they
+                  can design an entirely bespoke course, just for you.
+                </li>
+                <li class="content">
+                  Pin the Educators that will best enhance your development or
+                  study goals.
+                </li>
+                <li class="content">
+                  If you find one or more that suit your requirements, please
+                  just click ‘Contact Educator’ and book in your trial lesson.
+                </li>
+              </ul>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-flex content-section bg-light-blue" style="background-color: #f2f2f2 !important">
+      <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+          <div class="col-lg-6">
+            <h5 class="title">Lesson plans exactly as you want them</h5>
+            <br />
+            <ul class="disc-class">
+              <li class="content">
+                Our Educators can advise on the best course of action for 1-1
+                lessons. However, there is no reason that students and parents
+                can’t draw up a schedule that they wish the Educator to follow.
+              </li>
+              <li class="content">
+                The advantage of 1-1 lessons is that they are entirely catered
+                to you. Below there is some further detail on the 1-1 course
+                experience.
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6 virtual-class-img-container pt-2 pb-2">
+            <img class="image virtual-class-img" src="assets/img/1on1-1.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-flex content-section bg-white">
+      <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+          <div class="col-lg-6 virtual-class-img-container pt-2 pb-2">
+            <img style="margin-bottom: 1rem" class="image virtual-class-img" src="assets/img/1on1-2.png" />
+          </div>
+          <div class="col-lg-6">
+            <h5 class="title">Select Courses for 1-1 online</h5>
+            <br />
+            <ul class="disc-class">
+              <li class="content">
+                Browse Courses onsite in our four departments.
+              </li>
+              <li class="content">
+                Select ‘Enrol on Course’ as many times as you see Courses that
+                fit your study plan.
+              </li>
+              <li class="content">
+                Courses can also be adjusted in 1-1 learning if you want to make
+                changes.
+              </li>
+              <li class="content">
+                Book in as many trial lessons as appropriate for your
+                requirements.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-flex content-section bg-light-blue" style="background-color: #f2f2f2 !important">
+      <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+          <div class="col-lg-6">
+            <h5 class="title">Course Details</h5>
+            <br />
+            <ul class="disc-class">
+              <li class="content">
+                Each one of our courses comes with a specific set of features
+                you can always expect.
+              </li>
+              <li class="content">
+                All courses include homework and feedback, whether this be in
+                the form of presentations delivered in class, tests or marked
+                written work.
+              </li>
+              <li class="content">
+                We always include an introductory video from the Educator about
+                the course. This gives our students the opportunity to have a
+                taste of what lessons are like before signing up for a trial.
+              </li>
+              <li class="content">
+                Although homework and feedback are recommended, as you are
+                taking courses by yourself, any parts of the course can be
+                adjusted to fit your precise goals and requirements.
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6 virtual-class-img-container pt-2 pb-2" style="justify-content: flex-end !important">
+            <img class="image virtual-class-img" src="assets/img/1on1-3.png" style="width: 85%" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-flex content-section bg-white">
+      <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+          <div class="col-lg-12">
+            <h3 class="title">FAQ's</h3>
+            <hr class="big-blue" style="opacity: 1" />
+            <br />
+            <div id="accordion1">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn" data-toggle="collapse" data-target="#collapse1One" aria-expanded="true"
+                      aria-controls="collapse1One">
+                      <h6 class="title">
+                        How many trial classes can I take with Educators?
+                      </h6>
+                    </button>
+                  </h5>
+                </div>
+
+                <div id="collapse1One" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion1">
+                  <div class="card-body">
+                    <p class="content">
+                      As many as you like. There is absolutely no obligation to
+                      continue lessons with an Educator until you are completely
+                      satisfied that they understand your requirements and can
+                      fulfil your expectations.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn collapsed" data-toggle="collapse" data-target="#collapse1Two"
+                      aria-expanded="false" aria-controls="collapse1Two">
+                      <h6 class="title">Can I work with multiple Educators?</h6>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse1Two" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion1">
+                  <div class="card-body">
+                    <p class="content">
+                      Absolutely. Many students who we work with often find that
+                      when carrying out 1-1 lessons, it can be an effective
+                      strategy to have more than one Educator to cover different
+                      subjects if this is applicable.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn collapsed" data-toggle="collapse" data-target="#collapse1Three"
+                      aria-expanded="false" aria-controls="collapse1Three">
+                      <h6 class="title">
+                        Can I book private lessons with an Educator who I am
+                        also taking a group course with?
+                      </h6>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse1Three" class="collapse" aria-labelledby="headingThree" data-parent="#accordion1">
+                  <div class="card-body">
+                    <p class="content">
+                      Of course, and this is actually common. We often find that
+                      during courses, students can get intrigued by a certain
+                      area and book 1-1 sessions to get more depth or take their
+                      learning off in another direction.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn collapsed" data-toggle="collapse" data-target="#collapse1Four"
+                      aria-expanded="false" aria-controls="collapse1Four">
+                      <h6 class="title">
+                        Are there limitations to the bespoke courses that I can
+                        request of my 1-1 Educator?
+                      </h6>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse1Four" class="collapse" aria-labelledby="headingThree" data-parent="#accordion1">
+                  <div class="card-body">
+                    <p class="content">
+                      Provided that it is within the scope of their expertise,
+                      your Educator can create whatever is most suitable for
+                      your lessons. If you need something further, UEG has a
+                      very large team! It is more than likely that another
+                      Educator will be able to collaborate on your course to
+                      make it work.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+    <div class="container-flex content-section bg-light-blue" style="background-color: #fff !important">
+      <div class="container virtual-class-container">
+        <div class="row d-flex align-items-center justify-content-center">
+          <div class="col-lg-6 virtual-class-img-container pt-2 pb-2">
+            <img class="image virtual-class-img" src="assets/img/group-online-learning.png" />
+          </div>
+          <div class="col-lg-6 d-flex justify-content-center align-items-center">
+            <div class="content">
+              <h3 class="title">Group Online Learning</h3>
+              <div class="spacer">
+                <hr class="big-blue" />
+              </div>
+              <p class="content" style="font-size: 20px">
+                <b>Select Educators for Group Online </b>
+                <br />
+              </p>
+              <ul class="disc-class">
+                <li class="content">
+                  If you are creating your own group for online learning, it’s
+                  important that you select an Educator that is going to be
+                  suitable for everyone involved.
+                </li>
+                <li class="content">
+                  Look at one or more of our five departments to find the right
+                  option for you: Academic Development, Skill Acquisition,
+                  Professional Learning and Wellbeing.
+                </li>
+                <li class="content">
+                  Pin the Educators that will best enhance the group’s
+                  development or study goals.
+                </li>
+                <li class="content">
+                  If you find one or more that are appropriate for the group,
+                  please just click ‘Contact Educator’ and book in your trial
+                  lesson.
+                </li>
+              </ul>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-flex content-section" style="background-color: #f2f2f2">
+      <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+          <div class="col-lg-6">
+            <h5 class="title">Lesson Plans for Everyone</h5>
+            <br />
+            <ul class="disc-class">
+              <li class="content">
+                If you have created a group, UEG will get clear on what the
+                overall objective is, whether that be hitting a certain target,
+                or just learning for pleasure.
+              </li>
+              <li class="content">
+                The nature of group learning means that there is less
+                flexibility than with a 1-1 lesson. However, the group’s
+                Educator will always strive to accommodate wishes as far as
+                possible.
+              </li>
+              <li class="content">
+                Please discuss with your group if you would like to make
+                adjustments to the lesson plan and together, we’ll come up with
+                a solution.
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6 virtual-class-img-container pt-2 pb-2">
+            <img class="image virtual-class-img" src="assets/img/group-1.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-flex content-section" style="background-color: #fff !important">
+      <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+          <div class="col-lg-6 virtual-class-img-container pt-2 pb-2">
+            <img class="image virtual-class-img" src="assets/img/group-2.png" />
+          </div>
+          <div class="col-lg-6">
+            <h5 class="title">Join a Group Online</h5>
+            <br />
+            <ul class="disc-class">
+              <li class="content">
+                You may be in the position that you would like you or your child
+                to learn in a group but you haven’t created one yourself.
+              </li>
+              <li class="content">
+                Don’t worry! UEG runs many group lessons and Courses on a weekly
+                basis and it’s more than likely that we will be able to help you
+                form a group class.
+              </li>
+              <li class="content">
+                Alternatively, it’s possible to join a group online class that
+                is already running, providing that the class is happy to
+                accommodate a new group member.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-flex content-section" style="background-color: #f2f2f2">
+      <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+          <div class="col-lg-6">
+            <h5 class="title">Select Courses for Group online</h5>
+            <br />
+            <ul class="disc-class">
+              <li class="content">
+                Browse Courses onsite in our four departments.
+              </li>
+              <li class="content">
+                Select ‘Enrol on Course’ as many times as you see Courses that
+                fit your group’s study plan.
+              </li>
+              <li class="content">
+                Courses can also be adjusted to fit the group’s needs before
+                classes begin.
+              </li>
+              <li class="content">
+                Book in as many trial lessons as appropriate for the group’s
+                requirements.
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6 virtual-class-img-container pt-2 pb-2">
+            <img class="image virtual-class-img" src="assets/img/group-3.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-flex content-section bg-white">
+      <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+          <div class="col-lg-12">
+            <h3 class="title">FAQ's</h3>
+            <hr class="big-blue" />
+            <div id="accordion2">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn" data-toggle="collapse" data-target="#collapse2One" aria-expanded="true"
+                      aria-controls="collapse2One">
+                      <h6 class="title">
+                        Are all your courses listed on the website?
+                      </h6>
+                    </button>
+                  </h5>
+                </div>
+
+                <div id="collapse2One" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion2">
+                  <div class="card-body">
+                    <p class="content">
+                      Generally speaking, our users should expect the vast
+                      majority of our courses to be displayed on the Union
+                      Education Group website. Nevertheless, our team is always
+                      rapidly expanding and we’re constantly creating new
+                      material for the platform. A new selection of Educators
+                      and Courses are added and updated on a weekly basis so be
+                      sure to keep an eye on the homepage.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn collapsed" data-toggle="collapse" data-target="#collapse2Two"
+                      aria-expanded="false" aria-controls="collapse2Two">
+                      <h6 class="title">Can I request bespoke courses?</h6>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse2Two" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion2">
+                  <div class="card-body">
+                    <p class="content">
+                      Absolutely. If a course is not listed on the website, get
+                      in touch and we’ll deliver it for you within the week.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn collapsed" data-toggle="collapse" data-target="#collapse2Three"
+                      aria-expanded="false" aria-controls="collapse2Three">
+                      <h6 class="title">
+                        Can I take multiple courses at the same time with the
+                        same Educator?
+                      </h6>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse2Three" class="collapse" aria-labelledby="headingThree" data-parent="#accordion2">
+                  <div class="card-body">
+                    <p class="content">
+                      So long as both your schedules allow it, there is no limit
+                      to how much time you can spend with an Educator on a
+                      weekly basis.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn collapsed" data-toggle="collapse" data-target="#collapse2Thre"
+                      aria-expanded="false" aria-controls="collapse2Thre">
+                      <h6 class="title">
+                        Is there a limit to how many courses I can enrol on?
+                      </h6>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse2Thre" class="collapse" aria-labelledby="headingThree" data-parent="#accordion2">
+                  <div class="card-body">
+                    <p class="content">
+                      No limit whatsoever. So long as you have the time and your
+                      Educators of choice are free, you can continue to enrol on
+                      as many courses as you see fit.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn collapsed" data-toggle="collapse" data-target="#collapse2Four"
+                      aria-expanded="false" aria-controls="collapse2Four">
+                      <h6 class="title">
+                        Is homework a compulsory requirement to take a course?
+                      </h6>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse2Four" class="collapse" aria-labelledby="headingThree" data-parent="#accordion2">
+                  <div class="card-body">
+                    <p class="content">
+                      We pride ourselves on making our content as bespoke as
+                      possible. With this in mind, courses can be taken without
+                      doing homework in-between lessons. Nevertheless, we
+                      recommend doing homework for your course in order to get
+                      the maximum benefit.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+    <div class="container-flex bg-white content-section">
+      <div class="container virtual-class-container">
+        <div class="row d-flex align-items-center justify-content-center">
+          <div class="col-lg-6 virtual-class-img-container pt-2 pb-2">
+            <img class="image virtual-class-img" src="assets/img/in-person-education.png" />
+          </div>
+          <div class="col-lg-6 d-flex justify-content-center align-items-center">
+            <div class="content">
+              <h3 class="title">in-person education</h3>
+              <div class="spacer">
+                <hr class="big-blue" />
+              </div>
+              <p class="content" style="font-size: 20px">
+                <b>Educators directly to your home</b>
+                <br />
+              </p>
+              <ul class="disc-class">
+                <li class="content">
+                  Union Education Group is based in London and we can send
+                  Educators to your home on request.
+                </li>
+                <li class="content">
+                  Educators are available both nationally and internationally
+                  for residential stays or one-day visits.
+                </li>
+                <li class="content">
+                  In-person Education can take place both in a 1-1 setting and
+                  in small groups.
+                </li>
+                <li class="content">
+                  Courses can also be taken in person at your home or at another
+                  location.
+                </li>
+              </ul>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-flex content-section" style="background-color: #f2f2f2 !important">
+      <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+          <div class="col-lg-6">
+            <h5 class="title">Select Courses for In-Person Education</h5>
+            <br />
+            <ul class="disc-class">
+              <li class="content">
+                Browse Courses onsite in our four departments.
+              </li>
+              <li class="content">
+                Select ‘Enrol on Course’ as many times as you see Courses that
+                fit your study plan.
+              </li>
+              <li class="content">
+                Courses can also be adjusted in 1-1 learning if you want to make
+                changes.
+              </li>
+              <li class="content">
+                Book in as many trial lessons as appropriate for your
+                requirements.
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6 virtual-class-img-container pt-2 pb-2">
+            <img class="image virtual-class-img" src="assets/img/person-1.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-flex content-section bg-white">
+      <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+          <div class="col-lg-6 virtual-class-img-container pt-2 pb-2">
+            <img class="image virtual-class-img" src="assets/img/1on1-1.png" />
+          </div>
+          <div class="col-lg-6">
+            <h5 class="title">Bespoke Lesson Plans in-Person</h5>
+            <br />
+            <ul class="disc-class">
+              <li class="content">
+                Browse our catalogue of Educators and press ‘Contact Educator’
+                to book lessons to take place in person.
+              </li>
+              <li class="content">
+                Lesson plans can be discussed in advance and a structure put in
+                place for the long or short term.
+              </li>
+              <li class="content">
+                In person lessons can be switched online from time to time if
+                this is more convenient for you.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-flex content-section" style="background-color: #f2f2f2 !important">
+      <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+          <div class="col-lg-6">
+            <h5 class="title">Group Classes in-Person</h5>
+            <br />
+            <ul class="disc-class">
+              <li class="content">
+                UEG also runs many group classes both in London and nationally.
+              </li>
+              <li class="content">
+                If you would like a group class in-person, please request an
+                Educator but select the ‘Group’ option.
+              </li>
+              <li class="content">
+                The majority of these classes take place at student’s homes.
+                However, UEG also has various alternative locations where the
+                group classes can take place.
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6 virtual-class-img-container pt-2 pb-2">
+            <img class="image virtual-class-img" src="assets/img/person-2.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-flex content-section bg-white">
+      <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+          <div class="col-lg-12">
+            <h3 class="title">FAQ's</h3>
+            <hr class="big-blue" />
+            <div id="accordion4">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn" data-toggle="collapse" data-target="#collapse4One" aria-expanded="true"
+                      aria-controls="collapse4One">
+                      <h6 class="title">
+                        Are there limitations to where your Educators can
+                        travel?
+                      </h6>
+                    </button>
+                  </h5>
+                </div>
+
+                <div id="collapse4One" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion4">
+                  <div class="card-body">
+                    <p class="content">
+                      There are virtually no limitations globally as to where
+                      our Educators travel, insofar as we have never not been
+                      able to fulfil an enquiry where somebody is located. We
+                      understand that for one reason or another, online learning
+                      is not always the solution and work hard to make sure our
+                      students have in-person teaching if they need it.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn collapsed" data-toggle="collapse" data-target="#collapse4Two"
+                      aria-expanded="false" aria-controls="collapse4Two">
+                      <h6 class="title">
+                        What kind of locations can you provide if I don’t want
+                        to do in-person lessons at my home?
+                      </h6>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse4Two" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion4">
+                  <div class="card-body">
+                    <p class="content">
+                      Lessons are possible at the UEG London offices. Failing
+                      this, we often set lessons up in libraries and other
+                      communal zones if students would prefer to learn away from
+                      home.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn collapsed" data-toggle="collapse" data-target="#collapse4Three"
+                      aria-expanded="false" aria-controls="collapse4Three">
+                      <h6 class="title">
+                        Do I need to cover Educator travel expenses?
+                      </h6>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse4Three" class="collapse" aria-labelledby="headingThree" data-parent="#accordion4">
+                  <div class="card-body">
+                    <p class="content">
+                      This is dependent on how far they have to go. We do not
+                      expect expenses to be covered if it’s simply the price of
+                      a tube or bus ride in London. However, if Educators need
+                      to drive a long distance or take a train or plane, travel
+                      expenses are expected to be paid.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn collapsed" data-toggle="collapse" data-target="#collapse4Thre"
+                      aria-expanded="false" aria-controls="collapse4Thre">
+                      <h6 class="title">
+                        Can I have multiple Educators visit my home address to
+                        see different students?
+                      </h6>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse4Thre" class="collapse" aria-labelledby="headingThree" data-parent="#accordion4">
+                  <div class="card-body">
+                    <p class="content">
+                      Yes and this is very common practice, particularly if
+                      there are several students of different ages who are all
+                      working towards different goals. As ever, you can trial
+                      Educators until you find the perfect fit.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="nav-school" role="tabpanel" aria-labelledby="nav-school-tab" tabindex="0">
+    <div class="container-flex content-section bg-white">
+      <div class="container virtual-class-container">
+        <div class="row d-flex align-items-center justify-content-center">
+          <div class="col-lg-6 virtual-class-img-container pt-2 pb-2">
+            <img class="image virtual-class-img" src="assets/img/home-schooling.png" />
+          </div>
+          <div class="col-lg-6 d-flex justify-content-center align-items-center">
+            <div class="content">
+              <h3 class="title">School at Home</h3>
+              <div class="spacer">
+                <hr class="big-blue" />
+              </div>
+              <p class="content" style="font-size: 20px">
+                <b>Select Educators for Home Schooling </b>
+              </p>
+              <ul class="disc-class">
+                <li class="content">
+                  For home schooling, you may want to begin by browsing our
+                  Educator profiles first.
+                </li>
+                <li class="content">
+                  Look at one or more of our five departments to find the right
+                  option for you: Academic Development, Skill Acquisition,
+                  Professional Learning and Wellbeing.
+                </li>
+                <li class="content">
+                  Take time to figure out which Educators fit your requirements
+                  before you start learning.
+                </li>
+                <li class="content">
+                  Each Educator is available for standard 1-1 lessons, or they
+                  can design an entirely bespoke course, just for you.
+                </li>
+                <li class="content">
+                  Pin the Educators that will best enhance your development or
+                  study goals.
+                </li>
+                <li class="content">
+                  If you find one or more that suit your requirements, please
+                  just click ‘Contact Educator’ and book in your trial lesson.
+                </li>
+              </ul>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-flex content-section" style="background-color: #f2f2f2">
+      <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+          <div class="col-lg-6">
+            <h5 class="title">Select Courses for Home Schooling</h5>
+            <br />
+            <ul class="disc-class">
+              <li class="content">
+                Browse Courses onsite in our four departments.
+              </li>
+              <li class="content">
+                Select ‘Enrol on Course’ as many times as you see Courses that
+                fit your study plan.
+              </li>
+              <li class="content">
+                Courses can also be adjusted in 1-1 learning if you want to make
+                changes.
+              </li>
+              <li class="content">
+                Book in as many trial lessons as appropriate for your
+                requirements.
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6 virtual-class-img-container pt-2 pb-2">
+            <img class="image virtual-class-img" src="assets/img/home-1.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-flex content-section bg-white">
+      <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+          <div class="col-lg-6 virtual-class-img-container pt-2 pb-2">
+            <img class="image virtual-class-img" src="assets/img/home-2.png" />
+          </div>
+          <div class="col-lg-6">
+            <h5 class="title">Total handling of all things Education</h5>
+            <p class="content pt-2">
+              Whatever your needs, we will take care of everything. We have
+              established success in creating a first-class learning
+              environment, carrying out all key tasks from weekly lesson
+              planning to implementing long-term teaching strategy.
+            </p>
+            <br />
+            <h5 class="title">A completely bespoke approach</h5>
+            <p class="content pt-2">
+              We are devoted to making sure that the service is catered to you.
+              We are undaunted by challenges and will work with you to come up
+              with carefully deliberated and bespoke recipes for success.
+            </p>
+            <br />
+            <h5 class="title">Stepping in to replace school</h5>
+            <p class="content pt-2">
+              If the standard school day is not to your liking, change it. Not
+              only can the week be structured according to exact preference but
+              emphasis can be laid on subjects of inclination.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-flex content-section bg-white">
+      <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+          <div class="col-lg-12">
+            <h3 class="title">FAQ's</h3>
+            <hr class="big-blue" />
+            <div id="accordion3">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn" data-toggle="collapse" data-target="#collapse3One" aria-expanded="true"
+                      aria-controls="collapse3One">
+                      <h6 class="title">
+                        Can UEG take over my child’s schooling?
+                      </h6>
+                    </button>
+                  </h5>
+                </div>
+
+                <div id="collapse3One" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion3">
+                  <div class="card-body">
+                    <p class="content">
+                      Absolutely. We offer part-time Education to many students
+                      nationally and internationally but there are a range of
+                      different instances where UEG took over schooling
+                      completely. Contact us to see how we can help.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn collapsed" data-toggle="collapse" data-target="#collapse3Two"
+                      aria-expanded="false" aria-controls="collapse3Two">
+                      <h6 class="title">
+                        Is there a maximum number of years for home schooling?
+                      </h6>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse3Two" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion3">
+                  <div class="card-body">
+                    <p class="content">
+                      Not at all. Usually, we take over home schooling for
+                      around one year but the process has extended beyond this
+                      before and there’s no reason home schooling can’t last for
+                      as long as you wish.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn collapsed" data-toggle="collapse" data-target="#collapse3Three"
+                      aria-expanded="false" aria-controls="collapse3Three">
+                      <h6 class="title">
+                        How early can I start with home schooling?
+                      </h6>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse3Three" class="collapse" aria-labelledby="headingThree" data-parent="#accordion3">
+                  <div class="card-body">
+                    <p class="content">
+                      There is no minimum age requirement for a student’s home
+                      schooling to proceed. Most of our students learning with
+                      us outside of the formal classroom fulltime are over the
+                      age of eight.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn collapsed" data-toggle="collapse" data-target="#collapse3Thre"
+                      aria-expanded="false" aria-controls="collapse3Thre">
+                      <h6 class="title">
+                        Where does home schooling take place?
+                      </h6>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse3Thre" class="collapse" aria-labelledby="headingThree" data-parent="#accordion3">
+                  <div class="card-body">
+                    <p class="content">
+                      Home schooling can just as easily take place at your place
+                      of residence or at one of our offices in London.
+                      Furthermore, a large number of home schoolers are
+                      increasingly taking their lessons online.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn collapsed" data-toggle="collapse" data-target="#collapse3Four"
+                      aria-expanded="false" aria-controls="collapse3Four">
+                      <h6 class="title">
+                        Does home schooling need to take place in the United
+                        Kingdom?
+                      </h6>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse3Four" class="collapse" aria-labelledby="headingThree" data-parent="#accordion3">
+                  <div class="card-body">
+                    <p class="content">
+                      UEG prides itself on being a global company and
+                      face-to-face Education can take place at any destination
+                      in the world.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--main contain end-->

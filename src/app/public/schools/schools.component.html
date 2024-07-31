@@ -1,0 +1,95 @@
+<div class="school-page">
+    <div class="title-banner" [ngStyle]="{'background-image': 'url('+this.common.imgCheck(ImageUri1)+')'} ">
+        <div class="title-banner-blue-arrow">
+            <img class="blue-arrow-img" src="assets/img/blue-round-triangle.png" alt="">
+        </div>
+        <div class="title-banner-text">
+            <div class="row">
+                <div class="title-banner-text-left w-75">
+                    <h1>{{Name}}</h1>
+                    <div class="dark-blue-divider"></div>
+                    <button class="button-yellow">SCHOOLS OUTSIDE OF LONDON</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="school-intro bg-white">
+        <div class="school-logo">
+            <img [src]="this.common.imgCheck(LogoUri)" style="width: 40%;" />
+        </div>
+        <div class="school-intro-text">
+            <p [innerHTML]="MainInformation"></p>
+        </div>
+    </div>
+
+    <div class="school-info-1" [ngStyle]="{'background-image': 'url('+this.common.imgCheck(ImageUri2)+')'} ">
+        <div class="schools-info-trapezoid">
+            <img class="trapezoid" src="assets/img/white-slope-divider.png" alt="">
+        </div>
+        <div class="school-info-1-text">
+            <div class="row">
+                <div class="info-1-left">
+                    <h2 class="info-title-text">
+                        SCHOOL INFORMATION
+                    </h2>
+                    <div class="light-blue-divider"></div>
+                    <p class="info-1-p" [innerHTML]="SchoolInformation">
+                    </p>
+                </div>
+                <div class="info-1-right"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="school-info-2" [ngStyle]="{'background-image': 'url('+this.common.imgCheck(ImageUri3)+')'} ">
+        <div class="school-info-cutout">
+            <img class="cutout" src="assets/img/blue-arrow-cutout.png" alt="">
+        </div>
+        <div class="school-info-2-text">
+            <div class="info-2-left"></div>
+            <div class="info-2-right">
+                <p [innerHTML]="AdditionalInformation"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="admissions">
+        <h4>ADMISSIONS</h4>
+        <p [innerHTML]="AdmissionsPolicy"></p>
+    </div>
+
+    <div class="browse-schools">
+        <div class="browse-title-text">
+            <h3>SCHOOLS OUTSIDE OF LONDON</h3>
+            <div id="browse-divider" class="light-blue-divider"></div>
+        </div>
+        <div class="browse-container">
+            <div class="w-100">
+            <div id="tech_caro" class="prerecorded_caro owl-carousel owl-theme school-cards-container">
+                <div class="items school-card" *ngFor="let data of outsideschoolLocationList">
+                    <div class="school-card-image">
+                        <img [src]="this.common.imgCheck(data.ImageUri1)" style="width: 100%;" />
+                    </div>
+                    <h4 class="school-card-title">{{data.Name}}</h4>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- <div class="browse-container">
+        <img id="browse-arrow-left" class="browse-arrow" src="assets/img/NavDropdown_002.svg"
+            alt="">
+        <div class="school-cards-container">
+            <div class="school-card" *ngFor="let data of outsideschoolLocationList">
+                <div class="school-card-image" [ngStyle]="{'background-image': 'url('+this.common.imgCheck(data.ImageUri1)+')'}">
+                    
+                </div>
+                <h4 class="school-card-title">{{data.Name}}</h4>
+            </div>
+        </div>
+        <img id="browse-arrow-right" class="browse-arrow" src="assets/img/NavDropdown_002.svg"
+            alt="">
+    </div> -->
+    </div>
+</div>

@@ -1,0 +1,552 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "node_modules/angular-notifier/styles.css";
+
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+}
+
+/* html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+} */
+
+/* .container {
+    margin-top: 10%;
+} */
+
+.body-container {
+    padding-top: 120px;
+    padding-bottom: 20px;
+}
+
+.modal-backdrop.fade.show {
+    z-index: 1050 !important;
+}
+
+/*::-webkit-scrollbar {
+    height: 10px;              !* height of horizontal scrollbar ← You're missing this *!
+    width: 4px;               !* width of vertical scrollbar *!
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}*/
+
+::-webkit-scrollbar {
+    height: 4px;
+    width: 10px;
+    background: gray;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    background: #0074dc;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    background: #024156;
+    border-radius: 10px;
+}
+
+.border-rad {
+    border-radius: 10px;
+}
+
+img.cutout {
+    width: 100%;
+    height: 482px;
+}
+
+.admin-cont .form-control {
+    padding: .375rem .70rem !important;
+}
+
+.admin-cont .top_scne_rt .search-bar {
+    padding: 0 !important;
+}
+
+/*  27-02-2024  start */
+
+.eduSubpara {
+    font-size: 10px;
+    font-family: 'LEMON MILK';
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: rgba(11, 21, 75, 1.00);
+    border-bottom-color: rgba(221, 51, 51, 0.00);
+}
+
+.carousel-cells .carousel-cell img {
+    object-fit: cover !important;
+}
+
+.carousel-cell .carousel-image div img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    /* object-fit: none !important; */
+}
+
+.mat-mdc-option {
+    min-height: 10px !important;
+}
+
+.mat-option-span {
+    font-weight: 300 !important;
+    letter-spacing: 2px !important;
+    text-decoration: none !important;
+    font-size: 13px !important;
+    font-family: "LEMON MILK" !important;
+    color: #212529 !important;
+    padding: 0.2rem !important;
+}
+
+.span-text:hover {
+    text-decoration: underline !important;
+}
+
+.get-started-footer {
+    margin-top: 90px;
+}
+
+carousel {
+    z-index: 1 !important;
+}
+
+.loader-icon {
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+}
+
+.opt-icon {
+    height: 0.8rem;
+    margin-right: 5px;
+}
+
+ul.force-scrollbar {
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+.course-banner .page-banner-content .page-banner-text h1.title {
+    font-size: 2rem;
+}
+
+.accrod_dve-no-modl .lesn_new_secn_top.lesson-heading strong {
+    width: 15%;
+}
+
+/* 27-02-2024 css end*/
+
+
+
+
+/* 4the march  */
+
+.slick-list .slick-track {
+    margin-left: 0 !important;
+}
+
+.res-img {
+    height: 75% !important;
+    width: 75% !important;
+    object-fit: contain !important;
+}
+
+/* 
+.browse-schools .browse-container .slick-prev.slick-arrow {
+    background-image: url("assets/img/NavDropdown.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 38px;
+    height: 25px;
+    transform: rotate(90deg);
+    left: -50px;
+    top: 45%;
+}
+
+.browse-schools .browse-container .slick-next.slick-arrow {
+    background-image: url("assets/img/NavDropdown.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 38px;
+    height: 25px;
+    transform: rotate(-90deg);
+    right: -50px;
+    top: 45%;
+} */
+
+.browse-schools .browse-container .slick-arrow::before {
+    display: none !important;
+}
+
+.browse-schools div.owl-carousel.owl-theme {
+    padding: 0 20px;
+}
+
+.browse-schools.browse-schools-new {
+    height: auto;
+    padding-bottom: 10px;
+}
+
+.layer.course-tn-category {
+    display: block;
+}
+
+.layer.course-tn-category img {
+    margin-left: 0;
+    display: inline-block;
+}
+
+.mdc-form-field {
+    display: flex;
+    vertical-align: middle;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.age-rang-list mat-checkbox.mat-mdc-checkbox {
+    margin-right: 14px !important;
+}
+
+.browse-container {
+    position: relative;
+}
+
+
+
+.browse-schools .browse-container .slick-prev.slick-arrow,
+.containerforall .slick-prev.slick-arrow {
+    /* background-image: url("assets/img/NavDropdown.svg"); */
+    background-image: url("assets/img/left-arrow.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 28px;
+    height: 28px;
+    /* transform: rotate(90deg); */
+    right: 40px;
+    left: inherit;
+    top: -35px;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+}
+
+.browse-schools .browse-container .slick-next.slick-arrow,
+.containerforall .slick-next.slick-arrow {
+    /* background-image: url("assets/img/NavDropdown.svg"); */
+    background-image: url("assets/img/right-arrow.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 28px;
+    height: 28px;
+    /* transform: rotate(-90deg); */
+    right: 5px;
+    top: -35px;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+}
+
+.browse-schools .browse-container .slick-next.slick-arrow:hover,
+.browse-schools .browse-container .slick-prev.slick-arrow:hover,
+.containerforall .slick-next.slick-arrow:hover,
+.containerforall .slick-prev.slick-arrow:hover {
+    border: 1px solid #bcdeff;
+}
+
+.popularConttor .containerforall .slick-arrow::before {
+    display: none !important;
+}
+
+.containerforall {
+    position: relative;
+}
+
+.carousel.slick-slider {
+    position: inherit !important;
+}
+
+/* 15-03-2024 */
+.add-edu-quali .table .thead-dark th {
+    background: none;
+    padding: 5px;
+    border: 0;
+    vertical-align: top;
+}
+
+.add-edu-quali .table.table-no-striped tbody tr:hover {
+    background-color: #fff !important;
+}
+
+.add-edu-quali .table.table-no-striped tbody td {
+    padding: 2px;
+    border: 0;
+}
+
+.add-edu-quali .ng-select-searchable.ng-select-single.ng-pristine.ng-valid {
+    width: 200px !important;
+}
+
+.add-edu-quali input.form-control {
+    padding: 7px !important;
+    border-radius: 4px !important;
+    border-color: #ccc !important;
+}
+
+.add-edu-quali button.btn.btn-sm.btn-outline-secondary.btn-dlt {
+    border: 0;
+    background: #6C727F;
+    color: #fff;
+    padding: 7px 14px;
+}
+
+.six-dot-sps {
+    display: flex;
+    width: 16px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 8px 5px 0 0;
+}
+
+.six-dot-sps span {
+    background: #6C727F;
+    width: 44%;
+    height: 6px;
+    margin-top: 1px;
+}
+
+.heading.add-edu-tabl .mat-mdc-card-content:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.add-edu-tabl .add_more img {
+    display: none;
+}
+
+.add-edu-tabl .add_more {
+    border: 0;
+    background: #6C727F;
+    color: #fff;
+    padding: 5px 20px;
+    margin: 1px 0 1px 2px !important;
+    border-radius: 5px;
+}
+
+.add-edu-quali .table {
+    margin-bottom: 5px;
+    padding-bottom: 0;
+}
+
+.comn-ckbxe.row {
+    padding: 10px 60px 0;
+}
+
+
+/* side scrollbar */
+::-webkit-scrollbar {
+    width: 13px !important;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f0ebeb !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #cfcbcb !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #B4B4B4 !important;
+}
+
+.display-none {
+    background: white;
+    height: 100vh;
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+}
+
+.display-show {
+    display: block;
+}
+
+.vdoContain {
+    margin-left: 116px;
+    margin-top: -18px;
+}
+
+.bottom-secnedlt {
+    background-color: #0880AE;
+    display: flex;
+    justify-content: space-between;
+    padding: 18px;
+    margin-top: 66px;
+}
+
+.bottom-secnedlt button.cancel-button {
+    margin: 0;
+    border: 1px solid #fff;
+    color: #fff;
+    background: transparent !important;
+    font-weight: bold;
+    width: auto;
+    padding: 0 12px;
+    font-size: 1rem;
+    height: 38px;
+    border-radius: 0.25rem;
+}
+
+.ml {
+    margin-left: 63px !important;
+}
+
+.delteClose {
+    margin-top: -63px !important;
+}
+
+.videothumbnailcls .videothumbnailimg {
+    height: 350px;
+}
+
+.urlvideoplayer {
+    height: 350px;
+}
+
+.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline {
+    min-height: 200px;
+}
+
+.get_str_cmp .modal-lg {
+    max-width: 1500px;
+}
+
+.get_str_cmp.modal.show .modal-dialog {
+    transform: none !important;
+    transition: none;
+}
+
+.smlImg {
+    width: 18px;
+    height: 18px;
+}
+
+.prd_dlticon {
+    position: absolute;
+    margin-top: -12px;
+    margin-left: 146px;
+    cursor: pointer;
+}
+
+.contact-item.contact-item-checkbox p {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-right: 0;
+}
+
+.contact-item.contact-item-checkbox p span {
+    color: rgba(0, 0, 0, 0.2);
+    font-size: 13px;
+}
+
+.filter-result.resource-filter-div .single-item .item-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-result.resource-filter-div .single-item .item-image a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+
+.filter-result.resource-filter-div .single-item .item-image img {
+    transform: scale(0.8);
+    margin: -5px auto 0;
+    object-fit: contain;
+}
+
+.filter-result.resource-filter-div .single-item :hover .item-image img {
+    transform: scale(0.9);
+}
+
+.resource-filter-div .resourcecls.single-item .item-image {
+    height: 150px;
+}
+.col-lg-3-csm {
+    flex: 0 0 auto;
+    width: 25%;
+}
+.deletBtn.delcheckoutres{
+    color: brown;
+    position: absolute;
+    right: -25px;
+    bottom: 5px;
+    cursor: pointer;
+    top: 28px;
+}
+.selected_label .deletBtn.delcheckoutres {
+    display: none;
+}
+
+@media screen and (max-width: 1030px) {
+.container-fluid.bg-white.filter-search .container .col-lg-9.col-md-12.resource-filter-data {
+    width: 100%;
+}
+}
+@media screen and (max-width: 1024px) {
+    .col-lg-3-csm {
+        flex: 0 0 auto;
+        width: 33%;
+    }
+}
+@media screen and (max-width: 900px) {
+    .col-lg-3-csm {
+        flex: 0 0 auto;
+        width: 33%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .chaeckout .col-3.col-lg-3.col-md-3,.chaeckout .col-9.col-lg-9.col-md-9 {
+        width: 100%;
+    }
+    .selected_label .deletBtn.delcheckoutres {
+        display: block;
+        right: -30px !important;
+        top: 40px !important;
+    }
+    .chaeckout .col-3.col-lg-3.col-md-3 .deletBtn.delcheckoutres{display: none;}
+    .selected_label{
+        position: relative;
+    }
+}
+@media screen and (max-width: 600px) {
+    .col-lg-3-csm {
+        flex: 0 0 auto;
+        width: 48%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .col-lg-3-csm {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}
+
+

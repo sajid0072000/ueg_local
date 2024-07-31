@@ -1,0 +1,78 @@
+<notifier-container></notifier-container>
+
+<app-header></app-header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mt-4">
+            <h3 class="login-h3">Log in</h3>
+            <h4 class="login-h4"> Use a local account to log in. </h4>
+            <hr>
+            <div class="mb-3">
+                <label class="form-label login">Email</label>
+                <input type="text" class="form-control login" [(ngModel)]="email" (keyup)="changeEmail()" />
+                <span class="error-msg" *ngIf="emailErr">Email required</span>
+                <span class="error-msg" *ngIf="emailValidErr">Valid email required</span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label login">Password</label>
+                <input type="password" class="form-control login" [(ngModel)]="password" (keyup)="changePassword()"
+                    (keyup.enter)="login()" />
+                <span class="error-msg" *ngIf="passwordErr">Password required</span>
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" [(ngModel)]="checkTerm"
+                    (click)="checkTermFun()">
+                <label class="form-check-label" for="exampleCheck1">Remember me?</label>
+                <div class="error-msg" *ngIf="checkTermErr">Terms & condition required</div>
+            </div>
+            <p class="text-primary" (click)="openModal(content)">Forget Password?</p>
+            <button type="submit" class="btn btn-primary" (click)="login()">Log In</button>
+
+            <!-- <div class="links">
+                <a href="#">Forgot your password?</a>
+                <a href="#">Register as a new user</a>
+            </div> -->
+
+        </div>
+    </div>
+</div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Reset Password</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <div *ngIf="!hasOtp">
+            <div class="mb-3">
+                <label class="form-label" for="yourEmail">Enter Your Email:</label>
+                <input class="form-control" type="email" id="yourEmail" placeholder="Ex: sam@gmail.com" [(ngModel)]="yourEmail">
+            </div>
+            <button class="btn btn-primary btn-xl me-3" (click)="getOtp()"> <i *ngIf="showSpinner" class="spinner-border spinner-border-sm me-1" role="status"></i> Get OTP </button>
+            <button class="btn btn-primary btn-xl" (click)="setHasOtp()">Already Have OTP</button>
+        </div>
+
+        <div *ngIf="hasOtp">
+            <div class="mb-3">
+                <label class="form-label" for="otp">Enter OTP:</label>
+                <input class="form-control" type="text" id="otp" [(ngModel)]="otp">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="newPassword">Enter New Password:</label>
+                <input class="form-control" type="password" id="newPassword" [(ngModel)]="newPassword">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="confirmNewPassword">Confirm New Password:</label>
+                <input class="form-control" type="password" id="confirmNewPassword" [(ngModel)]="confirmNewPassword">
+            </div>
+
+            <button class="btn btn-primary btn-xl me-2" (click)="changeMyPassword()">Change Password</button>
+            <button class="btn btn-secondary btn-xl" (click)="closeModal()">Cancel</button>
+        </div>
+    </div>
+</ng-template>
+
+<app-footer></app-footer>

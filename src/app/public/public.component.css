@@ -1,0 +1,27 @@
+.termCheck{
+    margin-top: -43px;
+    margin-left: 16px;
+}
+
+.total-price-div[_ngcontent-gnm-c54] {
+    display: flex !important;
+    justify-content: flex-start !important;
+    gap: 7px;
+}
+.studytab{
+    width: 49.2%;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+

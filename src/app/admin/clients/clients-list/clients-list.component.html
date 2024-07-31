@@ -1,0 +1,134 @@
+<main role="main" class="main-body-sty mt-3">
+  <div class="row spc-row">
+    <div class="col-md-12">
+      <div class="top_scne d-flex justify-content-between align-items-center">
+        <div class="top_scne_iii d-flex align-items-center">
+          <div class="top_scne_in">
+            <h1>Clients</h1>
+          </div>
+          <div class="btns-mid ms-2">
+            <button class="btn btn-edtng" (click)="add()">Create New</button>
+            <button class="btn btn-edtng ms-2" (click)="downloadlistCsvfile()">Download List</button>
+          </div>
+        </div>
+        <div class="search-container mt-3">
+          <div class="input-group">
+            <input type="text" [(ngModel)]="searchText" class="form-control search-bar" placeholder="Search..." (keyup)="search()">
+            <span class="input-group-text">
+              <i class="fas fa-search"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="main-content-inner-list">
+      <div class="row">
+        <div class="col-md-12">
+          <div>
+            <div id="datatables-reponsive_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+              <div class="d-md-flex align-items-center mb-3">
+              </div>
+              <div class="table-responsive">
+                <table id="datatables-column-search-select-inputs" class="table table-no-striped dataTable" style="width: 100%;" aria-describedby="datatables-column-search-select-inputs_info">
+                  <thead class="thead-dark">
+                    <tr role="row">
+                      <th>Title</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>City</th>
+                      <th>Email</th>
+                      <th>Telephone</th>
+                      <th>
+                        <input type="checkbox" (change)="toggleSelectAll($event)">
+                      </th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngIf="clientsList.length == 0">
+                      <td class="text-center" colspan="9">
+                        <h4>No Data Found!</h4>
+                      </td>
+                    </tr>
+                    <tr role="row" class="odd" *ngFor="let client of clientsList; let i = index">
+                      <td>{{ client.title }}</td>
+                      <td>{{ client.firstName }}</td>
+                      <td>{{ client.lastName }}</td>          
+                      <td>{{ client.city }}</td>
+                      <td>{{ client.email }}</td>
+                      <td>{{ client.telephone }}</td>
+                      <td>
+                        <input type="checkbox" [(ngModel)]="client.selected">
+                      </td>
+                      <td>
+                        <button class="btn btn-sm btn-primary" (click)="edit(client.id)">Edit</button>
+                        <button class="btn btn-sm btn-secondary" (click)="openInvoiceModal(client.id)">Draft Invoice</button>
+                        <button class="btn btn-sm btn-info" (click)="accounting(client.id)">Accounting</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="d-xl-flex align-items-center mt-3 pegin_sec" *ngIf="clientsList.length > 0">
+                <div class="col-auto d-block">
+                  <div class="text-center">
+                    <div class="dataTables_length">
+                      <label>
+                        Clients per page
+                        <select name="datatables-reponsive_length" aria-controls="datatables-reponsive" class="form-select form-select-sm" (change)="changePagelimit($event)" [(ngModel)]="selectedVal">
+                          <option *ngFor="let item of pageList" [value]="item.value">{{ item.name }}</option>
+                        </select>
+                        {{ offset + 1 }} - {{ offset + limit }}
+                      </label>
+                      <div class="mx-2" style="display: inline-block;">
+                        <button class="btn btn-dark text-white" [disabled]="previousBtnDesable" (click)="previousPage()">
+                          <img src="assets/img/chevron-left.svg" alt="chevron-left">
+                        </button>
+                        <button class="btn btn-dark text-white mx-3" [disabled]="nextBtnDesable" (click)="nextPage()">
+                          <img src="assets/img/chevron-right.svg" alt="chevron-right">
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <ng-template #invoiceModal let-modal>
+    <div class="modal-header">
+      <h5 class="modal-title">Select Month and Year for Invoice Preview</h5>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="month">Month</label>
+        <select class="form-control" [(ngModel)]="selectedMonth">
+          <option *ngFor="let month of months" [value]="month.value">{{ month.name }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="year">Year</label>
+        <select class="form-control" [(ngModel)]="selectedYear">
+          <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="modal.dismiss('Cross click')">Close</button>
+      <button type="button" class="btn btn-primary" (click)="previewInvoice(modal)">Preview</button>
+    </div>
+  </ng-template>
+</main>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="clients-list.component.css">

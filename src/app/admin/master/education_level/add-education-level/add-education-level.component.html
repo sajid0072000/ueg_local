@@ -1,0 +1,128 @@
+
+
+<main role="main" class="main-body-sty mt-3">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="top_scne">
+                <div class="top_scne_in">
+                    <h1 class="add_heading_text">Education Levels</h1>
+                    <button class="btn btn-edtng-add" *ngIf="!educationLevelid">Creating</button>
+                    <button class="btn btn-edtng-add" *ngIf="educationLevelid">Editing</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="main-content-add">
+        <div class="main-content-inner">
+            <div class="row">
+
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">Name</label>
+                    <input type="text" class="form-control input-text" [(ngModel)]="Name"
+                        (keyup)="changeName()">
+                    <span class="error-msg" *ngIf="NameErr">Name required</span>
+                </div>
+
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">Min Age</label>
+                    <input type="text" class="form-control input-text" [(ngModel)]="MinAge"
+                    (keyup)="changeMinAge()">
+                    <span class="error-msg" *ngIf="MinAgeErr">Min age required</span>
+                    <span class="hint-txt" *ngIf="!MinAgeErr">The default minimum age this education level applies to. Setting This to zero means no age is applied by default. Educators have the ability to change within their own profile</span>
+                </div>
+
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">Max Age</label>
+                    <input type="text" class="form-control input-text" [(ngModel)]="MaxAge"
+                    (keyup)="changeMaxAge()">
+                    <span class="error-msg" *ngIf="MaxAgeErr">Max age required</span>
+                    <span class="hint-txt" *ngIf="!MaxAgeErr">The default maximun age this education level applies to. Setting This to zero means no age is applied by default. Educators have the ability to change within their own profile</span>
+                </div>
+
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">Display Age</label>
+                    <input type="text" class="form-control input-text" [(ngModel)]="DisplayAge"
+                    (keyup)="changeDisplayAge()">
+                    <span class="error-msg" *ngIf="DisplayAgeErr">Display age required</span>
+                    <span class="hint-txt" *ngIf="!DisplayAgeErr">For information purposes only - currently not used in portal or website</span>
+                </div>
+
+                <div class="col-md-12">
+                    <mat-checkbox [(ngModel)]="IsActive">IsActive</mat-checkbox>
+                </div>
+
+                <div class="col-md-12">
+                    <mat-checkbox [(ngModel)]="Deleted">Deteted</mat-checkbox>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-secne" style="text-align: center;">
+        <button class="delete-button btn btn-primary" *ngIf="educationLevelid" (click)="onClickDelete()">Delete
+            Education level</button>
+        <div *ngIf="!educationLevelid"></div>
+        <div>
+            <button class="cancel-button btn btn-primary" (click)="resetForm()">Cancel</button>
+            <button class="submit-button btn btn-primary" *ngIf="!educationLevelid" (click)="add()">Save</button>
+            <button class="submit-button btn btn-primary" *ngIf="educationLevelid" (click)="edit()">Save</button>
+        </div>
+
+    </div>
+    <a class="mt-2 a-back" style="color: #0366d6; cursor: pointer;" (click)="goBack()">Back to List</a>
+</main>
+
+<!-- <ng-template #deleteModal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-10">
+                        <h4 class="modal-title d-inline-block align-middle me-2">
+                            Are you want to sure delete this data?
+                        </h4>
+                    </div>
+                    <div class="col-sm-2 d-flex justify-content-end">
+                        <button type="button" (click)="closeModal()" class="btn-close"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6 text-center">
+                        <button type="button" class="btn btn-secondary btn-lg me-2" (click)="closeModal()">No</button>
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        <button type="button" class="btn btn-primary btn-lg me-2" (click)="delete()">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template> -->
+
+<ng-template #deleteModal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-10 mt-3">
+                        <h3 class="modal-title d-inline-block align-middle ml" style="color: black !important;">
+                            Are you sure you want to delete this data?
+                        </h3>
+                    </div>
+                    <div class="col-sm-2 d-flex justify-content-end">
+                        <button type="button" (click)="closeModal()" class="btn-close delteClose"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="bottom-secnedlt" style="text-align: center;">
+                    <div><button type="button" class="cancel-button btn btn-primary btn-lg" style="width: 100px;"  (click)="closeModal()">Cancel</button></div>
+                        <div><button type="button" class="btn btn-danger" style="width: 100px;" (click)="delete()">Delete</button></div>
+                   </div>
+         </div>
+  </ng-template>

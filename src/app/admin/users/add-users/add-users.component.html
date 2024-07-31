@@ -1,0 +1,143 @@
+
+
+<main role="main" class="main-body-sty mt-3">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="top_scne">
+                <div class="top_scne_in">
+                    <h1 class="add_heading_text">Users</h1>
+                    <button class="btn btn-edtng-add" *ngIf="!userid">Creating</button>
+                    <button class="btn btn-edtng-add" *ngIf="userid">Editing</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="main-content-add">
+        <div class="main-content-inner">
+            <div class="row">
+
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">Username</label>
+                    <input type="text" class="form-control input-text" [(ngModel)]="username" (keyup)="changeusername()">
+                    <span class="error-msg" *ngIf="usernameErr">Username required</span>
+                </div>
+
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">Email</label>
+                    <input type="text" class="form-control input-text" [(ngModel)]="email" (keyup)="changeemail()" >
+                    <span class="error-msg" *ngIf="emailErr">Email required</span>
+                    <span class="error-msg" *ngIf="validEmailErr">Valid email required</span>
+                </div>
+
+                <div class="mb-3 col-md-12" *ngIf="!userid">
+                    <label class="form-label lebel-text">Password</label>
+                    <input type="password" class="form-control input-text" [(ngModel)]="password" (keyup)="changepassword()">
+                    <span class="error-msg" *ngIf="passwordErr">Password required</span>
+                </div>
+
+                <div class="mb-3 col-md-12" *ngIf="userid">
+                    <label class="form-label lebel-text">New Password</label>
+                    <input type="password" class="form-control input-text" [(ngModel)]="newpassword" (keyup)="changenewpassword()">
+                    <span class="error-msg" *ngIf="newpasswordErr">New password required</span>
+                </div>
+
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">Repeat Password</label>
+                    <input type="password" class="form-control input-text" [(ngModel)]="repeatpassword" (keyup)="changerepeatpassword()">
+                    <span class="error-msg" *ngIf="repeatpasswordErr">Repeat password required</span>
+                    <span class="error-msg" *ngIf="mismatchErr">Valid password required</span>
+                </div>
+
+                <div class="mb-3 col-md-12" style="float: left;" *ngIf="userRoleArr.length>0">
+                    <div class="catgry_list_sc me-2" style="float: left;" *ngFor="let data of userRoleArr; let i = index">
+                        <div>
+                            <span>{{data.rolename}}</span>
+                            <a (click)="roleRemove(i)">X</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 col-md-6" style="display: flex;">
+                   
+                    <select class="form-select" [(ngModel)]="userType" >
+                        <option value="">Select a role</option>
+                        <option *ngFor="let data of roleArr" [value]="data.Id">{{data.name}}</option>
+                    </select>
+                    <button class="btn btn-primary mx-2" style="width: 60%;" (click)="addRole()">Add role</button>
+                    
+                </div>
+                <span class="error-msg" *ngIf="userTypeErr">Role required</span>
+
+            </div>
+        </div>
+        
+        
+    </div>
+    <div class="bottom-secne" style="text-align: center;">
+        <button class="delete-button btn btn-primary" *ngIf="userid" (click)="onClickDelete()">Delete User</button>
+        <div *ngIf="!userid"></div>
+        <div>
+            <button class="cancel-button btn btn-primary" (click)="resetForm()">Cancel</button>
+            <button class="submit-button btn btn-primary" *ngIf="userid == null" (click)="add()">Save</button>
+            <button class="submit-button btn btn-primary" *ngIf="userid != null" (click)="edit()">Save</button>
+        </div>
+
+    </div>
+    <a class="mt-2 a-back" style="color: #0366d6; cursor: pointer;" (click)="goBack()">Back to List</a>
+</main>
+
+<!-- <ng-template #deleteModal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-10">
+                        <h4 class="modal-title d-inline-block align-middle me-2">
+                            Are you want to sure delete this user?
+                        </h4>
+                    </div>
+                    <div class="col-sm-2 d-flex justify-content-end">
+                        <button type="button" (click)="closeModal()" class="btn-close"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6 text-center">
+                        <button type="button" class="btn btn-secondary btn-lg me-2" (click)="closeModal()">No</button>
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        <button type="button" class="btn btn-primary btn-lg me-2" (click)="delete()">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template> -->
+
+<ng-template #deleteModal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-10 mt-3">
+                        <h3 class="modal-title d-inline-block align-middle ml" style="color: black !important;">
+                            Are you want to sure delete this user?
+                        </h3>
+                    </div>
+                    <div class="col-sm-2 d-flex justify-content-end">
+                        <button type="button" (click)="closeModal()" class="btn-close delteClose"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="bottom-secnedlt" style="text-align: center;">
+                    <div><button type="button" class="cancel-button btn btn-primary btn-lg" style="width: 100px;"  (click)="closeModal()">Cancel</button></div>
+                        <div><button type="button" class="btn btn-danger" style="width: 100px;" (click)="delete()">Delete</button></div>
+                   </div>
+         </div>
+  </ng-template>

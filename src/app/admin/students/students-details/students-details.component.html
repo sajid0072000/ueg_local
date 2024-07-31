@@ -1,0 +1,58 @@
+<main role="main" class="main-body-sty mt-3">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="top_scne">
+                <div class="top_scne_in">
+                    <h1 class="add_heading_text">Student Details</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content-add">
+        <div class="main-content-inner">
+            <div class="row">
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">Name</label>
+                    <input type="text" class="form-control input-text" [(ngModel)]="student.childName" (keyup)="validateChildName()">
+                    <span class="error-msg" *ngIf="childNameErr">Name required</span>
+                </div>
+
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">Date of Birth</label>
+                    <input type="date" class="form-control input-text" [(ngModel)]="student.dateOfBirth" (change)="validateDateOfBirth()">
+                    <span class="error-msg" *ngIf="dateOfBirthErr">Date of Birth required</span>
+                </div>
+
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">Gender</label>
+                    <select class="form-select" [(ngModel)]="student.gender" (change)="validateGender()">
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <span class="error-msg" *ngIf="genderErr">Gender required</span>
+                </div>
+
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">School</label>
+                    <input type="text" class="form-control input-text" [(ngModel)]="student.school" (keyup)="validateSchool()">
+                    <span class="error-msg" *ngIf="schoolErr">School required</span>
+                </div>
+
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">Level</label>
+                    <input type="text" class="form-control input-text" [(ngModel)]="student.level" (keyup)="validateLevel()">
+                    <span class="error-msg" *ngIf="levelErr">Level required</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-secne" style="text-align: center;">
+        <button class="cancel-button btn btn-primary" (click)="goBack()">Cancel</button>
+        <button class="submit-button btn btn-primary" (click)="edit()">Save</button>
+    </div>
+    <a class="mt-2 a-back" style="color: #0366d6; cursor: pointer;" (click)="goBack()">Back to Students List</a>
+</main>

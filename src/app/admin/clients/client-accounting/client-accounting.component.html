@@ -1,0 +1,43 @@
+<main role="main" class="main-body-sty mt-3">
+    <div class="row spc-row">
+      <div class="col-md-12">
+        <div class="top_scne">
+          <div class="top_scne_iii">
+            <div class="top_scne_in">
+              <h1>Invoices to {{ clientName }}</h1>
+              <div class="btns-mid">
+                <button class="btn btn-edtng" (click)="sendReminder()">Send Reminder</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12" style="padding: 10px 10px 20px;">
+        <table class="table table-no-striped">
+          <thead class="thead-dark">
+            <tr role="row">
+              <th>Status</th>
+              <th>Invoice Number</th>
+              <th>Date Sent</th>
+              <th>Automated Reminder Date</th>
+              <th>Client</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let invoice of invoices">
+              <td>{{ invoice.paid ? 'Paid' : (invoice.void ? 'Unpaid (Voided)' : 'Unpaid') }}</td>
+              <td>{{ invoice.invoiceNumber }}</td>
+              <td>{{ invoice.dateCreated | date: 'short' }}</td>
+              <td>{{ invoice.reminderDate | date: 'short' }}</td>
+              <td>{{ invoice.clientFirstName }} {{ invoice.clientLastName }}</td>
+              <td>
+                <button class="btn btn-sm btn-primary" (click)="viewInvoicePdf(invoice)">View PDF</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  

@@ -1,0 +1,106 @@
+<main role="main" class="main-body-sty mt-3">
+  <div class="row spc-row">
+    <div class="col-md-12">
+      <div class="top_scne">
+        <div class="top_scne_iii">
+          <div class="top_scne_in d-flex justify-content-between align-items-center">
+            <h1>Calendar</h1>
+            <button class="btn btn-primary" (click)="updateAvailability()">Update Availability</button>
+            <button class="btn btn-secondary" (click)="viewAvailabilities()">View Availabilities</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="main-content-inner-list">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="calendar-container">
+            <div *ngIf="loading">Loading...</div>
+            <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+            <full-calendar *ngIf="!loading && !error" [options]="calendarOptions"></full-calendar>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Availability Modal -->
+  <ng-template #availabilityDialog let-modal>
+    <div class="modal-header">
+      <h5 class="modal-title">UPDATE AVAILABILITY</h5>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <full-calendar [options]="availabilityOptions"></full-calendar>
+    </div>
+    <div class="modal-footer">
+      <button *ngIf="showUpdateButton" class="btn btn-primary" (click)="updateAvailabilitySlots()">Update Availability</button>
+      <button type="button" class="btn btn-secondary" (click)="modal.dismiss('Cross click')">Close</button>
+    </div>
+  </ng-template>
+
+  <!-- View Availabilities Modal -->
+  <ng-template #viewAvailabilitiesDialog let-modal>
+    <div class="modal-header custom-modal-header">
+      <h5 class="modal-title">VIEW AVAILABILITIES</h5>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body custom-modal-body">
+      <div class="filter-container">
+        <div class="form-group">
+          <label for="tutorFilter">Educator:</label>
+          <select id="tutorFilter" class="form-control" [(ngModel)]="selectedTutor" (change)="applyFilters()">
+            <option value="">All Educators</option>
+            <option *ngFor="let tutor of tutors" [value]="tutor">{{ tutor }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="dateFilter">Date:</label>
+          <input type="date" id="dateFilter" class="form-control" [(ngModel)]="selectedDate" (change)="applyFiltersAndChangeDate()">
+        </div>
+      </div>
+      <div class="custom-calendar-container">
+        <full-calendar #fullCalendar [options]="filteredAvailabilityOptions"></full-calendar>
+      </div>
+    </div>
+    <div class="modal-footer custom-modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="modal.dismiss('Cross click')">Close</button>
+    </div>
+  </ng-template>
+
+  <!-- Event Details Modal -->
+  <ng-template #eventDialog let-modal>
+    <div class="modal-header">
+      <h5 class="modal-title">{{ selectedEvent?.title }}</h5>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="tutorName">Tutor Name:</label>
+        <p>{{ selectedEvent?.extendedProps?.tutorName }}</p>
+      </div>
+      <div class="form-group">
+        <label for="topic">Topic:</label>
+        <p>{{ selectedEvent?.extendedProps?.topic }}</p>
+      </div>
+      <div class="form-group">
+        <label for="completed">Completed:</label>
+        <p>{{ selectedEvent?.extendedProps?.completed ? 'Yes' : 'No' }}</p>
+      </div>
+      <div class="form-group">
+        <label for="startTime">Time:</label>
+        <p>{{ selectedEvent?.extendedProps?.startTime }} - {{ selectedEvent?.extendedProps?.endTime }}</p>
+      </div>
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <p>{{ selectedEvent?.extendedProps?.location }}</p>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="modal.dismiss('Cross click')">Close</button>
+    </div>
+  </ng-template>
+</main>

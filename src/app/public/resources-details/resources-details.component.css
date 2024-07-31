@@ -1,0 +1,29 @@
+.resources_caro .courses-h-list {
+    justify-content: flex-start !important;
+    gap: 36px !important;
+}
+
+
+
+.iconImag{
+    height: 15px;
+    width: 15px;
+}
+
+
+.checkCls{
+    text-decoration: underline;
+}
+
+
+#tabs-1 .zoomimg img{
+width: 100%;
+transform: scale(1);
+object-fit: none;
+}
+
+ .similar-res{
+   min-height: 150px;
+    min-width: 222px;
+    
+}

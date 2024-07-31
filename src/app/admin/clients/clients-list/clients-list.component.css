@@ -1,0 +1,140 @@
+h1 {
+  font-weight: bold;
+  font-size: 290%;
+}
+
+.top_scne {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top_scne_iii {
+  display: flex;
+  align-items: center;
+}
+
+.btns-mid {
+  display: flex;
+  align-items: center;
+  margin-right: 380px;
+}
+
+.search-container {
+  width: 100%;
+  max-width: 280px; 
+  margin-top: 80px; 
+}
+
+.search-bar {
+  height: 40px;
+  padding: 10px 35px 10px 15px;
+  width: 100%;
+}
+
+.input-group-text {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  pointer-events: none; 
+}
+
+.input-group-text i {
+  font-size: 16px;
+  color: #6c757d;
+}
+
+.form-control.search-bar {
+  padding-left: 35px;
+  border-left: 0;
+}
+
+table thead th {
+  white-space: nowrap;
+  text-align: center;
+}
+
+table thead th:nth-child(1) {
+  width: 10%;
+}
+
+table thead th:nth-child(2),
+table thead th:nth-child(3),
+table thead th:nth-child(4),
+table thead th:nth-child(5),
+table thead th:nth-child(6) {
+  width: 15%;
+}
+
+table thead th:nth-child(7),
+table thead th:nth-child(8) {
+  width: 10%;
+}
+
+.table-responsive .btn {
+  width: 100px;
+  height: 35px;
+  padding: 5px;
+  font-size: 14px;
+  text-align: center;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table thead th {
+  position: relative;
+}
+
+.btn-sm {
+  margin-top: 5px;
+  width: auto; /* Allows the button to adjust its width according to the content */
+}
+
+.table .btn {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.search-container .input-group {
+  max-width: 300px;
+}
+
+.search-container .form-control {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.search-container .input-group-text {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.spc-row {
+  margin-bottom: 20px;
+}
+
+.pegin_sec .dataTables_length {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pegin_sec .btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pegin_sec .btn img {
+  max-width: 16px;
+  max-height: 16px;
+}

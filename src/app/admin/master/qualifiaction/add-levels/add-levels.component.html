@@ -1,0 +1,112 @@
+
+  
+  <!-- <ng-template #deleteModal>
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <div class="col-sm-10">
+              <h4 class="modal-title d-inline-block align-middle me-2">
+                Are you want to sure delete this Qualification Levels?
+              </h4>
+            </div>
+            <div class="col-sm-2 d-flex justify-content-end">
+              <button type="button" (click)="closeModal()" class="btn-close"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6 text-center">
+              <button type="button" class="btn btn-secondary btn-lg me-2" (click)="closeModal()">No</button>
+            </div>
+            <div class="col-sm-6 text-center">
+              <button type="button" class="btn btn-primary btn-lg me-2" (click)="deleteQualificationLevel()">Yes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template> -->
+
+  <ng-template #deleteModal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-10 mt-3">
+                        <h3 class="modal-title d-inline-block align-middle ml" style="color: black !important;">
+                          Are you sure you want to delete this Qualification Level?
+                        </h3>
+                    </div>
+                    <div class="col-sm-2 d-flex justify-content-end">
+                        <button type="button" (click)="closeModal()" class="btn-close delteClose"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="bottom-secnedlt" style="text-align: center;">
+                    <div><button type="button" class="cancel-button btn btn-primary btn-lg" style="width: 100px;"  (click)="closeModal()">Cancel</button></div>
+                        <div><button type="button" class="btn btn-danger" style="width: 100px;" (click)="deleteQualificationLevel()">Delete</button></div>
+                   </div>
+         </div>
+  </ng-template>
+
+  <main role="main" class="main-body-sty mt-3">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="top_scne">
+                <div class="top_scne_in">
+                    <h1 class="add_heading_text">Qualification Levels</h1>
+                    <button class="btn btn-edtng-add" *ngIf="!levelId">Creating</button>
+                    <button class="btn btn-edtng-add" *ngIf="levelId">Editing</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="main-content-add">
+        <div class="main-content-inner">
+          <div class="row mb-3">
+            <div class="mb-3">
+              <label for="name" class="form-label lebel-text">Level Name</label>
+              <input type="text" class="form-control" [(ngModel)]="levelname" (keyup)="changeLevelFun()" />
+              <span class="error-msg">{{levelNameErr}}</span>
+            </div>
+    
+            <div class="mb-3">
+              <label for="name" class="form-label lebel-text">Parent Category: </label>
+              <input type="text" [(ngModel)]="parentcategoryname" (keyup)="searchCategoryName()" [matAutocomplete]="auto"
+                class="example-input form-control" />
+              <mat-autocomplete #auto="matAutocomplete" (optionSelected)="getparentCategoryIdByName()">
+                <mat-option *ngIf="spinner">
+                  <mat-spinner style="width:50px;"></mat-spinner>
+                </mat-option>
+                <mat-option *ngFor="let item of categoryArr" [value]="item.name">
+                  {{ item.name }}
+                </mat-option>
+              </mat-autocomplete>
+              <span class="error-msg">{{parentcategorynameErr}}</span>
+    
+            </div>
+          
+          </div>
+        </div>
+    </div>
+    <div class="bottom-secne" style="text-align: center;">
+        <button class="delete-button btn btn-primary" *ngIf="levelId" (click)="onClickDelete()">Delete
+          Qualification Level</button>
+        <div *ngIf="!levelId"></div>
+        <div>
+            <button class="cancel-button btn btn-primary" (click)="resetform()">Cancel</button>
+            <button class="submit-button btn btn-primary" *ngIf="!levelId" (click)="add()">Save</button>
+            <button class="submit-button btn btn-primary" *ngIf="levelId" (click)="edit()">Save</button>
+        </div>
+
+    </div>
+    <a class="mt-2 a-back" style="color: #0366d6; cursor: pointer;" (click)="goBack()">Back to List</a>
+
+</main>

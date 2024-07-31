@@ -1,0 +1,100 @@
+<main role="main" class="main-body-sty mt-3">
+    <div class="row spc-row">
+        <div class="col-md-12">
+            <div class="top_scne">
+                <div class="top_scne_in">
+                    <h1>Users</h1>
+                    <!-- <button class="btn btn-edtng" (click)="add()">Create New</button> -->
+                </div>
+                <button class="btn btn-edtng" (click)="add()">Create New</button>
+            </div>
+        </div>
+        <div class="col-sm-12 mb-4">
+            <input type="text" [(ngModel)]="searchText" class="form-control search-bar" placeholder="Search..."
+                (keyup)="search()">
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="main-content-inner-list">
+            <div class="row">
+                <div class="col-md-12 mb-2">
+                    <a class="btn me-2" *ngFor="let data of buttonArr; let i = index"
+                        [ngClass]="{'btn-secondary': data.isActive === false,'btn-primary': data.isActive === true}"
+                        (click)="userTypeFun(data, i)">{{data.name}}</a>
+                </div>
+                <div class="col-md-12 ">
+                    <div id="datatables-reponsive_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+                        <div class="table-responsive">
+                            <table id="datatables-column-search-select-inputs" class="table table-no-striped dataTable"
+                                style="width: 100%;" aria-describedby="datatables-column-search-select-inputs_info">
+                                <thead class="thead-dark">
+                                    <tr role="row">
+                                        <!-- <th class="sorting align-middle">Sl No.</th> -->
+                                        <th class="sorting align-middle">Username</th>
+                                        <th class="sorting align-middle">Email</th>
+                                        <th class="sorting align-middle text-center">Email Confirmed</th>
+                                        <th class="sorting align-middle text-center">Phone Number</th>
+                                        <th class="sorting align-middle text-center">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngIf="usersList.length == 0">
+                                        <td class="text-center" colspan="20">
+                                            <h4>No Data Found!</h4>
+                                        </td>
+                                    </tr>
+                                    <tr role="row" class="odd" *ngFor="let item of usersList; let i = index">
+                                        <!-- <td class="align-middle" style=" font-size: 14px; width: 10%;">{{i+1}}.</td> -->
+                                        <td class="align-middle" style="font-size: 14px; cursor: pointer;">
+                                            {{item.username}}</td>
+                                        <td class="align-middle" style="font-size: 14px; cursor: pointer;">
+                                            {{item.useremail}}</td>
+                                        <td style="text-align: center;">
+                                            <input type="checkbox" disabled [checked]="item.isemailverified === 1">
+                                        </td>
+                                        <td class="align-middle" style="text-align: center;">
+                                            <input type="checkbox" disabled>
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <button class="btn btn-primary" (click)="edit(item.userid)">Edit</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="d-xl-flex align-items-center mt-3 pegin_sec"
+                        *ngIf="usersList.length > 0">
+                        <div class="col-auto d-block">
+                            <div class="text-center">
+                                <div class="dataTables_length"><label>Users per page
+                                        <select name="datatables-reponsive_length"
+                                            aria-controls="datatables-reponsive"
+                                            class="form-select form-select-sm"
+                                            (change)="changePagelimit($event)" [(ngModel)]="selectedVal">
+                                            <option *ngFor="let item of pageList" [value]=item.value>
+                                                {{item.name}}
+                                            </option>
+                                        </select> {{offset + 1}} - {{offset + limit}}</label>
+                                    <div class="mx-2" style="display: inline-block;">
+                                        <button class="btn btn-dark text-white" [disabled]="previousBtnDesable"
+                                            (click)="previousPage()"><img src="assets/img/chevron-left.svg"
+                                                alt="chevron-left"></button>
+
+                                        <button class="btn btn-dark text-white mx-3" [disabled]="nextBtnDesable"
+                                            (click)="nextPage()"><img src="assets/img/chevron-right.svg"
+                                                alt="chevron-right"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</main>

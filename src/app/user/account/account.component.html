@@ -1,0 +1,212 @@
+
+<div class="family_page">
+    <div class="container-fluid bg-light-blue py-2">
+        <div class="resource_package_inr">
+            <div class="family_page_inner">
+                <div class="row align-items-start">
+                    <div class="col-md-4 col-sm-12">
+                        <div class="fam_list cp" (click)="accountFun()">
+                            <h4>My Account</h4>
+                            <ul>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                                        class="bi bi-person-circle" viewBox="0 0 16 16">
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                        <path fill-rule="evenodd"
+                                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                                    </svg>
+                                    <div >
+                                        <strong>{{parentName}}</strong>
+                                        <span>Parent Account</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="fam_list mt-5">
+                            <h4>Children</h4>
+                            <ul>
+                                <li *ngFor="let data of allChildrenArr">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                                        class="bi bi-person-circle" viewBox="0 0 16 16">
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                        <path fill-rule="evenodd"
+                                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                                    </svg>
+                                    <div style="cursor: pointer;" (click)="getChildUsersById(data.id)">
+                                        <strong>{{data.firstname}}</strong>
+                                        <span>Child Account</span>
+                                    </div>
+                                    <span class="text-danger cp" style="margin-left: 49px; font-size:18px;" (click)="deleteChildAccountUser(data.id)"><i class="fa fa-trash" aria-hidden="true"></i>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-accnt w-100 mt-3" *ngIf="!createChildDiv"
+                            (click)="openChildmodal()">CREATE CHILD
+                            ACCOUNT</button>
+                    </div>
+                    <div class="col-md-1  d-md-block d-sm-none"></div>
+                    <div class="col-md-7 col-sm-12" *ngIf="createChildDiv">
+                        <div class="famly_right">
+                            <h4 *ngIf="childFlg">Create Children Account</h4>
+                            <h4 *ngIf="!childFlg">Update Children Account</h4>
+                            <div class="row">
+                                <div class="col-lg-6 pb-3">
+                                    <label class="content">First Name</label>
+                                    <input type="text" id="mefn" name="ContactFirstName" class="form-control"
+                                        placeholder="First Name" required="" [(ngModel)]="firstname"
+                                        (keypress)="onKeyPressFirstName($event)">
+                                    <span class="error-msg" *ngIf="firstnameErr">Firstname is required</span>
+                                    <span class="error-msg" *ngIf="validFirstNameErr && firstnameErr==false">Valid name
+                                        is required</span>
+                                </div>
+                                <div class="col-lg-6 pb-3">
+                                    <label class="content">Username</label>
+                                    <input type="email" id="meln" name="username" class="form-control"
+                                        placeholder="username" required="" [(ngModel)]="email" (keyup)="emailFun()">
+                                    <span class="error-msg" *ngIf="emailErr">Email is required</span>
+                                    <span class="error-msg" *ngIf="validEmailErr">Valid email is required</span>
+                                </div>
+                                <div class="col-lg-6 pb-3">
+                                    <label class="content">Age</label>
+                                    <input type="number" id="memobile" name="ContactNumber" class="form-control"
+                                        placeholder="Age" required="" [(ngModel)]="age" (keyup)="ageFun()">
+                                    <span class="error-msg" *ngIf="ageErr">Age required</span>
+
+                                </div>
+                                <div class="col-lg-6 pb-3">
+                                    <label class="content">Parent controls</label>
+                                    <input type="text" id="meemail" name="ContactEmail" class="form-control"
+                                        placeholder="Parentcontrols" required="" [(ngModel)]="parentcontrols"
+                                        (keyup)="parentFun()">
+                                    <span class="error-msg" *ngIf="parentcontrolsErr">Parent controls required</span>
+                                </div>
+                                <div class="col-lg-12 pb-3">
+                                    <label class="content">Areas of interest</label>
+                                    <label class="optional-content">Optional</label>
+                                    <input type="text" placeholder="Select intrests" [matAutocomplete]="auto"
+                                        [(ngModel)]="areaofIntrest" class="form-control" (keyup)="search()" />
+                                    <mat-autocomplete #auto="matAutocomplete" [panelWidth]="'200px'"
+                                        (optionSelected)="getareaofIntrestTypeName()">
+                                        <mat-option *ngIf="intrestSpinner">
+                                            <mat-spinner style="width:50px;"></mat-spinner>
+                                        </mat-option>
+                                        <mat-option *ngFor="let obj of areaofintrestArr" [value]="obj.name">{{obj.name}}
+                                        </mat-option>
+                                    </mat-autocomplete>
+                                </div>
+                                <div class="catgry_list_mnd">
+                                    <div class="catgry_list_sc me-2" style="display:flex;"
+                                        *ngFor="let data of selectareofIntrestArr; let i = index">
+                                        <div>
+                                            <span>{{data.name}}</span>
+                                            <a (click)="intrestRemove(i)">X</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 pb-3">
+                                    <p>These details are only visible by the family account creator, please use a
+                                        username that doesn't give an indication of the childs identity.
+                                    </p>
+                                </div>
+                                <div class="col-lg-12 d-flex stack-row align-items-baseline">
+                                    <input type="checkbox" name="gdprSubmit" required=""
+                                        [(ngModel)]="checkTerm" (click)="checkTermFun()">
+                                    <p class="content submit-text" style="padding-left: .5rem;">By clicking
+                                        Submit I agree
+                                        to UEG's Terms &amp; Conditions and Privacy Policy, and I agree to
+                                        abide by the Code
+                                        of Conduct</p>
+                                </div>
+                                <div class="error-msg termCheck" *ngIf="checkTermErr">Terms & condition required</div>
+                            </div>
+                            <div class="col-lg-12">
+                                <button class="btn btn-cncl" (click)="resetChildren()">Cancel</button>
+                                <button class="btn btn-accnt mx-2" (click)="addchildrenAccount()"
+                                    *ngIf="childFlg">CREATE CHILD ACCOUNT</button>
+                                <button class="btn btn-accnt mx-2" (click)="updatechild()" *ngIf="!childFlg">UPDATE
+                                    CHILD ACCOUNT</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- account div -->
+                    <div class="col-md-7 col-sm-12" *ngIf="accountDiv">
+                        <div class="row mt-4">
+                            <div class="col-sm-12">
+                                <div class="famly_right">
+                                    <h4>Account Details</h4>
+                                    <div class="row">
+                                        <div class="col-lg-6 pb-3">
+                                            <label class="content">First Name</label>
+                                            <input type="text" id="mefn" name="ContactFirstName" [(ngModel)]="first "
+                                                class="form-control" placeholder="First Name" required="" (keypress)="onKeyPressFirst($event)">
+                                                <span class="error-msg" *ngIf="firstErr">Firstname is required</span>
+                                        </div>
+                                        <div class="col-lg-6 pb-3">
+                                            <label class="content">Last Name</label>
+                                            <input type="text" id="meln" name="ContactLastName" [(ngModel)]="last"
+                                                class="form-control" placeholder="Last Name" required=""  (keypress)="onKeyPressLast($event)">
+                                                <span class="error-msg" *ngIf="lastErr">Lastname is required</span>
+                                               
+                                        </div>
+                                        <div class="col-lg-6 pb-3">
+                                            <label class="content">Phone number</label>
+                                            <input type="text" id="memobile" name="ContactNumber" [(ngModel)]="mobile"
+                                                class="form-control" placeholder="Phone" required="" (keypress)="onKeyPressMobile($event)"
+                                                (keyup)="mobileFun()"> 
+                                                <span class="error-msg" *ngIf="mobileErr">Mobile number required</span>
+                                                <span class="error-msg" *ngIf="validMobileErr">Valid number required</span>
+                                        </div>
+                                        <div class="col-lg-6 pb-3">
+                                            <label class="content">Email Address</label>
+                                            <input type="email" id="meemail" name="ContactEmail" [(ngModel)]="email"
+                                                class="form-control" placeholder="Email" required="" (keyup)="emailFun()">
+                                                <span class="error-msg" *ngIf="emailErr">Email required</span>
+                                                <span class="error-msg" *ngIf="validEmailErr">Valid email required</span>
+                                        </div>
+                                        <div class="col-lg-6 pb-3">
+                                            <label class="content">Date of Birth</label>
+                                            <label class="optional-content">Optional</label>
+                                            <input type="date" id="medob" name="ContactDOB" class="form-control"
+                                                [(ngModel)]="dob" placeholder="Date of Birth">
+                                        </div>
+                                        <div class="col-lg-12 pb-3">
+                                            <label class="content">Address</label>
+                                            <label class="optional-content">Optional</label>
+                                            <textarea type="text" id="meaddress" name="ContactAdd" class="form-control"
+                                                [(ngModel)]="address" placeholder="Address"></textarea>
+                                    </div>
+                                   
+                                    <div class="col-lg-12 pb-3">
+                                        <label class="content">Message</label>
+                                        <label class="optional-content">Optional</label>
+                                        <textarea name="ContactMessage" id="memessage" class="form-control" [(ngModel)]="message"
+                                            required="" placeholder="Message"></textarea>
+                                        </div>
+                                        <div class="col-lg-12 d-flex stack-row align-items-baseline">
+                                            <input type="checkbox" name="gdprSubmit" required=""
+                                                 [(ngModel)]="checkTerm" (click)="checkTermFun()">
+                                            <p class="content submit-text" style="padding-left: .5rem;">By clicking
+                                                Submit I agree
+                                                to UEG's Terms &amp; Conditions and Privacy Policy, and I agree to
+                                                abide by the Code
+                                                of Conduct</p>
+                                        </div>
+                                        <div class="error-msg termCheck" *ngIf="checkTermErr">Terms & condition required</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <button class="btn btn-cncl" (click)="resetAccount()">CANCEL</button>
+                                            <button class="btn btn-accnt mx-2" (click)="updateAccount()">SAVE
+                                                ACCOUNT</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

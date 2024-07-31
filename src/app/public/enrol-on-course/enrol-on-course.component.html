@@ -1,0 +1,50 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <div class="stack-column d-flex">
+            <h4 class="title">Enrol On Course</h4>
+            <hr class="big-blue">
+        </div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModal()">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12 pb-3" ffattr="enrolCourseFormDetails">
+                <p class="content">
+                    <b>Course Title: </b>{{coursename}}
+                </p>
+                <p class="content">
+                    <b>Course Sector: </b>{{categorytypename}}
+                </p>
+                <p class="content"><b>Course Educator: </b>{{educator}}
+                </p>
+            </div>
+            <div class="col-md-4 pb-3">
+                <input type="text" id="enrolFirstName" class="form-control" placeholder="First Name"
+                    [(ngModel)]="firstname"  (keypress)="onKeyPressFirstName($event)"/>
+                <span class="error-msg" *ngIf="firstnameErr">First name required</span>
+            </div>
+            <div class="col-md-4 pb-3">
+                <input type="text" id="enrolLastName" class="form-control" placeholder="Last Name"
+                    [(ngModel)]="lastname" (keypress)="onKeyPresslastName($event)"/>
+                <span class="error-msg" *ngIf="lastnameErr">Last name required</span>
+            </div>
+            <div class="col-md-4 pb-3">
+                <input type="tel" id="enrolPhone" class="form-control" placeholder="Phone" [(ngModel)]="mobile" (keypress)="onKeyPressMobile($event)"
+                (keyup)="mobileFun()"/>
+                <span class="error-msg" *ngIf="mobileErr">Phone number required</span>
+                <span class="error-msg" *ngIf="validMobileErr && mobileErr == false">Valid phone number required</span>
+            </div>
+            <div class="col-md-12 pb-3">
+                <input type="email" id="enrolEmail" class="form-control" placeholder="Email" [(ngModel)]="email" (keyup)="emailFun()"/>
+                <span class="error-msg" *ngIf="emailErr">Email required</span>
+                <span class="error-msg" *ngIf="validEmailErr">Valid email required</span>
+            </div>
+            <div class="col-md-12 d-flex" style="justify-content: flex-end;">
+                <button class="btn btn-yellow" id="submitEnrol" (click)="add()">Submit</button>
+            </div>
+            <div id="notification"></div>
+        </div>
+    </div>
+</div>

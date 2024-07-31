@@ -1,0 +1,144 @@
+<div class="resource_package payment_page bg-light-blue py-2">
+    <div class="container">
+        <div class="resource_package_inr">
+            <div class="row align-items-start">
+                <div class="col-lg-12">
+                    <div class="payment_page_inner">
+                        <div class="chaeckout">
+                            <div *ngFor="let data of getCartlistArr; let i = index">
+                                <div class="row">
+                                    <div class="col-3 col-lg-3 col-md-3">
+                                        <div>
+                                            <img [src]="this.common.imgCheck(data.resourceimg)" class="img-fluid" style="border-radius: 8px;">
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-9 col-lg-9 col-md-9">
+                                        <div class="detaild_pays">
+                                            <div class="desc_div">
+                                                <h4>{{data.resourcename}}</h4>
+                                                <div class="prod_brif_des">
+                                                    <!-- <div class="prod_brif_titl"> -->
+                                                        <!-- <img [ngStyle]="{'background-color': data.backgroundColour}" [src]="this.common.imgCheck(data.logouri)" class="img-fluid"> -->
+                                                        <!-- <h4>{{data.resourcecategoryname}}</h4> -->
+                                                    <!-- </div> -->
+                                                    <div class="prout_price">
+                                                        <h3><span>£</span>{{data.resourceprice}}</h3>
+                                                    </div>
+                                                    <div class="selected_label">
+                                                        <div class="age_select">
+                                                            <h5>Age</h5>
+                                                            <div class="age">
+                                                                <div class="col-text-center">
+                                                                    <label>
+                                                                        <strong>{{data.agerangename}}</strong>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="age_select">
+                                                            <h5>Level</h5>
+                                                            <div class="age">
+                                                                <div class="col-text-center">
+                                                                    <label>
+                                                                        <strong>{{data.resourcelevel}}</strong>
+                                                                        <div class="tick_container">
+                                                                            <div class="tick">&nbsp;</div>
+                                                                        </div>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div style="display: flex;justify-content: space-between;align-items: center;">
+                                            <div class="qntty">
+                                                <h5>Quantity</h5>
+                                                <div class="qntty_innr">
+                                                    <input id="quanti" type="number" min="1" [(ngModel)]="data.quantity" (change)="updateCart(data)">
+                                                </div>
+                                            </div>
+                                            <div class="deletBtn1">
+                                                <img src="assets/img/delete-24.png" alt="" (click)="deleteCart(data.cartid)">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="total-price">
+                                <h4>Total Price: £{{totalPrice}} <span *ngIf="totalPrice == 0">.00</span></h4>
+                            </div>
+
+                            <div class="powred_by">
+                                <ul>
+                                    <li>Powered by <strong>Stripe</strong></li>
+                                    <li><a href="">Terms</a></li>
+                                    <li><a href="">Privacy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="payment_div">
+                            <div><strong>Please Enter Billing Information:</strong></div>
+                            <div class="paymnt_detail">
+                                <ul>
+                                    <li>
+                                        <label>Email</label>
+                                        <input id="StripeEmail" type="text" class="form-control" [(ngModel)]="email" (keyup)="changeEmailFun()">
+                                        <span class="error-msg" *ngIf="emailErr">Email required</span>
+                                        <span class="error-msg" *ngIf="validEmailErr">Valid email required</span>
+                                    </li>
+                                    <li>
+                                        <label>Name</label>
+                                        <input id="StripeName" type="text" class="form-control" [(ngModel)]="name" (keyup)="changeNameFun()">
+                                        <span class="error-msg" *ngIf="nameErr">Name required</span>
+                                    </li>
+                                    <li>
+                                        <label>Address</label>
+                                        <input id="StripeAddress" type="text" class="form-control" [(ngModel)]="address" (keyup)="changeAddressFun()">
+                                        <span class="error-msg" *ngIf="addressErr">Address required</span>
+                                    </li>
+                                    <li>
+                                        <div class="cunty_zip d-flex">
+                                            <div class="sel_country">
+                                                <label>Country</label>
+                                                <select id="StripeCountry" class="form-select" [(ngModel)]="country" (change)="changeCountryFun()">
+                                                    <option value="United Kingdom">United Kingdom</option>
+                                                    <option value="United States">United States</option>
+                                                    <option value="China">China</option>
+                                                    <option value="India">India</option>
+                                                </select>
+                                                <span class="error-msg" *ngIf="countryErr">Country required</span>
+                                            </div>
+                                            <div class="zip_dv">
+                                                <label>ZIP</label>
+                                                <input id="StripeZip" type="text" class="form-control" [(ngModel)]="zip" (keyup)="changeZipFun()">
+                                                <span class="error-msg" *ngIf="zipErr">ZIP required</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label>Phone</label>
+                                        <input id="StripePhone" type="text" class="form-control" [(ngModel)]="phone" (keyup)="changePhoneFun()">
+                                        <span class="error-msg" *ngIf="phoneErr">Phone number required</span>
+                                        <span class="error-msg" *ngIf="validPhoneErr">Valid Phone number required</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="add_bskt">
+                                <button (click)="payNow()" class="btn enrol-btn btn-pay">pay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+      <!-- Left column for PDF selection -->
+      <div class="col-md-6">
+          <div class="card">
+              <div class="card-header">
+                  Available PDFs
+                  <input type="checkbox" id="checkAllPdfs" class="ml-2 float-right" (change)="toggleSelectAll($event)"> Check All
+              </div>
+              <ul class="list-group list-group-flush" id="pdfList">
+                  <li class="list-group-item" *ngFor="let file of pdfFiles">
+                      <a href="javascript:void(0)" (click)="openPdf(file.token, file.filename)">{{ file.filename }}</a>
+                      <input type="checkbox" class="pdf-checkbox" [(ngModel)]="file.selected">
+                      <!-- Adding hidden fields for passing invoice data -->
+                      <input type="hidden" name="invoiceData" [value]="file.invoiceData | json">
+                  </li>
+              </ul>
+          </div>
+      </div>
+
+      <!-- Middle column for the Approve and De-approve buttons -->
+      <div class="col-md-1 d-flex align-items-center justify-content-center flex-column">
+          <button id="approveBtn" class="btn btn-success mb-2" (click)="approve()">Approve</button>
+          <button id="deapproveBtn" class="btn btn-danger mb-2" (click)="deapprove()">De-approve</button>
+      </div>
+
+      <!-- Right column for approved PDFs -->
+      <div class="col-md-5">
+          <div class="card">
+              <div class="card-header">
+                  Approved PDFs
+                  <button id="downloadApprovedBtn" class="btn btn-primary float-right" (click)="downloadApproved()">Send Approved</button>
+              </div>
+              <ul class="list-group list-group-flush" id="approvedPdfList">
+                  <li class="list-group-item" *ngFor="let file of approvedFiles">
+                      <a href="javascript:void(0)" (click)="openPdf(file.token, file.filename)">{{ file.filename }}</a>
+                      <input type="checkbox" class="pdf-checkbox" [(ngModel)]="file.selected">
+                      <!-- Adding hidden fields for passing invoice data -->
+                      <input type="hidden" name="invoiceData" [value]="file.invoiceData | json">
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div>
+  <a href="javascript:void(0)" (click)="backToList()">Back to List</a>
+</div>

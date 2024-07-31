@@ -1,0 +1,19 @@
+.offer-grid {
+    justify-content: space-between;
+    display: flex;
+}
+
+    .offer-grid img {
+        height: 50px;
+        padding-right: 14px;
+        margin-bottom: 15px;
+    }
+
+    .offer-grid div {
+        font-family: 'LEMON MILK';
+        margin-right: 2vw;
+        color: rgba(0,202,217,1.00);
+        font-size: 13px;
+        font-weight: 300;
+        letter-spacing: 2px;
+    }

@@ -1,0 +1,451 @@
+.home-banner-header-divider {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+.partnerships-banner.partnerships-banner-contact-background {
+background-image: url('../../../assets/img/get-to-know-us.png');
+background-size: contain;
+background-position-x: 100%;
+background-repeat: no-repeat;
+}
+
+
+
+
+.yellow-tag {
+width: auto;
+}
+
+
+.bg-dark {
+background-color: var(--ueg-dark-blue) !important;
+}
+
+
+.bg-light-blue {
+background-color: var(--ueg-background-blue);
+}
+
+.bg-gray {
+background-color: #F2F2F2;
+}
+
+.section-padding {
+padding-top: 3rem;
+padding-bottom: 3rem;
+}
+
+.bra-0 {
+border-radius: 0 !important;
+}
+
+h4.title {
+font-family: 'LEMON MILK';
+font-weight: 400;
+color: var(--ueg-dark-blue);
+letter-spacing: .1rem;
+}
+
+/* HR */
+hr {
+border-radius: 25px;
+opacity: 1;
+}
+
+hr.dark-blue {
+    background-color: var(--ueg-dark-blue);
+    border-color: var(--ueg-dark-blue);
+}
+
+hr.white {
+    background-color: white;
+    border-color: white;
+}
+
+hr.h-10 {
+    border-width: 10px;
+    border-style: solid;
+}
+
+hr.small-blue {
+    border: 5px solid #00CAD9;
+    background-color: var(--ueg-aqua);
+    border-radius: 25px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 50px;
+    margin-top: .4rem;
+}
+
+hr.big-blue {
+    border: 10px solid #00CAD9;
+    background-color: var(--ueg-aqua);
+    border-radius: 25px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 150px;
+}
+
+hr.big-long-yellow {
+    border-width: 6px;
+    border-style: solid;
+    border-color: var(--ueg-yellow);
+    background-color: var(--ueg-yellow);
+    width: 50%;
+}
+/* Preloaders */
+.filter-result {
+position: relative;
+}
+
+.pre-loader {
+position: absolute;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+}
+
+.pre-loader .background-preloader {
+    background-color: rgba(230,230,230,0.5);
+    height: 100%;
+    border-radius: 25px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.pre-loader .spinner-border {
+    margin-top: 5rem;
+}
+/* Buttons */
+.btn.btn-yellow {
+background-color: var(--ueg-yellow);
+border-radius: 5px;
+font-family: 'LEMON MILK';
+font-weight: 400;
+font-size: 16px;
+letter-spacing: .1rem;
+color: var(--ueg-dark-blue);
+padding: 1rem 3rem;
+transition: ease all .3s;
+}
+
+
+
+/* Tags */
+.yellow-tag .tag-title {
+padding: .5rem .5rem;
+border-radius: 8px;
+background-color: #F2D415;
+text-transform: uppercase;
+font-size: .8rem;
+font-family: 'LEMON MILK';
+font-weight: 600;
+letter-spacing: 2px;
+margin-bottom: 0 !important;
+}
+
+.partnerships-banner .main-title {
+font-family: 'LEMON MILK';
+color: var(--ueg-dark-blue);
+letter-spacing: .6rem;
+font-weight: 400;
+font-size: 60px;
+}
+
+.partnerships-banner .main-banner-line {
+margin-left: 0 !important;
+margin-right: 0 !important;
+width: 300px;
+border-top: 15px solid var(--ueg-aqua);
+border-radius: 25px;
+}
+
+.email.contact {
+color: var(--ueg-dark-blue);
+font-size: 25px;
+font-family: 'Lato';
+letter-spacing: .05rem;
+padding-top: .3rem;
+}
+
+.partnerships-banner .main-content-para {
+color: white;
+font-family: 'Lato', sans-serif;
+letter-spacing: 1px;
+font-weight: 400;
+font-size: 25px;
+}
+
+.partnerships-banner.contact .main-content-para {
+color: var(--dark-indigo);
+font-family: 'Lato', sans-serif;
+letter-spacing: 1px;
+font-weight: 400;
+font-size: 23px;
+}
+
+.partnerships-banner-content .main-content {
+z-index: 999;
+}
+
+.partnerships-banner-row {
+padding-top: 3rem;
+padding-bottom: 3rem;
+}
+
+.info-bar .single-sector {
+display: flex;
+align-items: center;
+}
+
+.info-bar .single-sector .educator-type-text {
+    color: var(--ueg-aqua);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-right: 1rem;
+    margin-bottom: 0;
+    font-family: 'LEMON MILK' !important;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.info-bar .single-sector svg {
+    height: 40px;
+}
+
+.review-card.card {
+border: unset;
+box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+border-radius: 0;
+}
+
+.site-search {
+background-color: #fff;
+box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.2);
+position: absolute;
+z-index: 999;
+width: 100%;
+left: 0;
+right: 0;
+}
+
+.site-search .dropdown-search-link {
+    font-family: 'LEMON MILK';
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: var(--dark-indigo);
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.site-search img {
+    max-height: 25px;
+    width: auto;
+}
+
+.site-search .search-item {
+    padding: .5rem 2rem;
+}
+.contact-item {
+padding: .5rem;
+}
+
+.contact-form {
+padding-top: 3rem;
+padding-bottom: 3rem;
+}
+
+.home-banner-header-divider {
+margin-top: 2rem;
+margin-bottom: 4rem;
+}
+
+.sub-banner-background.display-on-mobile.blue-triangle.partnerships {
+position: relative;
+top: -100%;
+z-index: 0;
+}
+
+.single-sector img {
+height: 40px;
+width: auto;
+margin-right: 1rem;
+}
+
+.banner-triangle {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+overflow: hidden;
+height: 100%;
+width: 60%;
+object-fit: cover;
+}
+
+.partnerships-banner-row {
+padding-top: 3rem;
+padding-bottom: 3rem;
+}
+
+.partnerships-banner-content .main-content {
+z-index: 10;
+}
+
+.partnerships-banner .main-title {
+font-family: 'LEMON MILK';
+color: var(--ueg-dark-blue);
+letter-spacing: .6rem;
+font-weight: 400;
+font-size: 60px;
+}
+
+.partnerships-banner.contact .main-content-para {
+color: var(--dark-indigo);
+font-family: Lato,sans-serif;
+letter-spacing: 1px;
+font-weight: 400;
+font-size: 23px;
+}
+
+.email.contact {
+color: var(--ueg-dark-blue);
+font-size: 25px;
+font-family: Lato;
+letter-spacing: .05rem;
+padding-top: .3rem;
+}
+
+.banner-contact-us {
+background-image: url('../../../assets/img/contact-us.jpg');
+}
+
+.content-section {
+padding-top: 5rem;
+padding-bottom: 5rem;
+}
+
+h3.title {
+font-family: 'LEMON MILK';
+color: var(--ueg-dark-blue);
+font-weight: 400;
+letter-spacing: .2rem;
+}
+
+.virtual-class-img-container {
+justify-content: center;
+align-items: center;
+padding-right: 5rem;
+}
+
+.virtual-class-img {
+width: 80%;
+height: auto;
+}
+
+p.content, .why-ueg-section .why-item .content {
+font-size: 20px;
+}
+
+hr.medium-yellow {
+border: 10px solid #F2D415;
+background-color: #F2D415;
+border-radius: 25px;
+margin-left: 0;
+margin-right: 0;
+width: 150px;
+}
+
+.social-icons {
+padding: 0;
+}
+
+.single-social {
+padding: 0;
+}
+
+.CV-button {
+color: var(--ueg-dark-blue);
+border: solid;
+padding: 0.75rem 2rem 0.75rem 2rem;
+font-family: 'LEMON MILK';
+cursor: pointer;
+letter-spacing: .2rem;
+}
+
+#file-chosen {
+margin-left: 0.3rem;
+font-family: 'Lato';
+}
+
+#sign-up-button {
+background-color: var(--ueg-yellow);
+border-radius: 5px;
+font-family: 'LEMON MILK';
+font-weight: 400;
+font-size: 16px;
+letter-spacing: .1rem;
+color: var(--ueg-dark-blue);
+padding: 1rem 3rem;
+transition: ease all .3s;
+}
+
+.pagination a.nav-link.active::after {
+content: '';
+border-bottom: 20px solid var(--ueg-aqua);
+width: 100%;
+height: 2px;
+position: absolute;
+border-radius: 25px;
+left: 0;
+bottom: -2rem;
+}
+
+:target {
+display: block;
+position: relative;
+top: -250px;
+visibility: hidden;
+}
+
+.terms-conditions {
+font-family: 'Lato', sans-serif;
+color: rgba(0,0,0,0.2);
+font-size: 13px;
+letter-spacing: 0;
+word-spacing: 0;
+}
+
+
+.image-upload > input
+{
+    display: none;
+}
+
+
+
+.cv_img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .err-image{
+    height: 32px;
+    width: 36px;
+    padding-left: 10px;
+  }
+
+
+
+  .termCheck {
+    margin-left:2px;
+   }
+
+
+  .display-nav{
+    display: block;
+  }

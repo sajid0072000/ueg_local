@@ -1,0 +1,350 @@
+<main role="main" class="pb-3">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="top_scne">
+                    <h1>Shopping Cart</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="ueg-cart-section">
+                <div class="ueg-cart-section-l">
+                    <div class="shopping-item-div" *ngFor="let data of cartList">
+                        <div class="shopping-item-image">
+                            <div class="shopping-item-inr">
+                                <img class="shopping-item-course-image" src={{FILE_URL+data.coursephoto}} alt=""
+                                    loading="lazy">
+                            </div>
+                        </div>
+                        <div class="shopping-item-header">
+                            <h3 class="ueg-heading-md shopping-item" data-purpose="course-title-url"
+                                (click)="goto(data.courseid)"><a>{{data.coursename}}</a></h3>
+                            <div class="ueg-text-xs shopping-item">
+                                <span class="shopping-item-instructor-list">
+                                    <div [innerHTML]="data.shortdesc"></div>
+                                </span>
+                            </div>
+                            <!-- <div class="shopping-item-badges">
+                            <div class="ueg-badge">
+                                Bestseller</div>
+                            <div class=" ueg-badge">
+                                Updated Recently</div>
+                            <div class="ueg_ratng">
+                                <span class="ueg-sr-only">4.6</span> 
+                                <ul>
+                                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                    </ul>
+                                    <span class="ueg-shopping-item--reviews">(40,073 ratings)</span>
+                                </div>
+                        </div> -->
+
+                        </div>
+                        <div class="shopping-item-vertical-rit">
+                            <div class="shopping-item-vertical-actions">
+                                <button type="button" class="" (click)="remove(data.courseid)">Remove</button>
+                                <button type="button" class="">Save for Later</button>
+                                <button type="button" class="" (click)="moveToWishlist(data.courseid)">Move to Wishlist</button>
+                            </div>
+                            <div class="quantity-controls">
+                                <button type="button" (click)="updateQuantity(data.courseid, data.quantity - 1)" [disabled]="data.quantity <= 1">-</button>
+                                <span>{{data.quantity}}</span>
+                                <button type="button" (click)="updateQuantity(data.courseid, data.quantity + 1)">+</button>
+                            </div>
+                            <div class="price-rit">
+                                <span>£{{data.price}} <i class="fa fa-tag" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ueg-cart-section-checkout-pane">
+                    <div>
+                        <div class="total-price-total-checkout">
+                            <div class="price-text-container" data-purpose="price-text-container">
+                                <div class="total-price-total">Total:</div>
+                                <div class="price-text"><span>₹{{total}}</span></div>
+                            </div>
+                        </div>
+                        <div class="w-100 my-2">
+                            <button type="button" class="checkout-button btn btn-primary">Checkout</button>
+                        </div>
+                        <hr>
+                        <div class="">
+                            <div>
+                                <p class="ueg-heading-md redeem-coupon">Promotions</p>
+
+                                <div class="coupon-form-coupon-form"><label
+                                        class="ueg-sr-only ueg-form-label ueg-heading-sm">Apply coupon</label>
+                                    <form class="coupon-form-coupon-inr">
+                                        <input placeholder="Enter Coupon" id="" type="text"
+                                            class="form-control ueg-text-input-promo">
+                                        <button type="submit" class="ueg-btn-apply btn-dark">Apply</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <!-- prerecorded section -->
+            <div class="container-fluid resource_section">
+                <div class="resource_top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 resource_headr">
+                                <h4 class="title">You might also like</h4>
+                                <div class="home-banner-header-divider mid-divdr"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div id="prerecorded_caro" class="prerecorded_caro owl-carousel owl-theme">
+                                    <div class="items">
+                                        <div class="layer single-carousel-item">
+                                            <a class="carousel-link"
+                                                href="https://www.unioneducationgroup.com/Course/3126">
+                                                <div class="layer component">
+                                                    <div class="layer carousel-image">
+                                                        <div class="zoomimg"><img
+                                                                src="assets/img/photo-1461749280684-dccba630e2f6.avif"
+                                                                style="height: 100%;"></div>
+                                                    </div>
+                                                    <div class="layer course-tn-category"> <img
+                                                            src="assets/img/course-icon-1.svg" style="width: 20px;">
+                                                        <span>Computing
+                                                            and IT</span>
+                                                    </div>
+                                                    <div class="layer">
+                                                        <div class="layer">
+                                                            <div class="layer course-tn-name">Programming
+                                                                in Swift
+                                                            </div>
+                                                            <div class="layer autre">
+                                                                Andrew G</div>
+                                                            <div class="layer">
+                                                                <div class="layer component">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="items">
+                                        <div class="layer single-carousel-item">
+                                            <a class="carousel-link"
+                                                href="https://www.unioneducationgroup.com/Course/2992">
+                                                <div class="layer component">
+                                                    <div class="layer carousel-image">
+                                                        <div class="zoomimg"><img
+                                                                src="assets/img/yoga%20to%20energise%20banner%203.jpg"
+                                                                style="height: 100%;"></div>
+                                                    </div>
+                                                    <div class="layer course-tn-category"> <img
+                                                            src="assets/img/course-icon-4.svg" style="width: 20px;">
+                                                        <span>Exercise</span>
+                                                    </div>
+                                                    <div class="layer">
+                                                        <div class="layer">
+                                                            <div class="layer course-tn-name">Yoga
+                                                                To Energise and Focus
+                                                            </div>
+                                                            <div class="layer autre">
+                                                                Phoebe N</div>
+                                                            <div class="layer">
+                                                                <div class="layer component">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="items">
+                                        <div class="layer single-carousel-item">
+                                            <a class="carousel-link"
+                                                href="https://www.unioneducationgroup.com/Course/3123">
+                                                <div class="layer component">
+                                                    <div class="layer carousel-image">
+                                                        <div class="zoomimg"><img
+                                                                src="assets/img/photo-1582547761303-4899595f0f35.avif"
+                                                                style="height: 100%;"></div>
+                                                    </div>
+                                                    <div class="layer course-tn-category"> <img
+                                                            src="assets/img/course-icon-1.svg" style="width: 20px;">
+                                                        <span>English
+                                                            Literature</span>
+                                                    </div>
+                                                    <div class="layer">
+                                                        <div class="layer">
+                                                            <div class="layer course-tn-name">Mary
+                                                                Shelley's 'Frankenstein':
+                                                                An
+                                                                In-Depth Analysis
+                                                            </div>
+                                                            <div class="layer autre">
+                                                                Elena P</div>
+                                                            <div class="layer">
+                                                                <div class="layer component">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="items">
+                                        <div class="layer single-carousel-item">
+                                            <a class="carousel-link"
+                                                href="https://www.unioneducationgroup.com/Course/2733">
+                                                <div class="layer component">
+                                                    <div class="layer carousel-image">
+                                                        <div class="zoomimg"><img
+                                                                src="assets/img/data-representation-49%20banner%202.jpg"
+                                                                style="height: 100%;"></div>
+                                                    </div>
+                                                    <div class="layer course-tn-category"> <img
+                                                            src="assets/img/course-icon-1.svg" style="width: 20px;">
+                                                        <span>Computing
+                                                            and IT</span>
+                                                    </div>
+                                                    <div class="layer">
+                                                        <div class="layer">
+                                                            <div class="layer course-tn-name">Components
+                                                                of a Computer
+                                                            </div>
+                                                            <div class="layer autre">
+                                                                Dawn H</div>
+                                                            <div class="layer">
+                                                                <div class="layer component">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="items">
+                                        <div class="layer single-carousel-item">
+                                            <a class="carousel-link"
+                                                href="https://www.unioneducationgroup.com/Course/2730">
+                                                <div class="layer component">
+                                                    <div class="layer carousel-image">
+                                                        <div class="zoomimg"><img
+                                                                src="assets/img/python-for-beginners--introduction-to-text-file-handling-49%25.jpg"
+                                                                style="height: 100%;"></div>
+                                                    </div>
+                                                    <div class="layer course-tn-category"> <img
+                                                            src="assets/img/course-icon-1.svg" style="width: 20px;">
+                                                        <span>Computing
+                                                            and IT</span>
+                                                    </div>
+                                                    <div class="layer">
+                                                        <div class="layer">
+                                                            <div class="layer course-tn-name">Python
+                                                                for Beginners:
+                                                                Introduction to
+                                                                Text File Handling
+                                                            </div>
+                                                            <div class="layer autre">
+                                                                Dawn H</div>
+                                                            <div class="layer">
+                                                                <div class="layer component">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="items">
+                                        <div class="layer single-carousel-item">
+                                            <a class="carousel-link"
+                                                href="https://www.unioneducationgroup.com/Course/2991">
+                                                <div class="layer component">
+                                                    <div class="layer carousel-image">
+                                                        <div class="zoomimg"><img
+                                                                src="assets/img/-1858-20201216-10_45AM.jpg"
+                                                                style="height: 100%;"></div>
+                                                    </div>
+                                                    <div class="layer course-tn-category"> <img
+                                                            src="assets/img/course-icon-4.svg" style="width: 20px;">
+                                                        <span>Exercise</span>
+                                                    </div>
+                                                    <div class="layer">
+                                                        <div class="layer">
+                                                            <div class="layer course-tn-name">Yoga
+                                                                for Flexibility: Body
+                                                                and Mind
+                                                            </div>
+                                                            <div class="layer autre">
+                                                                Phoebe N</div>
+                                                            <div class="layer">
+                                                                <div class="layer component">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="items">
+                                        <div class="layer single-carousel-item">
+                                            <a class="carousel-link"
+                                                href="https://www.unioneducationgroup.com/Course/3126">
+                                                <div class="layer component">
+                                                    <div class="layer carousel-image">
+                                                        <div class="zoomimg"><img
+                                                                src="assets/img/photo-1461749280684-dccba630e2f6.avif"
+                                                                style="height: 100%;"></div>
+                                                    </div>
+                                                    <div class="layer course-tn-category"> <img
+                                                            src="assets/img/course-icon-1.svg" style="width: 20px;">
+                                                        <span>Computing
+                                                            and IT</span>
+                                                    </div>
+                                                    <div class="layer">
+                                                        <div class="layer">
+                                                            <div class="layer course-tn-name">Programming
+                                                                in Swift
+                                                            </div>
+                                                            <div class="layer autre">
+                                                                Andrew G</div>
+                                                            <div class="layer">
+                                                                <div class="layer component">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</main>

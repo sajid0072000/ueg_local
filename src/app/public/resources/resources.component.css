@@ -1,0 +1,103 @@
+.bg-light-blue {
+    background: color #183cdf;;
+}
+
+.courses-card {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+
+
+/* new */
+
+.resources_caro .courses-h-list .layer.single-carousel-item {
+    margin-bottom: 20px;
+}
+
+.layer.single-carousel-item.ueg_resg {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.resources_caro .courses-h-list {
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.courses-h-list {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.lmtitle {
+    font-family: 'LEMON MILK' !important;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: var(--ueg-dark-blue) !important;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+
+.courses-box {
+    padding: 14px 33px 20px 33px;
+}
+
+
+.courses-h-list {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.resources_caro .courses-h-list .layer.single-carousel-item {
+    margin-bottom: 20px;
+}
+
+.layer.single-carousel-item.ueg_resg {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.resources_caro .courses-h-list .layer.course-tn-category span {
+    font: normal normal 300 8px/18px;
+    margin-left: 5px;
+    color: #0B154B;
+}
+
+.ueg_resg .layer.course-tn-category span {
+    font: normal normal 300 8px/18px;
+    margin-left: 5px;
+    color: #0B1;
+}
+
+.iconImag{
+    height: 15px;
+    width: 15px;
+}
+
+
+#poplre_caro1 .zoomimg img {
+    width: 100%;
+    transform: scale(1);
+    object-fit: none;
+} 
+#tech_caro .zoomimg img{
+    width: 100%;
+    transform: scale(1);
+    object-fit: none;
+}
+
+.similar-res{
+    height: 150px;
+}
+
+.bdr-none{
+    border-radius: 0 !important;
+}

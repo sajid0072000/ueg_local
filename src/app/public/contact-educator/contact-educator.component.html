@@ -1,0 +1,41 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <div class="stack-column d-flex">
+            <h4 class="title">Contact Educator</h4>
+            <hr class="big-blue">
+        </div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModal()">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12 pb-3">
+                <p class="content" ffattr="emailName"><b>Educator: </b>{{educator}}</p>
+            </div>
+            <div class="col-md-6 pb-3">
+                <input type="text" id="enrolName" class="form-control" placeholder="Name" [(ngModel)]="name"  (keypress)="onKeyPressName($event)"/>
+                <span class="error-msg" *ngIf="nameErr">Name required</span>
+                <span class="error-msg" *ngIf="validNameErr && nameErr==false">Name required</span>
+
+            </div>
+            <div class="col-md-6 pb-3">
+                <input type="tel" id="enrolPhone" class="form-control" placeholder="Phone" [(ngModel)]="mobile" (keypress)="onKeyPressMobile($event)"
+                (keyup)="mobileFun()"/>
+                <span class="error-msg" *ngIf="mobileErr">Phone number required</span>
+                <span class="error-msg" *ngIf="validMobileErr && mobileErr==false">Valid phone number required</span>
+            </div>
+            <div class="col-md-12 pb-3">
+                <input type="email" id="enrolEmail" class="form-control" placeholder="Email" [(ngModel)]="email" (keyup)="changeEmailFun()" />
+                <span class="error-msg" *ngIf="emailErr">Email required</span>
+                <span class="error-msg" *ngIf="validEmailErr">Valid email required</span>
+            </div>
+            <div class="col-md-12 d-flex" style="justify-content: flex-end;">
+                <button class="btn btn-yellow" id="submitEnrol" (click)="add()">Submit</button>
+            </div>
+            <div id="notification"></div>
+        </div>
+    </div>
+</div>
+
+

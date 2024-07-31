@@ -1,0 +1,98 @@
+
+<div class="resource_package  bg-light-blue py-2 for-moblie">
+   <div class="container">
+      <div class="resource_package_inr">
+         <div class="paginat">
+            <ul class="cp">
+               <li><a href="">Home</a> /</li>
+               <li><a >Resources</a> /</li>
+               <li>{{resourcecategoryname}}</li>
+            </ul>
+         </div>
+         <div class="row align-items-start">
+            <div class="col-lg-5 col-md-12" id="slider">
+               <div id="myCarousel" class="carousel slide">
+                  <div class="carousel-inner">
+                     <div class="active carousel-item " data-slide-number="0" style="height: 465px; display: flex; justify-content: center; align-items: center; border-radius: 10px;"  [ngStyle]="{'background-color': backgroundColor}"> 
+                        <img  [src]="this.common.imgCheck(resourceimg)" onerror="this.onerror=null; this.src='assets/img/gray.png'" class="img-fluid border-rad">
+                      </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-7 col-md-12">
+               <div class="detaild_pays">
+                  <div class="desc_div">
+                     <h4>{{resourcename}}</h4>
+                     <div class="prod_dtls">
+                        <p class="mb-1">This pack would be suitable for the following schools
+                        </p>
+                        <ul *ngFor="let item of schoolListArr">
+                           <li>• {{item.schoolname}}</li>
+                        </ul>
+                     </div>
+                     <div class="prod_brif_des">
+                        <div class="prod_brif_titl">
+                        </div>
+                        <p id="DescResource" style="display: none;">
+                           &lt;p&gt;Maths Level 1 Pack 1 - Test&amp;nbsp;&lt;/p&gt;
+                           <br> &lt;p&gt;This is a level 1 pack for 11+ maths.&amp;nbsp;&lt;/p&gt;
+                        </p>
+                        <p id="TestP">
+                        <p [innerHTML]="resourcedesc1">&nbsp;</p>
+                        <p [innerHTML]="resourcedesc2">&nbsp;</p>
+                     </div>
+                  </div>
+                  <div class="pays_div">
+                     <p>Available: <span>In Stock</span></p>
+                     <div class="prout_price">
+                        <h3>£{{resourceprice}}</h3>
+                     </div>
+                     <div class="age_select sele-intr">
+                        <h5>Age</h5>
+                        <div class="age">
+                           <div class='col-text-center'>
+                              <input type="radio" name="imgbackground" id="img1" class="d-none imgbgchk" value="">
+                              <label for="img1">
+                                 <strong>{{agerangename}}</strong>
+                                 <div class="tick_container">
+                                    <div class="tick">&nbsp;</div>
+                                 </div>
+                              </label>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="age_select">
+                        <h5>Level</h5>
+                        <div class="age">
+                           <div class='col-text-center'>
+                              <input type="radio" name="imgbackground" id="img6" class="d-none imgbgchk" value="">
+                              <label for="img6">
+                                 <strong>{{resourcelevel}}</strong>
+                                 <div class="tick_container">
+                                    <div class="tick">&nbsp;</div>
+                                 </div>
+                              </label>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="qntty">
+                        <h5>Quantity</h5>
+                        <div class="qntty_innr">
+                           <input type="text" [(ngModel)]="quantity" ((keydown))="false" readonly>
+                           <button class="btn btn-addq">+</button>
+                           <button class="btn btn-subq" >-</button>
+                        </div>
+                     </div>
+                     <div class="add_bskt">
+                        <button class="btn enrol-btn btn-baskt">ADD TO BASKET <img
+                              src="assets/img/cart-icon.png"></button>
+                        <button class="btn enrol-btn btn-paynw">CHECK OUT</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,19 @@
+
+.profile_img {
+    height: 190px;
+    width: 240px;
+    padding: 0;
+}
+
+.image-upload > input
+{
+    display: none;
+}
+
+.image-upload img
+{   display: inline;
+    width: 30px;
+    cursor: pointer;
+}
+  
+

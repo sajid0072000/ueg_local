@@ -1,0 +1,185 @@
+   /* Forms/INputs */
+   .form-control {
+    border-radius: 0 !important;
+    padding: 1.5rem;
+    font-family: 'Lato' !important;
+    font-weight: 400;
+    color: rgba(0,0,0,1);
+    font-size: 1rem;
+    background-color: white;
+}
+
+.contact-item {
+    padding: .5rem;
+}
+
+.contact-form {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+#courseLink {
+    border-radius: 0 !important;
+    padding: .5rem;
+    font-family: 'Lato' !important;
+    font-weight: 400;
+    color: rgba(0,0,0,0.4);
+    font-size: 1rem;
+    background-color: white;
+}
+
+.content.submit-text {
+    font-family: 'Lato', sans-serif;
+    color: rgba(0,0,0,0.2);
+    font-size: 13px;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    letter-spacing: 0;
+    word-spacing: 0;
+}
+
+.partnerships .home-banner-blue-arrow {
+    height: unset;
+}
+
+.home-banner.partnerships {
+    background-image: url('/img/partnershipBannerBackground.jpg') !important;
+}
+
+    .home-banner.partnerships .home-banner-text {
+        position: relative;
+        height: 100%;
+        top: 0px;
+        z-index: 1;
+    }
+
+    .home-banner.partnerships .home-banner-blue-arrow {
+        position: relative;
+        top: -100%;
+        z-index: 0;
+    }
+
+    .home-banner.partnerships .home-banner-text .home-banner-left h1 {
+        color: white;
+    }
+
+    .home-banner.partnerships .home-banner-text .home-banner-left h2 {
+        color: white;
+    }
+
+    .home-banner.partnerships .home-banner-text .home-banner-left .home-banner-header-divider {
+        border: 10px solid #00cad9;
+        background-color: var(--ueg-aqua);
+    }
+
+.sub-banner-background.display-on-mobile.blue-triangle.partnerships {
+    position: relative;
+    top: -100%;
+    z-index: 0;
+}
+
+.single-sector img {
+    height: 40px;
+    width: auto;
+    margin-right: 1rem;
+}
+
+.partnerships-banner.partnerships-banner-contact-background {
+    background-size: contain;
+    background-position-x: 100%;
+    background-repeat: no-repeat;
+    background-color: #fff;
+}
+
+.banner-triangle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 60%;
+    object-fit: cover;
+}
+
+.partnerships-banner-row {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.partnerships-banner-content .main-content {
+    z-index: 10;
+    background: none;
+}
+
+.partnerships-banner .main-title {
+    font-family: 'LEMON MILK';
+    color: var(--ueg-dark-blue);
+    letter-spacing: .6rem;
+    font-weight: 400;
+    font-size: 60px;
+}
+
+.main-banner-line.white {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 300px;
+    border-top: 15px solid #fff !important;
+    border-radius: 25px !important;
+}
+
+.partnerships-banner.contact .main-content-para {
+    color: var(--dark-indigo);
+    font-family: Lato,sans-serif;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 23px;
+}
+
+.email.contact {
+    color: var(--ueg-dark-blue);
+    font-size: 25px;
+    font-family: Lato;
+    letter-spacing: .05rem;
+    padding-top: .3rem;
+}
+
+.partnerships-contact-banner {
+    height: 604px;
+}
+
+.banner-contact-us {
+    background-image: url(/img/banners/contact-us.jpg);
+}
+
+.terms-conditions {
+    font-family: 'Lato', sans-serif;
+    color: rgba(0,0,0,0.2);
+    font-size: 13px;
+    letter-spacing: 0;
+    word-spacing: 0;
+    overflow: hidden; 
+    /* text-overflow: ellipsis; */
+    white-space: nowrap;
+}
+.partnerships-banner .main-banner-line {
+margin-left: 0 !important;
+margin-right: 0 !important;
+width: 300px;
+border-top: 15px solid var(--ueg-aqua);
+border-radius: 25px;
+opacity: 1;
+}
+.container {
+width: 100%;
+padding-right: 15px;
+padding-left: 15px;
+margin-right: auto;
+margin-left: auto;
+}
+
+.termCheck{
+    /* padding-top: 3px; */
+    /* margin-left: -30px; */
+  }
+  

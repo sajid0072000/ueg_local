@@ -1,0 +1,750 @@
+<div class="banner home-banner about-banner" [ngStyle]="{'background-image': 'url('+bannerImg+')'} "
+    style="position: relative;">
+
+    <div class="home-banner-blue-arrow">
+        <img class="display-off-mobile" src="assets/img/blue-round-triangle.png">
+        <img class="display-on-mobile" src="assets/img/blue-round-triangle-mobile.png">
+    </div>
+    <div class="container home-banner-text becm-eductr">
+        <div class="row">
+            <div class="col-lg-6 home-banner-left pt-5">
+                <h1>Become an Educator</h1>
+                <div class="home-banner-header-divider"></div>
+                <a class="btn btn-yellow" (click)="scrollToSection('sign-up')">SIGN UP</a>
+                <span id="uk-students"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div [ngClass]="{'fixed-top' : isNav}">
+    <div class="container-flex info-bar bg-gray" id="info-bar" [ngStyle]="{'display': isNav ? 'block' : 'none' }">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-6 course-title">
+                    <h4 class="cour-title" ffattr="courseTitle">
+                        BECOME AN EDUCATOR
+                    </h4>
+                </div>
+                <div class="col-lg-3 single-sector" style="justify-content: flex-end;">
+                    <p class="educator-type-text" ffattr="courseSector"></p>
+
+                </div>
+                <div class="col-lg-3">
+                    <a data-toggle="modal" data-target="#enrolCourse" class="btn btn-yellow"
+                        (click)="scrollToSection('sign-up')">SIGN UP</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="paginationFixed" class="pagination container-flex">
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center text-center">
+                <div class="col-md-2 nav-item">
+                    <a [ngClass]="{'active' : isNav && isActiveDiv == '1'}" class="nav-link" id="anchor"
+                        (click)="scrollToSection('uk-students')">UK Students</a>
+                </div>
+                <div class="col-md-2 nav-item">
+                    <a [ngClass]="{'active' : isNav && isActiveDiv == '2'}" class="nav-link" id="anchor"
+                        (click)="scrollToSection('online-courses')">Online Courses</a>
+                </div>
+                <div class="col-md-2 nav-item">
+                    <a [ngClass]="{'active' : isNav && isActiveDiv == '3'}" class="nav-link" id="anchor"
+                        (click)="scrollToSection('international-travel')">International
+                        Travel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="pagination" class="display-off-mobile" style="display: none;">
+    <div class="container-flex info-bar bg-gray">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-9 course-title">
+                    <h4 class="title" ffattr="courseTitle">About UEG</h4>
+                </div>
+                <div class="col-lg-3">
+                    <a (click)="this.common.getStarted()" class="btn btn-yellow">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- educator-navigation.end -->
+
+<div class="container-flex content-section" id="uk-students1">
+    <a></a>
+    <div class="container trusted-content-container">
+        <div class="row">
+            <div class="col-lg-6 virtual-class-img-container">
+                <img class="image virtual-class-img w-100" src="assets/img/trusted-content.png">
+                <div class="social-icons col-lg-10 mt-5" style="margin-top: -3rem !important;">
+                    <div class="single-social col-md-2 col-3">
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 990.83 1000">
+                            <defs>
+                                <linearGradient id="linear-gradient" x1="8.39" y1="142.89" x2="11.13" y2="125.65"
+                                    gradientTransform="matrix(33.33, 0, 0, -33.33, -33.33, 4766.67)"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0.01" stop-color="#00b7f0"></stop>
+                                    <stop offset="0.34" stop-color="#009de5"></stop>
+                                    <stop offset="0.76" stop-color="#0082d9"></stop>
+                                    <stop offset="1" stop-color="#0078d4"></stop>
+                                </linearGradient>
+                                <linearGradient id="linear-gradient-2" x1="14.38" y1="117.36" x2="29.55" y2="126.11"
+                                    gradientTransform="matrix(33.33, 0, 0, -33.33, -33.33, 4766.67)"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#0078d4"></stop>
+                                    <stop offset="0.37" stop-color="#007ad5"></stop>
+                                    <stop offset="0.57" stop-color="#0082d9"></stop>
+                                    <stop offset="0.73" stop-color="#0090df"></stop>
+                                    <stop offset="0.88" stop-color="#00a3e7"></stop>
+                                    <stop offset="1" stop-color="#00bcf2"></stop>
+                                </linearGradient>
+                                <linearGradient id="linear-gradient-3" x1="10.45" y1="137.31" x2="24.29" y2="113.34"
+                                    gradientTransform="matrix(33.33, 0, 0, -33.33, -33.33, 4766.67)"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#00b7f0"></stop>
+                                    <stop offset="1" stop-color="#007cc1"></stop>
+                                </linearGradient>
+                            </defs>
+                            <path
+                                d="M583.93,291c0,160.71-130.71,291-292,291h0C130.72,582,0,451.71,0,291H0C0,130.29,130.72,0,292,0h0c161.25,0,292,130.29,292,291h0"
+                                transform="translate(0 0)" fill="url(#linear-gradient)"></path>
+                            <path
+                                d="M990.83,708.9c0,160.77-130.76,291.1-292.06,291.1S406.7,869.67,406.7,708.9,537.46,417.8,698.77,417.8,990.83,548.13,990.83,708.9h0"
+                                transform="translate(0 0)" fill="url(#linear-gradient-2)"></path>
+                            <path
+                                d="M1.07,315.9C14.32,476.58,155.32,596.1,316,582.85s280.2-154.26,267-314.94A292,292,0,0,0,328.3,2.23,530.52,530.52,0,0,0,1.07,315.9Z"
+                                transform="translate(0 0)" fill-rule="evenodd" opacity="0.05" style="isolation:isolate">
+                            </path>
+                            <path
+                                d="M990.07,688C979,527.09,839.66,405.59,678.75,416.61S396.34,567,407.37,727.93A292,292,0,0,0,672.3,998.8,530.52,530.52,0,0,0,990.07,688Z"
+                                transform="translate(0 0)" fill-rule="evenodd" opacity="0.05" style="isolation:isolate">
+                            </path>
+                            <path
+                                d="M14.73,382.43C64.81,535.63,229.6,619.23,382.8,569.15S619.59,354.28,569.51,201.08A291.88,291.88,0,0,0,394.67,18.53,496.45,496.45,0,0,0,14.73,382.43Z"
+                                transform="translate(0 0)" fill-rule="evenodd" opacity="0.1" style="isolation:isolate">
+                            </path>
+                            <path
+                                d="M976.8,619.6C927.89,466,763.7,381.07,610.07,430S371.54,643.07,420.44,796.7A292,292,0,0,0,603.73,984.23,496.42,496.42,0,0,0,976.8,619.6Z"
+                                transform="translate(0 0)" fill-rule="evenodd" opacity="0.1" style="isolation:isolate">
+                            </path>
+                            <path
+                                d="M25.47,410c65.36,147.29,237.75,213.7,385,148.33s213.7-237.75,148.33-385A291.74,291.74,0,0,0,421.93,30.37,479.55,479.55,0,0,0,25.47,410Z"
+                                transform="translate(0 0)" fill-rule="evenodd" opacity="0.1" style="isolation:isolate">
+                            </path>
+                            <path
+                                d="M966,591.43C901.55,443.7,729.52,376.21,581.78,440.69S366.56,677.21,431,824.94a291.88,291.88,0,0,0,144.56,148A479.52,479.52,0,0,0,966,591.43Z"
+                                transform="translate(0 0)" fill-rule="evenodd" opacity="0.1" style="isolation:isolate">
+                            </path>
+                            <path
+                                d="M957.9,502.17c0,254.54-207,460.9-462.43,460.9h0C240.07,963.07,33,756.71,33,502.17h0c0-254.55,207-460.9,462.44-460.9h0c255.39,0,462.43,206.35,462.43,460.9h0"
+                                transform="translate(0 0)" fill="url(#linear-gradient-3)"></path>
+                            <path
+                                d="M365.43,486.17a145.26,145.26,0,0,1-45.56-48.07,132.74,132.74,0,0,1-15.6-66.43,119.39,119.39,0,0,1,28.13-80.4,169.32,169.32,0,0,1,73.33-49,283.29,283.29,0,0,1,96-16.17A373.31,373.31,0,0,1,565.6,231a230.33,230.33,0,0,1,44.3,11.43,85.9,85.9,0,0,1,34.67,22.14,44.83,44.83,0,0,1,10.7,29.76,43.15,43.15,0,0,1-11.27,31,37.49,37.49,0,0,1-28.3,11.8,50.94,50.94,0,0,1-21-4.74,381.52,381.52,0,0,0-50.1-18.33,182,182,0,0,0-48.27-6,110.16,110.16,0,0,0-60.47,15.47,50.27,50.27,0,0,0-24.13,45.16,45.45,45.45,0,0,0,12.53,31.77A114.4,114.4,0,0,0,458,424.67q21.24,10.53,63.33,27.93a65.73,65.73,0,0,1,9.07,3.63,450.73,450.73,0,0,1,78.4,40.3,158.09,158.09,0,0,1,48.27,49.54,130.68,130.68,0,0,1,17.43,68.8,138.41,138.41,0,0,1-24.13,82.93,143.6,143.6,0,0,1-67.5,50.1A284.36,284.36,0,0,1,481.4,764.43a319.66,319.66,0,0,1-138.3-26.16,75.38,75.38,0,0,1-28.47-22.14A49.75,49.75,0,0,1,305.37,686a39.37,39.37,0,0,1,12.16-30.67,44.85,44.85,0,0,1,31.37-11.06,80.26,80.26,0,0,1,36.67,9.43q21.06,10.53,33.23,15.8a167.25,167.25,0,0,0,28.67,9.07,164.59,164.59,0,0,0,36.83,3.8,98.38,98.38,0,0,0,61.9-16.5,54.53,54.53,0,0,0,20.87-45.2,48,48,0,0,0-13.07-33,138.82,138.82,0,0,0-38.47-28Q490.11,546.26,444,527a442.77,442.77,0,0,1-78.57-40.83"
+                                transform="translate(0 0)" fill="#fff" fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div class="single-social col-md-2 col-3 teams">
+                        <svg version="1.1" id="Livello_1" xmlns:x="&amp;ns_extend;" xmlns:i="&amp;ns_ai;"
+                            xmlns:graph="&amp;ns_graphs;" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2228.833 2073.333"
+                            enable-background="new 0 0 2228.833 2073.333" xml:space="preserve">
+                            <metadata>
+                                <!-- <sfw xmlns="&amp;ns_sfw;">
+                            <slices></slices>
+                            <slicesourcebounds bottomleftorigin="true" height="2073.333" width="2228.833" x="-1116.333" y="-1012.667">
+            </slicesourcebounds>
+    </sfw> -->
+                            </metadata>
+                            <path fill="#5059C9" d="M1554.637,777.5h575.713c54.391,0,98.483,44.092,98.483,98.483c0,0,0,0,0,0v524.398
+    c0,199.901-162.051,361.952-361.952,361.952h0h-1.711c-199.901,0.028-361.975-162-362.004-361.901c0-0.017,0-0.034,0-0.052V828.971
+    C1503.167,800.544,1526.211,777.5,1554.637,777.5L1554.637,777.5z"></path>
+                            <circle fill="#5059C9" cx="1943.75" cy="440.583" r="233.25"></circle>
+                            <circle fill="#7B83EB" cx="1218.083" cy="336.917" r="336.917"></circle>
+                            <path fill="#7B83EB" d="M1667.323,777.5H717.01c-53.743,1.33-96.257,45.931-95.01,99.676v598.105
+    c-7.505,322.519,247.657,590.16,570.167,598.053c322.51-7.893,577.671-275.534,570.167-598.053V877.176
+    C1763.579,823.431,1721.066,778.83,1667.323,777.5z"></path>
+                            <path opacity="0.1" enable-background="new    " d="M1244,777.5v838.145c-0.258,38.435-23.549,72.964-59.09,87.598
+    c-11.316,4.787-23.478,7.254-35.765,7.257H667.613c-6.738-17.105-12.958-34.21-18.142-51.833
+    c-18.144-59.477-27.402-121.307-27.472-183.49V877.02c-1.246-53.659,41.198-98.19,94.855-99.52H1244z"></path>
+                            <path opacity="0.2" enable-background="new    " d="M1192.167,777.5v889.978c-0.002,12.287-2.47,24.449-7.257,35.765
+    c-14.634,35.541-49.163,58.833-87.598,59.09H691.975c-8.812-17.105-17.105-34.21-24.362-51.833
+    c-7.257-17.623-12.958-34.21-18.142-51.833c-18.144-59.476-27.402-121.307-27.472-183.49V877.02
+    c-1.246-53.659,41.198-98.19,94.855-99.52H1192.167z"></path>
+                            <path opacity="0.2" enable-background="new    " d="M1192.167,777.5v786.312c-0.395,52.223-42.632,94.46-94.855,94.855h-447.84
+    c-18.144-59.476-27.402-121.307-27.472-183.49V877.02c-1.246-53.659,41.198-98.19,94.855-99.52H1192.167z"></path>
+                            <path opacity="0.2" enable-background="new    " d="M1140.333,777.5v786.312c-0.395,52.223-42.632,94.46-94.855,94.855H649.472
+    c-18.144-59.476-27.402-121.307-27.472-183.49V877.02c-1.246-53.659,41.198-98.19,94.855-99.52H1140.333z"></path>
+                            <path opacity="0.1" enable-background="new    " d="M1244,509.522v163.275c-8.812,0.518-17.105,1.037-25.917,1.037
+    c-8.812,0-17.105-0.518-25.917-1.037c-17.496-1.161-34.848-3.937-51.833-8.293c-104.963-24.857-191.679-98.469-233.25-198.003
+    c-7.153-16.715-12.706-34.071-16.587-51.833h258.648C1201.449,414.866,1243.801,457.217,1244,509.522z"></path>
+                            <path opacity="0.2" enable-background="new    " d="M1192.167,561.355v111.442c-17.496-1.161-34.848-3.937-51.833-8.293
+    c-104.963-24.857-191.679-98.469-233.25-198.003h190.228C1149.616,466.699,1191.968,509.051,1192.167,561.355z"></path>
+                            <path opacity="0.2" enable-background="new    " d="M1192.167,561.355v111.442c-17.496-1.161-34.848-3.937-51.833-8.293
+    c-104.963-24.857-191.679-98.469-233.25-198.003h190.228C1149.616,466.699,1191.968,509.051,1192.167,561.355z"></path>
+                            <path opacity="0.2" enable-background="new    " d="M1140.333,561.355v103.148c-104.963-24.857-191.679-98.469-233.25-198.003
+    h138.395C1097.783,466.699,1140.134,509.051,1140.333,561.355z"></path>
+                            <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="198.099" y1="1683.0726"
+                                x2="942.2344" y2="394.2607" gradientTransform="matrix(1 0 0 -1 0 2075.3333)">
+                                <stop offset="0" style="stop-color:#5A62C3"></stop>
+                                <stop offset="0.5" style="stop-color:#4D55BD"></stop>
+                                <stop offset="1" style="stop-color:#3940AB"></stop>
+                            </linearGradient>
+                            <path fill="url(#SVGID_1_)" d="M95.01,466.5h950.312c52.473,0,95.01,42.538,95.01,95.01v950.312c0,52.473-42.538,95.01-95.01,95.01
+    H95.01c-52.473,0-95.01-42.538-95.01-95.01V561.51C0,509.038,42.538,466.5,95.01,466.5z"></path>
+                            <path fill="#FFFFFF"
+                                d="M820.211,828.193H630.241v517.297H509.211V828.193H320.123V727.844h500.088V828.193z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="single-social col-md-2 col-3 zoom">
+                        <img src="assets/img/zoom.svg">
+                    </div>
+                    <div class="single-social col-md-2 col-3 online">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 608 608.162">
+                            <g id="noun_Teacher_491456" transform="translate(-30.5 -274.5)">
+                                <g id="Group_68115" data-name="Group 68115" transform="translate(30.5 274.5)">
+                                    <g id="Group_68110" data-name="Group 68110" transform="translate(364.8 212.719)">
+                                        <path id="Path_1787" data-name="Path 1787"
+                                            d="M293.5,290.981a91.281,91.281,0,1,0,182.562,0c0-50.1-41.02-91.281-91.281-91.281A91.476,91.476,0,0,0,293.5,290.981Z"
+                                            transform="translate(-293.5 -199.7)" fill="#0b154b"></path>
+                                    </g>
+                                    <g id="Group_68111" data-name="Group 68111" transform="translate(0 0)">
+                                        <path id="Path_1788" data-name="Path 1788"
+                                            d="M68.5,68.5V494.1H402.981V433.3H129.3v-304H615.7V281.381h60.8V68.5Z"
+                                            transform="translate(-68.5 -68.5)" fill="#0b154b"></path>
+                                    </g>
+                                    <g id="Group_68112" data-name="Group 68112" transform="translate(304 425.6)">
+                                        <path id="Path_1789" data-name="Path 1789"
+                                            d="M408.082,331A152.091,152.091,0,0,0,256,483.081v30.481H560V483.081C560,399.1,491.58,331,408.082,331Z"
+                                            transform="translate(-256 -331)" fill="#0b154b"></path>
+                                    </g>
+                                    <g id="Group_68113" data-name="Group 68113" transform="translate(121.6 121.6)">
+                                        <rect id="Rectangle_511" data-name="Rectangle 511" width="364.8" height="60.8"
+                                            fill="#0b154b"></rect>
+                                    </g>
+                                    <g id="Group_68114" data-name="Group 68114" transform="translate(121.6 243.2)">
+                                        <rect id="Rectangle_512" data-name="Rectangle 512" width="182.4" height="60.8"
+                                            fill="#0b154b"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <div class="content">
+                    <h3 class="title">UK STUDENTS</h3>
+                    <hr class="medium-yellow">
+                    <br>
+                    <p class="content"
+                        style="font-family: Lato !important;letter-spacing: 1px !important;font-size: 20px !important;color: var(--ueg-dark-blue) !important;word-spacing: 2px !important;">
+                        As an Educator at UEG, you’ll have the chance to work with a wide range of exceptional students
+                        across the UK. Our principal student base is in London and whether you’re looking to cover
+                        school education, university support, adult learning or corporate training, we have keen
+                        students who are looking to be connected with first-class Educators. We also work with families
+                        outside of London and residential stays are available for Educators who are looking to travel.
+                        <br><br>
+                        <span id="online-courses"></span>
+                        When working with UK students, Union Education Group also makes ample use of its resources
+                        division. When starting new lessons or courses, our students will often purchase the relevant
+                        material from UEG so that they’re best supported in their learning and Educators have everything
+                        they need to make their lessons as effective as possible. When delivering your lessons, you will
+                        be assisted with anything you need in order to produce the best possible outcomes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-flex content-section bg-white" style="background-color: #CCDEEE !important;" id="online-courses1">
+    <a></a>
+    <div class="container virtual-class-container">
+        <div class="row">
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <div class="content">
+                    <h3 class="title">ONLINE COURSES</h3>
+                    <hr class="big-blue">
+                    <br>
+                    <p class="content"
+                        style="font-family: Lato !important;letter-spacing: 1px !important;font-size: 20px !important;color: var(--ueg-dark-blue) !important;word-spacing: 2px !important;">
+                        Union Education Group has established itself via partnerships in countries such as China, India,
+                        Vietnam and the United States. Thousands of students across the world use our course platform
+                        every month due to the brilliant material provided by our Educators. Our course content is
+                        divided into four departments, each offering its own unique perspective on education and
+                        providing a holistic take on learning. Whatever your passion, we can find a home for it and
+                        connect you with groups of students who are hungry to learn.
+                        <br><br>
+                        The advantage of our international student base is that Educators are able to teach at a time
+                        that suits them and aren’t limited solely to working in the after school or work period. Every
+                        time zone from early morning till night-time is covered at UEG. Some Educators like to find the
+                        time zone that best suits them, while others prefer to carry out a full day of 6-8 hours online
+                        teaching. There is no limit to the amount of online teaching Educators can carry out if they
+                        want to make it their core focus.
+                        <span id="international-travel"></span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 virtual-class-img-container" style="padding-right: 0">
+                <img class="image virtual-class-img" src="assets/img/online-courses.png" style="padding-left: 5rem">
+                <div class="social-icons col-lg-10 mt-5" style="justify-content: flex-end; margin-top: 0 !important;">
+                    <div class="single-social col-md-2 col-3">
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 990.83 1000">
+                            <defs>
+                                <linearGradient id="linear-gradient" x1="8.39" y1="142.89" x2="11.13" y2="125.65"
+                                    gradientTransform="matrix(33.33, 0, 0, -33.33, -33.33, 4766.67)"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0.01" stop-color="#00b7f0"></stop>
+                                    <stop offset="0.34" stop-color="#009de5"></stop>
+                                    <stop offset="0.76" stop-color="#0082d9"></stop>
+                                    <stop offset="1" stop-color="#0078d4"></stop>
+                                </linearGradient>
+                                <linearGradient id="linear-gradient-2" x1="14.38" y1="117.36" x2="29.55" y2="126.11"
+                                    gradientTransform="matrix(33.33, 0, 0, -33.33, -33.33, 4766.67)"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#0078d4"></stop>
+                                    <stop offset="0.37" stop-color="#007ad5"></stop>
+                                    <stop offset="0.57" stop-color="#0082d9"></stop>
+                                    <stop offset="0.73" stop-color="#0090df"></stop>
+                                    <stop offset="0.88" stop-color="#00a3e7"></stop>
+                                    <stop offset="1" stop-color="#00bcf2"></stop>
+                                </linearGradient>
+                                <linearGradient id="linear-gradient-3" x1="10.45" y1="137.31" x2="24.29" y2="113.34"
+                                    gradientTransform="matrix(33.33, 0, 0, -33.33, -33.33, 4766.67)"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#00b7f0"></stop>
+                                    <stop offset="1" stop-color="#007cc1"></stop>
+                                </linearGradient>
+                            </defs>
+                            <path
+                                d="M583.93,291c0,160.71-130.71,291-292,291h0C130.72,582,0,451.71,0,291H0C0,130.29,130.72,0,292,0h0c161.25,0,292,130.29,292,291h0"
+                                transform="translate(0 0)" fill="url(#linear-gradient)"></path>
+                            <path
+                                d="M990.83,708.9c0,160.77-130.76,291.1-292.06,291.1S406.7,869.67,406.7,708.9,537.46,417.8,698.77,417.8,990.83,548.13,990.83,708.9h0"
+                                transform="translate(0 0)" fill="url(#linear-gradient-2)"></path>
+                            <path
+                                d="M1.07,315.9C14.32,476.58,155.32,596.1,316,582.85s280.2-154.26,267-314.94A292,292,0,0,0,328.3,2.23,530.52,530.52,0,0,0,1.07,315.9Z"
+                                transform="translate(0 0)" fill-rule="evenodd" opacity="0.05" style="isolation:isolate">
+                            </path>
+                            <path
+                                d="M990.07,688C979,527.09,839.66,405.59,678.75,416.61S396.34,567,407.37,727.93A292,292,0,0,0,672.3,998.8,530.52,530.52,0,0,0,990.07,688Z"
+                                transform="translate(0 0)" fill-rule="evenodd" opacity="0.05" style="isolation:isolate">
+                            </path>
+                            <path
+                                d="M14.73,382.43C64.81,535.63,229.6,619.23,382.8,569.15S619.59,354.28,569.51,201.08A291.88,291.88,0,0,0,394.67,18.53,496.45,496.45,0,0,0,14.73,382.43Z"
+                                transform="translate(0 0)" fill-rule="evenodd" opacity="0.1" style="isolation:isolate">
+                            </path>
+                            <path
+                                d="M976.8,619.6C927.89,466,763.7,381.07,610.07,430S371.54,643.07,420.44,796.7A292,292,0,0,0,603.73,984.23,496.42,496.42,0,0,0,976.8,619.6Z"
+                                transform="translate(0 0)" fill-rule="evenodd" opacity="0.1" style="isolation:isolate">
+                            </path>
+                            <path
+                                d="M25.47,410c65.36,147.29,237.75,213.7,385,148.33s213.7-237.75,148.33-385A291.74,291.74,0,0,0,421.93,30.37,479.55,479.55,0,0,0,25.47,410Z"
+                                transform="translate(0 0)" fill-rule="evenodd" opacity="0.1" style="isolation:isolate">
+                            </path>
+                            <path
+                                d="M966,591.43C901.55,443.7,729.52,376.21,581.78,440.69S366.56,677.21,431,824.94a291.88,291.88,0,0,0,144.56,148A479.52,479.52,0,0,0,966,591.43Z"
+                                transform="translate(0 0)" fill-rule="evenodd" opacity="0.1" style="isolation:isolate">
+                            </path>
+                            <path
+                                d="M957.9,502.17c0,254.54-207,460.9-462.43,460.9h0C240.07,963.07,33,756.71,33,502.17h0c0-254.55,207-460.9,462.44-460.9h0c255.39,0,462.43,206.35,462.43,460.9h0"
+                                transform="translate(0 0)" fill="url(#linear-gradient-3)"></path>
+                            <path
+                                d="M365.43,486.17a145.26,145.26,0,0,1-45.56-48.07,132.74,132.74,0,0,1-15.6-66.43,119.39,119.39,0,0,1,28.13-80.4,169.32,169.32,0,0,1,73.33-49,283.29,283.29,0,0,1,96-16.17A373.31,373.31,0,0,1,565.6,231a230.33,230.33,0,0,1,44.3,11.43,85.9,85.9,0,0,1,34.67,22.14,44.83,44.83,0,0,1,10.7,29.76,43.15,43.15,0,0,1-11.27,31,37.49,37.49,0,0,1-28.3,11.8,50.94,50.94,0,0,1-21-4.74,381.52,381.52,0,0,0-50.1-18.33,182,182,0,0,0-48.27-6,110.16,110.16,0,0,0-60.47,15.47,50.27,50.27,0,0,0-24.13,45.16,45.45,45.45,0,0,0,12.53,31.77A114.4,114.4,0,0,0,458,424.67q21.24,10.53,63.33,27.93a65.73,65.73,0,0,1,9.07,3.63,450.73,450.73,0,0,1,78.4,40.3,158.09,158.09,0,0,1,48.27,49.54,130.68,130.68,0,0,1,17.43,68.8,138.41,138.41,0,0,1-24.13,82.93,143.6,143.6,0,0,1-67.5,50.1A284.36,284.36,0,0,1,481.4,764.43a319.66,319.66,0,0,1-138.3-26.16,75.38,75.38,0,0,1-28.47-22.14A49.75,49.75,0,0,1,305.37,686a39.37,39.37,0,0,1,12.16-30.67,44.85,44.85,0,0,1,31.37-11.06,80.26,80.26,0,0,1,36.67,9.43q21.06,10.53,33.23,15.8a167.25,167.25,0,0,0,28.67,9.07,164.59,164.59,0,0,0,36.83,3.8,98.38,98.38,0,0,0,61.9-16.5,54.53,54.53,0,0,0,20.87-45.2,48,48,0,0,0-13.07-33,138.82,138.82,0,0,0-38.47-28Q490.11,546.26,444,527a442.77,442.77,0,0,1-78.57-40.83"
+                                transform="translate(0 0)" fill="#fff" fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div class="single-social col-md-2 col-3 teams">
+                        <svg version="1.1" id="Livello_1" xmlns:x="&amp;ns_extend;" xmlns:i="&amp;ns_ai;"
+                            xmlns:graph="&amp;ns_graphs;" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2228.833 2073.333"
+                            enable-background="new 0 0 2228.833 2073.333" xml:space="preserve">
+                            <metadata>
+                                <!-- <sfw xmlns="&amp;ns_sfw;">
+                            <slices></slices>
+                            <slicesourcebounds bottomleftorigin="true" height="2073.333" width="2228.833" x="-1116.333" y="-1012.667">
+            </slicesourcebounds>
+    </sfw> -->
+                            </metadata>
+                            <path fill="#5059C9" d="M1554.637,777.5h575.713c54.391,0,98.483,44.092,98.483,98.483c0,0,0,0,0,0v524.398
+    c0,199.901-162.051,361.952-361.952,361.952h0h-1.711c-199.901,0.028-361.975-162-362.004-361.901c0-0.017,0-0.034,0-0.052V828.971
+    C1503.167,800.544,1526.211,777.5,1554.637,777.5L1554.637,777.5z"></path>
+                            <circle fill="#5059C9" cx="1943.75" cy="440.583" r="233.25"></circle>
+                            <circle fill="#7B83EB" cx="1218.083" cy="336.917" r="336.917"></circle>
+                            <path fill="#7B83EB" d="M1667.323,777.5H717.01c-53.743,1.33-96.257,45.931-95.01,99.676v598.105
+    c-7.505,322.519,247.657,590.16,570.167,598.053c322.51-7.893,577.671-275.534,570.167-598.053V877.176
+    C1763.579,823.431,1721.066,778.83,1667.323,777.5z"></path>
+                            <path opacity="0.1" enable-background="new    " d="M1244,777.5v838.145c-0.258,38.435-23.549,72.964-59.09,87.598
+    c-11.316,4.787-23.478,7.254-35.765,7.257H667.613c-6.738-17.105-12.958-34.21-18.142-51.833
+    c-18.144-59.477-27.402-121.307-27.472-183.49V877.02c-1.246-53.659,41.198-98.19,94.855-99.52H1244z"></path>
+                            <path opacity="0.2" enable-background="new    " d="M1192.167,777.5v889.978c-0.002,12.287-2.47,24.449-7.257,35.765
+    c-14.634,35.541-49.163,58.833-87.598,59.09H691.975c-8.812-17.105-17.105-34.21-24.362-51.833
+    c-7.257-17.623-12.958-34.21-18.142-51.833c-18.144-59.476-27.402-121.307-27.472-183.49V877.02
+    c-1.246-53.659,41.198-98.19,94.855-99.52H1192.167z"></path>
+                            <path opacity="0.2" enable-background="new    " d="M1192.167,777.5v786.312c-0.395,52.223-42.632,94.46-94.855,94.855h-447.84
+    c-18.144-59.476-27.402-121.307-27.472-183.49V877.02c-1.246-53.659,41.198-98.19,94.855-99.52H1192.167z"></path>
+                            <path opacity="0.2" enable-background="new    " d="M1140.333,777.5v786.312c-0.395,52.223-42.632,94.46-94.855,94.855H649.472
+    c-18.144-59.476-27.402-121.307-27.472-183.49V877.02c-1.246-53.659,41.198-98.19,94.855-99.52H1140.333z"></path>
+                            <path opacity="0.1" enable-background="new    " d="M1244,509.522v163.275c-8.812,0.518-17.105,1.037-25.917,1.037
+    c-8.812,0-17.105-0.518-25.917-1.037c-17.496-1.161-34.848-3.937-51.833-8.293c-104.963-24.857-191.679-98.469-233.25-198.003
+    c-7.153-16.715-12.706-34.071-16.587-51.833h258.648C1201.449,414.866,1243.801,457.217,1244,509.522z"></path>
+                            <path opacity="0.2" enable-background="new    " d="M1192.167,561.355v111.442c-17.496-1.161-34.848-3.937-51.833-8.293
+    c-104.963-24.857-191.679-98.469-233.25-198.003h190.228C1149.616,466.699,1191.968,509.051,1192.167,561.355z"></path>
+                            <path opacity="0.2" enable-background="new    " d="M1192.167,561.355v111.442c-17.496-1.161-34.848-3.937-51.833-8.293
+    c-104.963-24.857-191.679-98.469-233.25-198.003h190.228C1149.616,466.699,1191.968,509.051,1192.167,561.355z"></path>
+                            <path opacity="0.2" enable-background="new    " d="M1140.333,561.355v103.148c-104.963-24.857-191.679-98.469-233.25-198.003
+    h138.395C1097.783,466.699,1140.134,509.051,1140.333,561.355z"></path>
+                            <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="198.099" y1="1683.0726"
+                                x2="942.2344" y2="394.2607" gradientTransform="matrix(1 0 0 -1 0 2075.3333)">
+                                <stop offset="0" style="stop-color:#5A62C3"></stop>
+                                <stop offset="0.5" style="stop-color:#4D55BD"></stop>
+                                <stop offset="1" style="stop-color:#3940AB"></stop>
+                            </linearGradient>
+                            <path fill="url(#SVGID_1_)" d="M95.01,466.5h950.312c52.473,0,95.01,42.538,95.01,95.01v950.312c0,52.473-42.538,95.01-95.01,95.01
+    H95.01c-52.473,0-95.01-42.538-95.01-95.01V561.51C0,509.038,42.538,466.5,95.01,466.5z"></path>
+                            <path fill="#FFFFFF"
+                                d="M820.211,828.193H630.241v517.297H509.211V828.193H320.123V727.844h500.088V828.193z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="single-social col-md-2 col-3 zoom">
+                        <img src="assets/img/zoom.svg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-flex content-section" id="international-travel1">
+    <a></a>
+    <div class="container trusted-content-container">
+        <div class="row">
+            <div class="col-lg-6 virtual-class-img-container">
+                <img class="image virtual-class-img w-74" src="assets/img/international-travel.png"
+                    style="padding-top: 3rem;">
+                <div class="social-icons col-lg-10 mt-5" style="margin-top: -1rem !important;">
+                    <div class="single-social col-md-2 col-3">
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 990.83 1000">
+                            <defs>
+                                <linearGradient id="linear-gradient" x1="8.39" y1="142.89" x2="11.13" y2="125.65"
+                                    gradientTransform="matrix(33.33, 0, 0, -33.33, -33.33, 4766.67)"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0.01" stop-color="#00b7f0"></stop>
+                                    <stop offset="0.34" stop-color="#009de5"></stop>
+                                    <stop offset="0.76" stop-color="#0082d9"></stop>
+                                    <stop offset="1" stop-color="#0078d4"></stop>
+                                </linearGradient>
+                                <linearGradient id="linear-gradient-2" x1="14.38" y1="117.36" x2="29.55" y2="126.11"
+                                    gradientTransform="matrix(33.33, 0, 0, -33.33, -33.33, 4766.67)"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#0078d4"></stop>
+                                    <stop offset="0.37" stop-color="#007ad5"></stop>
+                                    <stop offset="0.57" stop-color="#0082d9"></stop>
+                                    <stop offset="0.73" stop-color="#0090df"></stop>
+                                    <stop offset="0.88" stop-color="#00a3e7"></stop>
+                                    <stop offset="1" stop-color="#00bcf2"></stop>
+                                </linearGradient>
+                                <linearGradient id="linear-gradient-3" x1="10.45" y1="137.31" x2="24.29" y2="113.34"
+                                    gradientTransform="matrix(33.33, 0, 0, -33.33, -33.33, 4766.67)"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#00b7f0"></stop>
+                                    <stop offset="1" stop-color="#007cc1"></stop>
+                                </linearGradient>
+                            </defs>
+                            <path
+                                d="M583.93,291c0,160.71-130.71,291-292,291h0C130.72,582,0,451.71,0,291H0C0,130.29,130.72,0,292,0h0c161.25,0,292,130.29,292,291h0"
+                                transform="translate(0 0)" fill="url(#linear-gradient)"></path>
+                            <path
+                                d="M990.83,708.9c0,160.77-130.76,291.1-292.06,291.1S406.7,869.67,406.7,708.9,537.46,417.8,698.77,417.8,990.83,548.13,990.83,708.9h0"
+                                transform="translate(0 0)" fill="url(#linear-gradient-2)"></path>
+                            <path
+                                d="M1.07,315.9C14.32,476.58,155.32,596.1,316,582.85s280.2-154.26,267-314.94A292,292,0,0,0,328.3,2.23,530.52,530.52,0,0,0,1.07,315.9Z"
+                                transform="translate(0 0)" fill-rule="evenodd" opacity="0.05" style="isolation:isolate">
+                            </path>
+                            <path
+                                d="M990.07,688C979,527.09,839.66,405.59,678.75,416.61S396.34,567,407.37,727.93A292,292,0,0,0,672.3,998.8,530.52,530.52,0,0,0,990.07,688Z"
+                                transform="translate(0 0)" fill-rule="evenodd" opacity="0.05" style="isolation:isolate">
+                            </path>
+                            <path
+                                d="M14.73,382.43C64.81,535.63,229.6,619.23,382.8,569.15S619.59,354.28,569.51,201.08A291.88,291.88,0,0,0,394.67,18.53,496.45,496.45,0,0,0,14.73,382.43Z"
+                                transform="translate(0 0)" fill-rule="evenodd" opacity="0.1" style="isolation:isolate">
+                            </path>
+                            <path
+                                d="M976.8,619.6C927.89,466,763.7,381.07,610.07,430S371.54,643.07,420.44,796.7A292,292,0,0,0,603.73,984.23,496.42,496.42,0,0,0,976.8,619.6Z"
+                                transform="translate(0 0)" fill-rule="evenodd" opacity="0.1" style="isolation:isolate">
+                            </path>
+                            <path
+                                d="M25.47,410c65.36,147.29,237.75,213.7,385,148.33s213.7-237.75,148.33-385A291.74,291.74,0,0,0,421.93,30.37,479.55,479.55,0,0,0,25.47,410Z"
+                                transform="translate(0 0)" fill-rule="evenodd" opacity="0.1" style="isolation:isolate">
+                            </path>
+                            <path
+                                d="M966,591.43C901.55,443.7,729.52,376.21,581.78,440.69S366.56,677.21,431,824.94a291.88,291.88,0,0,0,144.56,148A479.52,479.52,0,0,0,966,591.43Z"
+                                transform="translate(0 0)" fill-rule="evenodd" opacity="0.1" style="isolation:isolate">
+                            </path>
+                            <path
+                                d="M957.9,502.17c0,254.54-207,460.9-462.43,460.9h0C240.07,963.07,33,756.71,33,502.17h0c0-254.55,207-460.9,462.44-460.9h0c255.39,0,462.43,206.35,462.43,460.9h0"
+                                transform="translate(0 0)" fill="url(#linear-gradient-3)"></path>
+                            <path
+                                d="M365.43,486.17a145.26,145.26,0,0,1-45.56-48.07,132.74,132.74,0,0,1-15.6-66.43,119.39,119.39,0,0,1,28.13-80.4,169.32,169.32,0,0,1,73.33-49,283.29,283.29,0,0,1,96-16.17A373.31,373.31,0,0,1,565.6,231a230.33,230.33,0,0,1,44.3,11.43,85.9,85.9,0,0,1,34.67,22.14,44.83,44.83,0,0,1,10.7,29.76,43.15,43.15,0,0,1-11.27,31,37.49,37.49,0,0,1-28.3,11.8,50.94,50.94,0,0,1-21-4.74,381.52,381.52,0,0,0-50.1-18.33,182,182,0,0,0-48.27-6,110.16,110.16,0,0,0-60.47,15.47,50.27,50.27,0,0,0-24.13,45.16,45.45,45.45,0,0,0,12.53,31.77A114.4,114.4,0,0,0,458,424.67q21.24,10.53,63.33,27.93a65.73,65.73,0,0,1,9.07,3.63,450.73,450.73,0,0,1,78.4,40.3,158.09,158.09,0,0,1,48.27,49.54,130.68,130.68,0,0,1,17.43,68.8,138.41,138.41,0,0,1-24.13,82.93,143.6,143.6,0,0,1-67.5,50.1A284.36,284.36,0,0,1,481.4,764.43a319.66,319.66,0,0,1-138.3-26.16,75.38,75.38,0,0,1-28.47-22.14A49.75,49.75,0,0,1,305.37,686a39.37,39.37,0,0,1,12.16-30.67,44.85,44.85,0,0,1,31.37-11.06,80.26,80.26,0,0,1,36.67,9.43q21.06,10.53,33.23,15.8a167.25,167.25,0,0,0,28.67,9.07,164.59,164.59,0,0,0,36.83,3.8,98.38,98.38,0,0,0,61.9-16.5,54.53,54.53,0,0,0,20.87-45.2,48,48,0,0,0-13.07-33,138.82,138.82,0,0,0-38.47-28Q490.11,546.26,444,527a442.77,442.77,0,0,1-78.57-40.83"
+                                transform="translate(0 0)" fill="#fff" fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div class="single-social col-md-2 col-3 teams">
+                        <svg version="1.1" id="Livello_1" xmlns:x="&amp;ns_extend;" xmlns:i="&amp;ns_ai;"
+                            xmlns:graph="&amp;ns_graphs;" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2228.833 2073.333"
+                            enable-background="new 0 0 2228.833 2073.333" xml:space="preserve">
+                            <metadata>
+                                <!-- <sfw xmlns="&amp;ns_sfw;">
+                            <slices></slices>
+                            <slicesourcebounds bottomleftorigin="true" height="2073.333" width="2228.833" x="-1116.333" y="-1012.667">
+            </slicesourcebounds>
+    </sfw> -->
+                            </metadata>
+                            <path fill="#5059C9" d="M1554.637,777.5h575.713c54.391,0,98.483,44.092,98.483,98.483c0,0,0,0,0,0v524.398
+    c0,199.901-162.051,361.952-361.952,361.952h0h-1.711c-199.901,0.028-361.975-162-362.004-361.901c0-0.017,0-0.034,0-0.052V828.971
+    C1503.167,800.544,1526.211,777.5,1554.637,777.5L1554.637,777.5z"></path>
+                            <circle fill="#5059C9" cx="1943.75" cy="440.583" r="233.25"></circle>
+                            <circle fill="#7B83EB" cx="1218.083" cy="336.917" r="336.917"></circle>
+                            <path fill="#7B83EB" d="M1667.323,777.5H717.01c-53.743,1.33-96.257,45.931-95.01,99.676v598.105
+    c-7.505,322.519,247.657,590.16,570.167,598.053c322.51-7.893,577.671-275.534,570.167-598.053V877.176
+    C1763.579,823.431,1721.066,778.83,1667.323,777.5z"></path>
+                            <path opacity="0.1" enable-background="new    " d="M1244,777.5v838.145c-0.258,38.435-23.549,72.964-59.09,87.598
+    c-11.316,4.787-23.478,7.254-35.765,7.257H667.613c-6.738-17.105-12.958-34.21-18.142-51.833
+    c-18.144-59.477-27.402-121.307-27.472-183.49V877.02c-1.246-53.659,41.198-98.19,94.855-99.52H1244z"></path>
+                            <path opacity="0.2" enable-background="new    " d="M1192.167,777.5v889.978c-0.002,12.287-2.47,24.449-7.257,35.765
+    c-14.634,35.541-49.163,58.833-87.598,59.09H691.975c-8.812-17.105-17.105-34.21-24.362-51.833
+    c-7.257-17.623-12.958-34.21-18.142-51.833c-18.144-59.476-27.402-121.307-27.472-183.49V877.02
+    c-1.246-53.659,41.198-98.19,94.855-99.52H1192.167z"></path>
+                            <path opacity="0.2" enable-background="new    " d="M1192.167,777.5v786.312c-0.395,52.223-42.632,94.46-94.855,94.855h-447.84
+    c-18.144-59.476-27.402-121.307-27.472-183.49V877.02c-1.246-53.659,41.198-98.19,94.855-99.52H1192.167z"></path>
+                            <path opacity="0.2" enable-background="new    " d="M1140.333,777.5v786.312c-0.395,52.223-42.632,94.46-94.855,94.855H649.472
+    c-18.144-59.476-27.402-121.307-27.472-183.49V877.02c-1.246-53.659,41.198-98.19,94.855-99.52H1140.333z"></path>
+                            <path opacity="0.1" enable-background="new    " d="M1244,509.522v163.275c-8.812,0.518-17.105,1.037-25.917,1.037
+    c-8.812,0-17.105-0.518-25.917-1.037c-17.496-1.161-34.848-3.937-51.833-8.293c-104.963-24.857-191.679-98.469-233.25-198.003
+    c-7.153-16.715-12.706-34.071-16.587-51.833h258.648C1201.449,414.866,1243.801,457.217,1244,509.522z"></path>
+                            <path opacity="0.2" enable-background="new    " d="M1192.167,561.355v111.442c-17.496-1.161-34.848-3.937-51.833-8.293
+    c-104.963-24.857-191.679-98.469-233.25-198.003h190.228C1149.616,466.699,1191.968,509.051,1192.167,561.355z"></path>
+                            <path opacity="0.2" enable-background="new    " d="M1192.167,561.355v111.442c-17.496-1.161-34.848-3.937-51.833-8.293
+    c-104.963-24.857-191.679-98.469-233.25-198.003h190.228C1149.616,466.699,1191.968,509.051,1192.167,561.355z"></path>
+                            <path opacity="0.2" enable-background="new    " d="M1140.333,561.355v103.148c-104.963-24.857-191.679-98.469-233.25-198.003
+    h138.395C1097.783,466.699,1140.134,509.051,1140.333,561.355z"></path>
+                            <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="198.099" y1="1683.0726"
+                                x2="942.2344" y2="394.2607" gradientTransform="matrix(1 0 0 -1 0 2075.3333)">
+                                <stop offset="0" style="stop-color:#5A62C3"></stop>
+                                <stop offset="0.5" style="stop-color:#4D55BD"></stop>
+                                <stop offset="1" style="stop-color:#3940AB"></stop>
+                            </linearGradient>
+                            <path fill="url(#SVGID_1_)" d="M95.01,466.5h950.312c52.473,0,95.01,42.538,95.01,95.01v950.312c0,52.473-42.538,95.01-95.01,95.01
+    H95.01c-52.473,0-95.01-42.538-95.01-95.01V561.51C0,509.038,42.538,466.5,95.01,466.5z"></path>
+                            <path fill="#FFFFFF"
+                                d="M820.211,828.193H630.241v517.297H509.211V828.193H320.123V727.844h500.088V828.193z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="single-social col-md-2 col-3 online">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 608 608.162">
+                            <g id="noun_Teacher_491456" transform="translate(-30.5 -274.5)">
+                                <g id="Group_68115" data-name="Group 68115" transform="translate(30.5 274.5)">
+                                    <g id="Group_68110" data-name="Group 68110" transform="translate(364.8 212.719)">
+                                        <path id="Path_1787" data-name="Path 1787"
+                                            d="M293.5,290.981a91.281,91.281,0,1,0,182.562,0c0-50.1-41.02-91.281-91.281-91.281A91.476,91.476,0,0,0,293.5,290.981Z"
+                                            transform="translate(-293.5 -199.7)" fill="#0b154b"></path>
+                                    </g>
+                                    <g id="Group_68111" data-name="Group 68111" transform="translate(0 0)">
+                                        <path id="Path_1788" data-name="Path 1788"
+                                            d="M68.5,68.5V494.1H402.981V433.3H129.3v-304H615.7V281.381h60.8V68.5Z"
+                                            transform="translate(-68.5 -68.5)" fill="#0b154b"></path>
+                                    </g>
+                                    <g id="Group_68112" data-name="Group 68112" transform="translate(304 425.6)">
+                                        <path id="Path_1789" data-name="Path 1789"
+                                            d="M408.082,331A152.091,152.091,0,0,0,256,483.081v30.481H560V483.081C560,399.1,491.58,331,408.082,331Z"
+                                            transform="translate(-256 -331)" fill="#0b154b"></path>
+                                    </g>
+                                    <g id="Group_68113" data-name="Group 68113" transform="translate(121.6 121.6)">
+                                        <rect id="Rectangle_511" data-name="Rectangle 511" width="364.8" height="60.8"
+                                            fill="#0b154b"></rect>
+                                    </g>
+                                    <g id="Group_68114" data-name="Group 68114" transform="translate(121.6 243.2)">
+                                        <rect id="Rectangle_512" data-name="Rectangle 512" width="182.4" height="60.8"
+                                            fill="#0b154b"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <div class="content">
+                    <h3 class="title">INTERNATIONAL TRAVEL</h3>
+                    <hr class="medium-yellow">
+                    <br>
+                    <p class="content"
+                        style="font-family: Lato !important;letter-spacing: 1px !important;font-size: 20px !important;color: var(--ueg-dark-blue) !important;word-spacing: 2px !important;">
+                        There are two key types of international travel for teaching purposes at Union Education Group.
+                        The first is staying with a family in another country. Ordinarily, this is for a shorter period
+                        of time and focused on a specific objective like passing an exam or mastering a language
+                        quickly. However, there are instances when this requires a longer commitment of six to twelve
+                        months. This is usually when a student has taken time off school or is between jobs and needs
+                        more contact hours than would normally be required. Accommodation and travel are covered by the
+                        family receiving tuition.
+                        <br><br>
+                        A firmer and longer commitment is required when Educators travel abroad to work in one of our
+                        partnership schools or universities. Ordinarily, this would be a fixed contract for at least one
+                        year as all accommodation and travel is covered by UEG. There is also scope to live with
+                        families rather than in hotels or rented accommodation if Educators are interested in cultural
+                        immersion. Mostly, work in international schools and universities is focused on English language
+                        training but there are other subjects available to teach primarily in the humanities and
+                        sciences.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-flex contact-form col-md-12 pb-0" style="background-color: rgba(154,189,221,0.2) !important;"
+    id="sign-up">
+    <div class="container">
+        <h3 class="title">REGISTER YOUR INTEREST</h3>
+        <hr class="big-blue">
+        <br>
+        <div id="sign-up-form">
+            <div>
+                <div class="row">
+                    <div class="col-md-12 row">
+                        <div class="col-md-6 contact-item">
+                            <input type="text" name="txtfirstname" id="contactFName" placeholder="First Name"
+                                class="form-control" required="" [(ngModel)]="firstname"
+                                (keypress)="onKeyPressfirstname($event)">
+                            <span class="error-msg" *ngIf="firstnameErr">First name required</span>
+                            <span class="error-msg" *ngIf="validfirstnameErr && firstnameErr == false">Valid name
+                                required</span>
+                        </div>
+                        <div class="col-md-6 contact-item">
+                            <input type="text" name="txtlastname" id="contactLName" placeholder="Last Name"
+                                class="form-control" required="" [(ngModel)]="lastname"
+                                (keypress)="onKeyPresslastname($event)">
+                            <span class="error-msg" *ngIf="lastnameErr">Last name required</span>
+                            <span class="error-msg" *ngIf="validlastnameErr && lastnameErr == false">Valid name
+                                required</span>
+                        </div>
+                        <div class="col-md-6 contact-item">
+                            <input type="text" name="txtContact" id="contactPhone" placeholder="Phone Number"
+                                class="form-control" [(ngModel)]="mobile" (keypress)="onKeyPressMobile($event)"
+                                (keyup)="mobileFun()">
+                            <span class="error-msg" *ngIf="mobileErr">Phone number required</span>
+                            <span class="error-msg" *ngIf="validmobilErr && mobileErr==false">Valid number
+                                required</span>
+                        </div>
+                        <div class="col-md-6 contact-item">
+                            <input type="text" name="txtEmail" id="contactEmail" placeholder="Email"
+                                class="form-control" required="" [(ngModel)]="email" (keyup)="emailFun()">
+                            <span class="error-msg" *ngIf="emailErr">Email required</span>
+                            <span class="error-msg" *ngIf="validEmailErr">Valid email required</span>
+                        </div>
+                        <div class="col-md-6 contact-item">
+                            <input type="text" name="txtLocation" id="contactLocation" placeholder="Location"
+                                class="form-control pac-target-input" required="" autocomplete="off"
+                                [(ngModel)]="location" (keyup)="locationFun()">
+                            <span class="error-msg" *ngIf="locationErr">Location required</span>
+                        </div>
+                        <div class="col-md-6 contact-item">
+                            <!-- <img class="cv_img" [src]="this.common.imgCheck(resume)"alt=""> -->
+                            <label class="CV-button" for="CV-button">ATTACH CV
+                                <input #fileInput type="file" name="CV-button" id="CV-button" placeholder="CV Upload"
+                                    required="" hidden="" (change)="onFileChanged($event)" accept="application/pdf"
+                                    [disabled]="spinner">
+                            </label>
+                            <span *ngIf="spinner"> <img class="loader-icon" src="assets/img/loading-gif.gif" alt=""
+                                    srcset=""></span>
+                            <span *ngIf="resume != ''"><img style="margin-left: 10px;" src="assets/img/checked.png"
+                                    alt="">{{orgFilename}}
+                                successfully
+                                uploaded</span>
+                            <span class="error-msg" *ngIf="fileerr "><img src="assets/img/error.png" class="err-image"
+                                    alt=""> Please upload your CV with file type .pdf, .docx, .doc only.</span>
+                            <div class="error-msg" *ngIf="resumeErr">No file chosen</div>
+                        </div>
+                        <div class="col-md-12 row mt-4 contact-item contact-item-checkbox" style="padding-bottom: 1rem;">
+                            <p>
+                                <input type="checkbox" name="gdprSubmit" required=""
+                                    style="margin:0 0.5rem 0 0; width: 12px; position:relative;" [(ngModel)]="checkTerm"
+                                    (click)="checkTermFun()"><span>By clicking Submit, I agree to
+                                    UEG's Terms &amp; Conditions and Privacy Policy, and I agree to abide by the
+                                    Code of Conduct.</span>
+                            </p>
+                            <span class="error-msg termCheck" *ngIf="checkTermErr">Please check this box if you want to
+                                proceed
+                            </span>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-md-2">
+                            <div class="gcap d-flex justify-content-between align-items-center">
+                                <input class="googleCaptcha" type="checkbox" name="gdprSubmit" required=""
+                                    [(ngModel)]="googlRecaptcha" (click)="checkGooglecaptcha()"><span>I am not a
+                                    robot<img src="assets/img/captcha.png" alt="" srcset=""
+                                        style="height: 61px;width: 70px;"></span>
+                            </div>
+                            <div class="error-msg" *ngIf="googlRecaptchaErr">Checked, I am not a robot</div>
+                            <div></div>
+                            <button class="btn btn-yellow w-100"
+                                style="border-radius: 0 !important; font-size: 16px; margin-top: 14px;"
+                                (click)="addRegisterdetails()">Submit</button>
+                        </div>
+                        <div class="w-100"></div>
+                        <div id="notification" class="mt-4"></div>
+                    </div>
+                    <input name="__RequestVerificationToken" type="hidden"
+                        value="CfDJ8HNI9nvlVP9KsnTxGSCm---cwwWpN01g8RanCPuMt8z31Ys-k1jL6fKxrHfxOfCw1_WcT3oZjhahS2zZ-tcyq0BgE13bmRM0hVT6eUc3Mco2_uCLUVpHEOL-sTgWZ2vI49znuPphkD1ZCggxXhQLKbM">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-flex partnerships-banner contact contact-us"
+        style="background-image:url('assets/img/get-to-know-us.png')">
+        <img class="display-on-mobile" src="assets/img/blue-arrow-cutout-mobile.png">
+        <div class="container">
+            <div class="row margin-none partnerships-banner-content partnerships-banner-row">
+                <div class="col-lg-5">
+                    <h1 class="main-title dark-indigo">Get to <br>know us</h1>
+                    <hr class="main-banner-line">
+                    <div class="col-lg-10 pl-0 pt-5">
+                        <p class="main-content-para">We are always ready to help so give us a call or email if you
+                            prefer. We look forward to hearing from you.</p>
+                    </div>
+
+                    <div class="contact-info col-md-12 row pt-4" style="z-index: 0;">
+                        <div class="yellow-tag" style="z-index: 0;">
+                            <div class="tag-title">Email</div>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-md-6 pl-0 pt-2" style="margin-bottom: 2rem;">
+                            <a href="mailto:info@unioneducationgroup.com"
+                                class="email contact">info@unioneducationgroup.com</a>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="yellow-tag" style="z-index: 0;">
+                            <div class="tag-title">or call us on</div>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-md-6 pl-0 pt-3">
+                            <a href="tel:+4402034883805" class="email contact">+44 (0) 20 3488 3805</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--main contain end-->

@@ -1,0 +1,97 @@
+.get-started .get-started-title {
+    font-family: 'Lato';
+    letter-spacing: .05rem;
+    font-weight: 400;
+    color: var(--ueg-dark-blue);
+    font-size: 20px;
+    margin-bottom: 2rem;
+}
+
+.get-started-background {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 101;
+}
+
+.container.get-started {
+    position: fixed;
+    z-index: 120;
+    background-color: white;
+    top: 135px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0px 2px 10px rgb(0 0 0 / 20%);
+    left: 0px;
+    right: 0px;
+    border-radius: 5px;
+    height:450px;
+    overflow: auto;
+}
+
+.get-started .sector-item {
+    border: 1px solid var(--ueg-dark-blue);
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    height: 100%;
+    cursor: pointer;
+    margin: 2px;
+}
+
+
+.close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    border: none;
+    text-shadow: 0 1px 0 #fff;
+    opacity: 0.5;
+}
+
+
+.get-started .get-started-footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: flex-end;
+    padding: .75rem;
+    border-top: 1px solid #dee2e6;
+    border-bottom-right-radius: calc(.3rem - 1px);
+    border-bottom-left-radius: calc(.3rem - 1px);
+}
+
+
+
+.btn-grid {
+    display: grid !important;
+}
+
+.btn-grid .btn.btn-blue {
+    background-color: rgba(154, 189, 221, .5);
+    border-radius: 0;
+    font-family: 'LEMON MILK';
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: .1rem;
+    color: var(--ueg-dark-blue);
+    padding: .5rem 1rem;
+    transition: ease all .3s;
+}
+
+
+.btn-grid.btn.btn-yellow {
+    background-color: var(--ueg-yellow);
+    border-radius: 0;
+    font-family: 'LEMON MILK';
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: .1rem;
+    color: var(--ueg-dark-blue);
+    padding: .5rem 1rem;
+    transition: ease all .3s;
+}

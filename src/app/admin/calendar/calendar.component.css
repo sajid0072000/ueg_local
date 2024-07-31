@@ -1,0 +1,62 @@
+.custom-modal .modal-dialog {
+  max-width: 90vw;
+  width: 90vw;
+}
+
+.custom-modal .modal-content {
+  max-height: 90vh;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-modal .modal-body {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.custom-modal-header,
+.custom-modal-footer {
+  flex-shrink: 0;
+}
+
+.custom-calendar-container {
+  flex: 1;
+  max-width: 100%;
+  height: 100%;  
+}
+
+.calendar-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.fc .fc-daygrid-day-number {
+  font-size: 1em;
+}
+
+.fc .fc-daygrid-event {
+  font-size: 0.85em;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.fc .fc-day-today {
+  background-color: #eaf7ff;
+}
+
+.fc .fc-button {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+}
+
+.fc .fc-button:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}

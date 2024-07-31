@@ -1,0 +1,336 @@
+<div class="full-screen" id="fulldiv">
+    <div>
+        <button class="close" (click)="toggleFullScreenImg(0)">X</button>
+    </div>
+    <div class="full-screen-img">
+        <img [src]="fullScreenImg" alt="" style="width: 500px;">
+    </div>
+</div>
+
+<main role="main" class="main-body-sty mt-3">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="top_scne">
+                <div class="top_scne_in">
+                    <h1 class="add_heading_text">Course</h1>
+                    <button class="btn btn-edtng-add" *ngIf="!courseid">Creating</button>
+                    <button class="btn btn-edtng-add" *ngIf="courseid">Editing</button>
+                </div>
+                <div class="top_scne_rt"><button class="btn btn-edtng" (click)="coursePreviewData()">Preview</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content-add">
+        <div class="main-content-inner">
+            <div class="row">
+                <div class="mb-3 col-md-6">
+                    <label class="form-label lebel-text">Course Name</label>
+                    <input type="text" class="form-control input-text" [(ngModel)]="coursename" [disabled]="showField"
+                        (keyup)="changeCourseName()">
+                    <span class="error-msg" *ngIf="coursenameErr">Course name required</span>
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label class="form-label lebel-text">Course Type</label>
+                    <select class="form-select input-text" [(ngModel)]="coursetypeid" (change)="changeCourseTypeName()"
+                        [disabled]="showField">
+                        <option value="">Select</option>
+                        <option *ngFor="let data of categoryTypeArr" [value]="data.categorytypeid">
+                            {{data.name}}
+                        </option>
+                    </select>
+                    <span class="error-msg" *ngIf="coursetypeidErr">Course type required</span>
+                </div>
+
+                <div class="mb-3 col-md-6" *ngIf="this.common.getRoleId() === 1 || common.getRoleId() === 3">
+                    <label for="name" class="form-label lebel-text">Educator </label>
+                    <input type="text" [(ngModel)]="educatorname" (keyup)="searchEducatorByName()"
+                        [matAutocomplete]="auto10" [disabled]="showField" class="form-control input-text"
+                        placeholder="Search..." />
+                    <mat-autocomplete #auto10="matAutocomplete" (optionSelected)="getEducatorIdByName()">
+                        <mat-option *ngIf="educatorSpinner">
+                            <mat-spinner style="width:50px;"></mat-spinner>
+                        </mat-option>
+                        <mat-option *ngFor="let item of educatorArr" [value]="item.educatorname">
+                            {{ item.educatorname }}
+                        </mat-option>
+                    </mat-autocomplete>
+                    <span class="error-msg" *ngIf="educatornameErr">Educator required</span>
+
+                    <div class="catgry_list_sc">
+                        <div *ngFor="let data of educatorList; let i = index">
+                            <span>{{data.educatorname}}</span>
+                            <a *ngIf="!showField" (click)="educatorRemove(i)">X</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 col-md-6">
+                    <label class="form-label lebel-text">Category</label>
+                    <input type="text" [(ngModel)]="categoriesName" (keyup)="searchCategoriesByName()"
+                        [disabled]="showField" [matAutocomplete]="auto2" class="form-control input-text"
+                        placeholder="Search..." />
+                    <mat-autocomplete #auto2="matAutocomplete" (optionSelected)="getCategoriesIdByName()">
+                        <mat-option *ngIf="categoriesSpinner">
+                            <mat-spinner style="width:50px;"></mat-spinner>
+                        </mat-option>
+                        <mat-option *ngFor="let item of categoriesArr" [value]="item.name">
+                            {{ item.name }}
+                        </mat-option>
+                    </mat-autocomplete>
+                    <span class="error-msg" *ngIf="categoriesNameErr">Category required</span>
+
+                    <div class="catgry_list_sc">
+                        <div *ngFor="let data of categoriesList; let i = index">
+                            <span>{{data.name}}</span>
+                            <a *ngIf="!showField" (click)="catrgoriesRemove(i)">X</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label class="form-label lebel-text">Age Range</label>
+                    <div class="age-rang-list primary">
+                        <mat-checkbox *ngFor="let obj of ageRangeArr; let i = index" [disabled]="showField"
+                            (change)="checkAgeRange($event, i)" [checked]="obj.ischeck">{{obj.value}}</mat-checkbox>
+                    </div>
+                    <span class="error-msg" *ngIf="agerangeErr">Age range required</span>
+
+                </div>
+
+
+                <div class="mb-3 col-md-6">
+                    <label for="name" class="form-label lebel-text">Course Skills</label>
+                    <input type="text" [(ngModel)]="skillName" (keyup)="searchSkillByName()" [matAutocomplete]="auto"
+                        [disabled]="showField" class="form-control input-text" placeholder="Search..." />
+                    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="getSkillsIdByName()">
+                        <mat-option *ngIf="skillsSpinner">
+                            <mat-spinner style="width:50px;"></mat-spinner>
+                        </mat-option>
+                        <mat-option *ngFor="let item of skillsArr" [value]="item.Name">
+                            {{ item.Name }}
+                        </mat-option>
+                    </mat-autocomplete>
+                    <span class="error-msg" *ngIf="skillNameErr">Skills required</span>
+
+                    <div class="catgry_list_sc">
+                        <div *ngFor="let data of skillList; let i = index">
+                            <span>{{data.name}}</span>
+                            <a *ngIf="!showField" (click)="skillRemove(i)">X</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 col-md-6">
+                    <label for="name" class="form-label lebel-text">Subject Name </label>
+                    <input type="text" [(ngModel)]="subjectName" (keyup)="searchSubjectsByName()" [disabled]="showField"
+                        [matAutocomplete]="auto1" class="input-text form-control" placeholder="Search..." />
+                    <mat-autocomplete #auto1="matAutocomplete" (optionSelected)="getSubjectsIdByName()">
+                        <mat-option *ngIf="subjectSpinner">
+                            <mat-spinner style="width:50px;"></mat-spinner>
+                        </mat-option>
+                        <mat-option *ngFor="let item of subjectArr" [value]="item.Name">
+                            {{ item.Name }}
+                        </mat-option>
+                    </mat-autocomplete>
+                    <span class="error-msg" *ngIf="subjectNameErr">Subject required</span>
+                </div>
+                <div class="mb-3 col-md-6" *ngIf="this.common.getRoleId() === 1 || common.getRoleId() === 3">
+                    <label class="form-label lebel-text">Course Price</label>
+                    <input type="number" class="form-control input-text" [(ngModel)]="price" [disabled]="showField" (keyup)="changePriceName()" min="0">
+                    <span class="error-msg" *ngIf="priceErr">Price required</span>
+                    <span class="error-msg" *ngIf="price < 0">Price cannot be negative</span>
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label class="form-label lebel-text">Course Photo </label>
+                    <div class="row">
+                        <div class="col-5" *ngIf="coursephoto">
+                            <img *ngIf="coursephoto" [src]="this.common.imgCheck(coursephoto)"
+                                class="form-control profile_img" alt="" (click)="common.openImageModal(coursephoto)">
+                        </div>
+                        <div class="col-4">
+                            <div class="image-upload">
+                                <label for="file-input">
+                                    <button type="button" class="btn btn-upload-btn" (click)="uploadBtn()">
+                                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
+                                            <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+                                            <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12"/>
+                                          </svg> -->
+                                        <i class="fa fa-upload" aria-hidden="true"></i>
+                                    </button>
+                                </label>
+                                <input id="file-input" type="file" (change)="onFileChanged($event)"
+                                    [disabled]="showField">
+                            </div>
+                            <span class="error-msg" *ngIf="coursephotoErr">Photo required</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 col-md-6">
+                    <label class="form-label lebel-text">Video Thumbnail </label>
+                    <div class="row">
+                        <div class="col-5" *ngIf="videothumbnail">
+                            <img *ngIf="videothumbnail" [src]="this.common.imgCheck(videothumbnail)"
+                                class="form-control profile_img" alt="" (click)="common.openImageModal(videothumbnail)">
+                        </div>
+                        <div class="col-4">
+                            <div class="image-upload">
+                                <label for="file-input-videothumbnail">
+                                    <button type="button" class="btn btn-upload-btn" (click)="uploadBtnvideothumbnail()"
+                                        [disabled]="showField">
+                                        <i class="fa fa-upload" aria-hidden="true"></i>
+                                    </button>
+                                </label>
+                                <input id="file-input-videothumbnail" type="file"
+                                    (change)="onFileChangedvideothumbnail($event)" [disabled]="showField">
+                            </div>
+                            <span class="error-msg" *ngIf="videothumbnailErr">Thumbnail required</span>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="mt-5 col-md-12">
+                    <label class="form-label lebel-text">Course Video </label>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="image-upload" *ngIf="!showField">
+                                <app-ng-chunk-upload (transProcess)="addTransProcess($event)" (onFileSelect)="onFileChange($event)"></app-ng-chunk-upload>
+                            </div>
+                            <span class="error-msg" *ngIf="courseVideoErr">Video required</span>
+                        </div>
+                        <div class="col-8">
+                            <div id="video-container" class="vdoContain"></div>
+                            <span *ngIf="trncstatus == 1 && !showField && !coursevideourl" style="color: #e39013;">Transcoding in
+                                progress...</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">Short Description</label>
+                    <ckeditor [(ngModel)]="shortdesc" [editor]="Editor" (change)="changeShortDecs()"
+                        [disabled]="showField"></ckeditor>
+                    <span class="error-msg" *ngIf="shortdescErr">Short description required</span>
+
+                </div>
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">Long Description </label>
+                    <ckeditor [(ngModel)]="longdesc" [editor]="Editor" (change)="changeLongDecs()"
+                        [disabled]="showField"></ckeditor>
+                    <span class="error-msg" *ngIf="longdescErr">Long description required</span>
+
+                </div>
+                <div class="mb-3 col-md-12" *ngIf="this.common.getRoleId() === 1 || common.getRoleId() === 3">
+                    <label class="form-label lebel-text">Course Tags</label> 
+                    <i class="fa fa-info-circle mx-2" style="cursor: pointer;" data-toggle="tooltip" data-placement="bottom" title="Tags separated with comma and space"></i>
+                    <textarea class="form-control input-text" [(ngModel)]="tags" (keyup)="changetags()"
+                        [disabled]="showField">
+                        </textarea>
+                    <span class="error-msg" *ngIf="tagsErr">Course tags required</span>
+
+                </div>
+
+                <div class="mb-3 col-md-12" *ngIf="isLive">
+                    <label class="form-label lebel-text">Course Content</label>
+                    <div class="table-responsive">
+                        <table class="table table-no-striped dataTable">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Sequence</th>
+                                    <th>Title</th>
+                                    <th>Duration (Minutes)</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let obj of courseContent; let i = index;">
+                                    <td>
+                                        <input type="number" [id]="'seq_' + i" class="form-control input-text" [(ngModel)]="obj.sequence">
+                                    </td>
+                                    <td>
+                                        <input type="text" [id]="'tit_' + i" class="form-control input-text" [(ngModel)]="obj.title">
+                                    </td>
+                                    <td>
+                                        <input type="number" [id]="'dur_' + i" class="form-control input-text" [(ngModel)]="obj.duration" min="0">
+                                        <span class="error-msg" *ngIf="obj.duration < 0">Duration cannot be negative</span>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-upload-btn" (click)="removeCourseContent(i)">
+                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <button class="btn btn-edtng" (click)="addCourseContent()">Add Course Content</button>
+                </div>
+
+                <div class="mb-3 col-md-6" *ngIf="this.common.getRoleId() === 1 || common.getRoleId() === 3">
+                    <mat-checkbox [disabled]="showField" [(ngModel)]="featured">Featured</mat-checkbox>
+                </div>
+
+                <div class="mb-3 col-md-6" *ngIf="this.common.getRoleId() === 1 || common.getRoleId() === 3">
+                    <mat-checkbox [disabled]="showField" [(ngModel)]="isLive">Live</mat-checkbox>
+                </div>
+
+                <div class="mb-3 col-md-6" *ngIf="this.common.getRoleId() === 1 || common.getRoleId() === 3">
+                    <mat-checkbox [disabled]="showField" [(ngModel)]="popular">Popular</mat-checkbox>
+                </div>
+
+                <div class="mb-3 col-md-6" *ngIf="this.common.getRoleId() === 1 || common.getRoleId() === 3">
+                    <mat-checkbox [disabled]="showField" [(ngModel)]="hidden">Hidden</mat-checkbox>
+                </div>
+
+                <div class="col-md-12">
+                    <mat-checkbox [disabled]="showField" [(ngModel)]="approved"
+                        [hidden]="showApproved">Approved</mat-checkbox>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-secne" style="text-align: center;">
+        <!-- <button class="delete-button btn btn-primary" *ngIf="courseid" (click)="onClickDelete()" [disabled]="showField">Delete Course</button> -->
+        <div></div>
+        <div *ngIf="!courseid"></div>
+        <div>
+            <button class="btn btn-danger" *ngIf="courseid" (click)="onClickDelete()" [disabled]="showField">Delete
+                Course
+            </button>
+            <button class="cancel-button btn btn-primary " (click)="resetForm()">Cancel</button>
+            <button class="submit-button btn btn-primary " [disabled]="showField" *ngIf="courseid == null"
+                (click)="add()">Save</button>
+            <button class="submit-button btn btn-primary " [disabled]="showField" *ngIf="courseid != null"
+                (click)="edit()">Save</button>
+        </div>
+    </div>
+    <a class="mt-2 a-back" style="color: #0366d6; cursor: pointer;" (click)="goBack()">Back to List</a>
+</main>
+
+
+<ng-template #deleteModal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-10 mt-3">
+                        <h3 class="modal-title d-inline-block align-middle ml" style="color: black !important;">
+                            Are you sure you want to delete this course?
+                        </h3>
+                    </div>
+                    <div class="col-sm-2 d-flex justify-content-end">
+                        <button type="button" (click)="closeModal()" class="btn-close delteClose"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-secnedlt" style="text-align: center;">
+            <div><button type="button" class="cancel-button btn btn-primary btn-lg" style="width: 100px;"
+                    (click)="closeModal()">Cancel</button></div>
+            <div><button type="button" class="btn btn-danger" style="width: 100px;" (click)="delete()">Delete</button>
+            </div>
+        </div>
+    </div>
+</ng-template>

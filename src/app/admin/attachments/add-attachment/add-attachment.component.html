@@ -1,0 +1,162 @@
+<main role="main" class="main-body-sty mt-3">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="top_scne">
+                <div class="top_scne_in">
+                    <h1 class="add_heading_text">Attachment</h1>
+                    <button class="btn btn-edtng-add" *ngIf="!attachmentid">Creating</button>
+                    <button class="btn btn-edtng-add" *ngIf="attachmentid">Editing</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="main-content-add">
+        <div class="main-content-inner">
+        <div class="row">
+            <div class="mb-3 col-md-6">
+                <label class="form-label lebel-text">Course Name </label>
+                <input type="text" [(ngModel)]="coursename" (keyup)="searchCourseByName()" [matAutocomplete]="auto"
+                    class="input-text form-control" />
+                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="getCourseIdByName()">
+                    <mat-option *ngIf="spinner">
+                        <mat-spinner style="width:50px;"></mat-spinner>
+                    </mat-option>
+                    <mat-option *ngFor="let item of courseArr" [value]="item.coursename">
+                        {{ item.coursename }}
+                    </mat-option>
+                </mat-autocomplete>
+                <span class="error-msg" *ngIf="coursenameErr">Course name required</span>
+
+            </div>
+
+            <div class="mb-3 col-md-6">
+                <label class="form-label lebel-text">Lesson Name</label>
+                <input type="text" [(ngModel)]="title" (keyup)="searchLessionByName()" [matAutocomplete]="lession"
+                    class="input-text form-control" />
+                <mat-autocomplete #lession="matAutocomplete" (optionSelected)="getLessionIdByName()">
+                    <mat-option *ngIf="spinnerLession">
+                        <mat-spinner style="width:50px;"></mat-spinner>
+                    </mat-option>
+                    <mat-option *ngFor="let item of lessionArr" [value]="item.title">
+                        {{ item.title }}
+                    </mat-option>
+                </mat-autocomplete>
+                <span class="error-msg" *ngIf="lessonnameErr">Lesson name required</span>
+
+            </div>
+
+            <div class="mb-3 col-md-6">
+                <label class="form-label lebel-text">Unit Name </label>
+                <input type="text" [(ngModel)]="unittitle" (keyup)="searchUnitByName()" [matAutocomplete]="unit"
+                    class="input-text form-control" />
+                <mat-autocomplete #unit="matAutocomplete" (optionSelected)="getUnitIdByName()">
+                    <mat-option *ngIf="spinnerUnit">
+                        <mat-spinner style="width:50px;"></mat-spinner>
+                    </mat-option>
+                    <mat-option *ngFor="let item of unitArr" [value]="item.unittitle">
+                        {{ item.unittitle }}
+                    </mat-option>
+                </mat-autocomplete>
+                <span class="error-msg" *ngIf="unitnameErr">Unit name required</span>
+
+            </div>
+
+            <div class="mb-3 col-md-6">
+                <label class="form-label lebel-text">Attachment </label>
+                <div class="row">
+                    <div class="col-5" *ngIf="orgfilename">
+                        <h4 *ngIf="orgfilename">
+                            <a style="font-size: 14px;" [href]="FILE_ROOT + filename" target="_blank">
+                                {{filename}}
+                            </a>
+                        </h4>
+                    </div>
+                    <div class="col-4">
+                        <div class="image-upload">
+                            <label for="file-input">
+                                <button type="button" class="btn btn-upload-btn" (click)="uploadBtn()"> 
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-paperclip" viewBox="0 0 16 16">
+                                        <path d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0z"/>
+                                      </svg>
+                                </button>
+                            </label>
+                            <input id="file-input" type="file" (change)="onFileChanged($event)">
+                        </div>
+                    <span class="error-msg" *ngIf="filenameErr">Attachment upload required</span>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </div>
+    <div class="bottom-secne" style="text-align: center;">
+        <button class="delete-button btn btn-primary" *ngIf="attachmentid" (click)="onClickDelete()">Delete Attachment</button>
+        <div *ngIf="!attachmentid"></div>
+        <div>
+            <button class="cancel-button btn btn-primary" (click)="resetForm()">Cancel</button>
+            <button class="submit-button btn btn-primary" *ngIf="!attachmentid" (click)="add()">Save</button>
+            <button class="submit-button btn btn-primary" *ngIf="attachmentid" (click)="edit()">Save</button>
+        </div>
+
+    </div>
+    <a class="mt-2 a-back" style="color: #0366d6; cursor: pointer;" (click)="goBack()">Back to List</a>
+
+</main>
+
+<!-- <ng-template #deleteModal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-10">
+                        <h4 class="modal-title d-inline-block align-middle me-2">
+                            Are you want to sure delete this attachment?
+                        </h4>
+                    </div>
+                    <div class="col-sm-2 d-flex justify-content-end">
+                        <button type="button" (click)="closeModal()" class="btn-close"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6 text-center">
+                        <button type="button" class="btn btn-secondary btn-lg me-2" (click)="closeModal()">No</button>
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        <button type="button" class="btn btn-primary btn-lg me-2" (click)="delete()">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template> -->
+<ng-template #deleteModal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-10 mt-3">
+                        <h3 class="modal-title d-inline-block align-middle ml" style="color: black !important;">
+                            Are you sure you want to delete this attachment?
+                        </h3>
+                    </div>
+                    <div class="col-sm-2 d-flex justify-content-end">
+                        <button type="button" (click)="closeModal()" class="btn-close delteClose"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="bottom-secnedlt" style="text-align: center;">
+                    <div><button type="button" class="cancel-button btn btn-primary btn-lg" style="width: 100px;"  (click)="closeModal()">Cancel</button></div>
+                        <div><button type="button" class="btn btn-danger" style="width: 100px;" (click)="delete()">Delete</button></div>
+                   </div>
+         </div>
+  </ng-template>

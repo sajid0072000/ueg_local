@@ -1,0 +1,46 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <div class="stack-column d-flex">
+            <h4 class="title">Share Course</h4>
+            <hr class="big-blue">
+        </div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModal()">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="stack-row d-flex pb-3" style="width: 100%">
+                <input type="text" id="courseLink" class="form-control" [(ngModel)]="url" disabled>
+                <button class="btn btn-yellow bra-0" id="copyURL" [cdkCopyToClipboard]="url" (click)="closeModal()">Copy</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="d-grid share-social-icons" style="width: 100%;">
+                
+                <div class="fb-share-button" data-href="https://localhost:44307/EducatorList/1" data-layout="button_count" data-size="small">
+                    <a class="social-icon href-hover" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Funioneducationgroup.com%2FEducator%2F459&amp;src=sdkpreparse">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24.075" viewBox="0 0 24 24.075">
+                            <path id="Path_170" data-name="Path 170" d="M1302.163,306.775v-8.652H1299.3v-3.762h2.859v-1.881a4.954,4.954,0,0,1,4.89-5.191h2.633V291.5h-2.407a.751.751,0,0,0-.828.828v1.956h3.16v3.762h-3.16V306.7h3.461a4.014,4.014,0,0,0,3.987-3.987V286.687a4.014,4.014,0,0,0-3.987-3.987h-16.025a4.014,4.014,0,0,0-3.987,3.987v16.025a4.014,4.014,0,0,0,3.987,3.987Z" transform="translate(-1289.9 -282.7)" fill="#00cad9"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="social-icon" id="twitter" data-href="https://twitter.com/share?url=&amp;text=Look%20at%20this%20course%20on%20Union%20Education%20Group!">
+                    <a target="_blank" class="social-icon href-hover" id="twitter" href="https://twitter.com/intent/tweet?text=Check%20out%20this%20educator!%20https%3A%2F%2Funioneducationgroup.com%2FEducator%2F459">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="19.514" viewBox="0 0 24 19.514">
+                            <path id="Path_172" data-name="Path 172" d="M1362.9,288.518a8.85,8.85,0,0,1-2.841.748,4.831,4.831,0,0,0,2.168-2.692,9.425,9.425,0,0,1-3.14,1.2,4.854,4.854,0,0,0-3.589-1.57,4.93,4.93,0,0,0-4.934,4.935,5.776,5.776,0,0,0,.149,1.121,13.8,13.8,0,0,1-10.094-5.159,4.707,4.707,0,0,0-.673,2.467,5.058,5.058,0,0,0,2.168,4.112,4.567,4.567,0,0,1-2.243-.6v.075a4.892,4.892,0,0,0,3.962,4.785,3.7,3.7,0,0,1-1.271.15,3.639,3.639,0,0,1-.9-.075,4.994,4.994,0,0,0,4.561,3.439,9.657,9.657,0,0,1-6.131,2.093,6.432,6.432,0,0,1-1.2-.075,13.947,13.947,0,0,0,21.533-11.738v-.6A13.523,13.523,0,0,0,1362.9,288.518Z" transform="translate(-1338.9 -286.2)" fill="#00cad9"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="social-icon" id="linkedin" data-href="https://www.linkedin.com/company/unioneducationgroup/">
+                    <a class="social-icon href-hover" id="linkedin" target="_blank" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Funioneducationgroup.com%2FEducator%2F459">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path id="Path_1653" data-name="Path 1653" d="M1508.862,282.7h-15.925a4.021,4.021,0,0,0-4.037,4.037v15.925a4.021,4.021,0,0,0,4.037,4.037h15.925a4.021,4.021,0,0,0,4.037-4.037V286.737A4.021,4.021,0,0,0,1508.862,282.7Zm-10.916,19.439h-2.991V291.672h2.991Zm-1.5-11.963a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,1496.451,290.177Zm11.963,11.963h-2.991v-5.981a1.5,1.5,0,1,0-2.991,0v5.981h-2.99V291.672h2.99v1.869c.6-.822,1.57-1.869,2.617-1.869a3.541,3.541,0,0,1,3.364,3.738Z" transform="translate(-1488.9 -282.7)" fill="#00cad9"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,116 @@
+<main role="main" class="main-body-sty mt-3">
+  <div class="row spc-row">
+    <div class="col-md-12">
+      <div class="top_scne">
+        <div class="top_scne_iii">
+          <div class="top_scne_in">
+            <h1 class="add_heading_text">Lessons for {{ childName }} (Child of {{ clientName }}) - Educator: {{ educatorName }}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="main-content-inner-list">
+      <div class="row">
+        <div class="col-md-12">
+          <div>
+            <div id="datatables-reponsive_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+              <div class="d-md-flex align-items-center mb-3"></div>
+              <div class="table-responsive">
+                <table id="datatables-column-search-select-inputs" class="table table-no-striped dataTable" style="width: 100%;" aria-describedby="datatables-column-search-select-inputs_info">
+                  <thead class="thead-dark">
+                    <tr role="row">
+                      <th>Topic</th>
+                      <th>Start Time</th>
+                      <th>End Time</th>
+                      <th>Location</th>
+                      <th>Notes</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngIf="lessons.length == 0">
+                      <td class="text-center" colspan="7">
+                        <h4>No Lessons Found!</h4>
+                      </td>
+                    </tr>
+                    <tr role="row" class="odd" *ngFor="let lesson of lessons">
+                      <td>{{ lesson.Topic }}</td>
+                      <td>{{ lesson.StartTime | date:'HH:mm dd-MM-yyyy' }}</td>
+                      <td>{{ lesson.EndTime | date:'HH:mm dd-MM-yyyy' }}</td>
+                      <td>{{ lesson.Location }}</td>
+                      <td>{{ lesson.Notes }}</td>
+                      <td>{{ lesson.Status }}</td>
+                      <td>
+                        <button class="btn btn-sm btn-primary" (click)="editLesson(lesson)">Edit</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-secondary" (click)="goBack()">Back</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Lesson Modal -->
+  <div id="lessonModal" class="modal" tabindex="-1" role="dialog" (click)="hideModal('lessonModal')">
+    <div class="modal-dialog" role="document" (click)="$event.stopPropagation()">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Lesson for {{ childName }}</h5>
+          <button type="button" class="close" (click)="hideModal('lessonModal')" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form (ngSubmit)="updateLesson()">
+            <div class="form-group">
+              <label for="startTime">Start Time</label>
+              <input type="datetime-local" class="form-control" [(ngModel)]="selectedLesson.StartTime" name="StartTime" required>
+            </div>
+            <div class="form-group">
+              <label for="endTime">End Time</label>
+              <input type="datetime-local" class="form-control" [(ngModel)]="selectedLesson.EndTime" name="EndTime" required>
+            </div>
+            <div class="form-group">
+              <label for="topic">Topic</label>
+              <input type="text" class="form-control" [(ngModel)]="selectedLesson.Topic" name="Topic" required>
+            </div>
+            <div class="form-group">
+              <label for="location">Location</label>
+              <input type="text" class="form-control" [(ngModel)]="selectedLesson.Location" name="Location" required>
+            </div>
+            <div class="form-group">
+              <label for="status">Status</label>
+              <select class="form-control" [(ngModel)]="selectedLesson.Status" name="Status">
+                <option value="Planned">Planned</option>
+                <option value="Completed">Completed</option>
+                <option value="Cancelled">Cancelled</option>
+                <option value="Cancelled but Still Charge">Cancelled But Still Charge</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="notes">Notes</label>
+              <textarea class="form-control" [(ngModel)]="selectedLesson.Notes" name="Notes"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" (click)="hideModal('lessonModal')">Cancel</button>
+              <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

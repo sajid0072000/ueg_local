@@ -1,0 +1,133 @@
+.partnerships-banner.partnerships-banner-contact-background {
+    /* background-image: url('../../../assets/img/partnershipContactBanner.jpg') !important; */
+    background-size: cover;
+    background-position: 80% 60%;
+}
+
+.banner-triangle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 60%;
+    object-fit: cover;
+}
+
+.partnerships-banner-row {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.partnerships-banner-content .main-content {
+    z-index: 10;
+}
+
+.partnerships-banner .main-title {
+    font-family: 'LEMON MILK';
+    color: var(--ueg-dark-blue);
+    letter-spacing: .6rem;
+    font-weight: 400;
+    font-size: 4rem;
+}
+
+.main-banner-line.white {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 300px;
+    border-top: 15px solid #fff !important;
+    border-radius: 25px !important;
+}
+
+.partnerships-banner.contact .main-content-para {
+    color: var(--dark-indigo);
+    font-family: Lato,sans-serif;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 23px;
+}
+
+.email.contact {
+    color: var(--ueg-dark-blue);
+    font-size: 1.4rem;
+    font-family: Lato;
+    letter-spacing: .05rem;
+    padding-top: .3rem;
+}
+
+.partnerships-contact-banner {
+    height: 604px;
+}
+.partnerships .home-banner-blue-arrow {
+    height: unset;
+}
+
+
+    .home-banner.partnerships .home-banner-text {
+        position: relative;
+        height: 100%;
+        top: 0px;
+        z-index: 1;
+    }
+
+    .home-banner.partnerships .home-banner-blue-arrow {
+        position: relative;
+        top: -100%;
+        z-index: 0;
+    }
+
+    .home-banner.partnerships .home-banner-text .home-banner-left h1 {
+        color: white;
+    }
+
+    .home-banner.partnerships .home-banner-text .home-banner-left h2 {
+        color: white;
+    }
+
+    .home-banner.partnerships .home-banner-text .home-banner-left .home-banner-header-divider {
+        border: 10px solid #00cad9;
+        background-color: var(--ueg-aqua);
+    }
+
+.sub-banner-background.banner-display-on-mobile.blue-triangle.partnerships {
+    position: relative;
+    top: -100%;
+    z-index: 0;
+}
+
+.single-sector img {
+    height: 40px;
+    width: auto;
+    margin-right: 1rem;
+}
+
+.sector-name {
+    letter-spacing: 1px;
+    color: #0b154b;
+}
+
+.align-items-center.pl-0 {
+    justify-content: space-between;
+    margin-right: 20px;
+}
+
+.offer-grid {
+    justify-content: space-between;
+    display: flex;
+}
+
+.offer-grid img {
+    height: 50px;
+    padding-right: 14px;
+    margin-bottom: 15px;
+}
+
+.offer-grid div {
+    font-family: 'LEMON MILK';
+    margin-right: 2vw;
+    color: rgba(0,202,217,1.00);
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}

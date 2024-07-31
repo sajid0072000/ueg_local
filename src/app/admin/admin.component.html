@@ -1,0 +1,54 @@
+<header class="admin-headr">
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 admin-nav">
+    <div class="container">
+      <a class="navbar-brand" (click)="gotoHome('/admin/app')">
+        <img src="assets/img/logo.svg"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+        <ul class="navbar-nav navbar-user">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-dark" href="#" id="userDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              user: {{this.common.getLoginUserName()}}
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+              <a class="dropdown-item text-dark" (click)="gotoCalendar()">Calendar</a>
+              <a class="dropdown-item text-dark" (click)="gotoChangePassword()">Change Password</a>
+              <div class="dropdown-divider"></div>
+              <form class="form-inline" action="" method="post">
+                <button type="submit" class="dropdown-item text-dark login-button" (click)="logout()">Logout</button>
+                <input name="" type="hidden" value="">
+              </form>
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav flex-grow-1 navbar-main">
+          <li class="nav-item" *ngFor="let data of menuArr" [ngClass]="{'dropdown': data.child.length > 0}">
+            <div *ngIf="data.child.length == 0">
+              <a class="nav-link text-dark" (click)="goto(data)">{{data.name}}</a>
+            </div>
+            <div *ngIf="data.child.length > 0">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{data.name}}
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item text-dark" *ngFor="let obj of data.child" (click)="goto(obj)">{{obj.name}}</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="container admin-cont">
+  <router-outlet></router-outlet>
+</div>
+<app-footer></app-footer>
+
+<notifier-container></notifier-container>

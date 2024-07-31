@@ -1,0 +1,117 @@
+<main role="main" class="main-body-sty mt-3">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="top_scne">
+                <div class="top_scne_in">
+                    <h1>Educator Sign Up Request </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="main-content-inner-list">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div>
+                        <div id="datatables-reponsive_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+                            <div class="table-responsive">
+                                <table id="datatables-column-search-select-inputs"
+                                    class="table table-no-striped dataTable" style="width: 100%;"
+                                    aria-describedby="datatables-column-search-select-inputs_info">
+                                    <thead class="thead-dark">
+                                        <tr role="row">
+                                            <th class="sorting align-middle">Sl No.</th>
+                                            <th class="sorting align-middle">Name</th>
+                                            <th class="sorting align-middle">Email</th>
+                                            <th class="sorting align-middle">Phone No.</th>
+                                            <th class="sorting align-middle">Location</th>
+                                            <th class="sorting align-middle">Resume</th>
+                                            <th class="sorting align-middle">Action</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngIf="educatorSignupdetailsArr.length == 0">
+                                            <td class="text-center" colspan="20">
+                                                <h4>No Data Found!</h4>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="odd" style="cursor: pointer;"
+                                            *ngFor="let item of educatorSignupdetailsArr; let i = index">
+                                            <td class="align-middle" style="width: 10%;">{{i+1}}.</td>
+                                            <td class="align-middle" style="width: 20%;">{{item.name}}</td>
+                                            <td class="align-middle" style="width: 20%;">{{item.email}}</td>
+                                            <td class="align-middle" style="width: 20%;">{{item.mobile}}</td>
+                                            <td class="align-middle" style="width: 20%;">{{item.address}}</td>
+                                            <td class="align-middle text-center">
+                                                <a [href]="FILE_ROOT + item.cvfile" target="_blank">
+                                                    <i class="fa fa-file-text docIcon" aria-hidden="true"></i>
+                                                </a>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <button class="btn btn-primary" (click)="openModal(approveModal, item.id)">Approve</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="d-xl-flex align-items-center mt-3 pegin_sec"
+                                *ngIf="educatorSignupdetailsArr.length > 0">
+                                <div class="col-auto d-block">
+                                    <div class="text-center">
+                                        <div class="dataTables_length"><label>Educator Sign Up Request per page
+                                                <select name="datatables-reponsive_length"
+                                                    aria-controls="datatables-reponsive"
+                                                    class="form-select form-select-sm"
+                                                    (change)="changePagelimit($event)" [(ngModel)]="selectedVal">
+                                                    <option *ngFor="let item of pageList" [value]=item.value>
+                                                        {{item.name}}
+                                                    </option>
+                                                </select> {{offset + 1}} - {{offset + limit}}</label>
+                                            <div class="mx-2" style="display: inline-block;">
+                                                <button class="btn btn-dark text-white" [disabled]="previousBtnDesable"
+                                                    (click)="previousPage()"><img src="assets/img/chevron-left.svg"
+                                                        alt="chevron-left"></button>
+
+                                                <button class="btn btn-dark text-white" style="margin-left: 10px;" [disabled]="nextBtnDesable"
+                                                    (click)="nextPage()"><img src="assets/img/chevron-right.svg"
+                                                        alt="chevron-right"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+<ng-template #approveModal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-10 mt-3">
+                        <h3 class="modal-title d-inline-block align-middle ml" style="color: black !important;">
+                            Are you sure you want to approve this educator?
+                        </h3>
+                    </div>
+                    <div class="col-sm-2 d-flex justify-content-end">
+                        <button type="button" (click)="closeModal()" class="btn-close delteClose"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-secnedlt" style="text-align: center;">
+            <div><button type="button" class="cancel-button btn btn-primary btn-lg" style="width: 100px;"
+                    (click)="closeModal()">Cancel</button></div>
+            <div><button type="button" class="cancel-button btn btn-primary btn-lg" style="width: 100px;"
+                    (click)="approveEducator()">Approve </button></div>
+        </div>
+    </div>
+</ng-template>

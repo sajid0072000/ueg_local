@@ -1,0 +1,110 @@
+
+
+<main role="main" class="main-body-sty mt-3">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="top_scne">
+                <div class="top_scne_in">
+                    <h1 class="add_heading_text">Educator of the month</h1>
+                    <button class="btn btn-edtng-add" *ngIf="!educatorofthemonthid">Creating</button>
+                    <button class="btn btn-edtng-add" *ngIf="educatorofthemonthid">Editing</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content-add">
+        <div class="main-content-inner">
+            <div class="row">
+
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">Starting Date</label>
+                    <input type="datetime-local" class="form-control input-text" [(ngModel)]="DateStarting"
+                        (change)="changeDateStarting()">
+                    <span class="error-msg" *ngIf="DateStartingErr">Start date required</span>
+                </div>
+
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">Educator Id</label>
+                    <select class="form-select input-text" [(ngModel)]="EducatorId" (change)="chngeEducatorId()">
+                        <option value="">Selcet</option>
+                        <option *ngFor="let data of fetchEducatorIdArr" [value]="data.userId">{{data.educatorname}}</option>
+                    </select>
+                    <span class="error-msg" *ngIf="EducatorIdErr">Educator required</span>
+                </div>
+
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">Content</label>
+                    <ckeditor [(ngModel)]="Content" [editor]="Editor" (change)="changeContent()"></ckeditor>
+                    <span class="error-msg" *ngIf="ContentErr">Content required</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-secne" style="text-align: center;">
+        <button class="delete-button btn btn-primary" *ngIf="educatorofthemonthid" (click)="onClickDelete()">Delete</button>
+        <div *ngIf="!educatorofthemonthid"></div>
+        <div>
+            <button class="cancel-button btn btn-primary" (click)="resetForm()">Cancel</button>
+            <button class="submit-button btn btn-primary" *ngIf="educatorofthemonthid == null" (click)="add()">Save</button>
+            <button class="submit-button btn btn-primary" *ngIf="educatorofthemonthid != null" (click)="edit()">Save</button>
+        </div>
+
+    </div>
+    <a class="mt-2 a-back" style="color: #0366d6; cursor: pointer;" (click)="goBack()">Back to List</a>
+
+</main>
+
+<!-- <ng-template #deleteModal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-10">
+                        <h4 class="modal-title d-inline-block align-middle me-2">
+                            Are you want to sure delete this data?
+                        </h4>
+                    </div>
+                    <div class="col-sm-2 d-flex justify-content-end">
+                        <button type="button" (click)="closeModal()" class="btn-close"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6 text-center">
+                        <button type="button" class="btn btn-secondary btn-lg me-2" (click)="closeModal()">No</button>
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        <button type="button" class="btn btn-primary btn-lg me-2" (click)="delete()">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template> -->
+
+<ng-template #deleteModal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-10 mt-3">
+                        <h3 class="modal-title d-inline-block align-middle ml" style="color: black !important;">
+                            Are you sure you want to delete this data?
+                        </h3>
+                    </div>
+                    <div class="col-sm-2 d-flex justify-content-end">
+                        <button type="button" (click)="closeModal()" class="btn-close delteClose"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="bottom-secnedlt" style="text-align: center;">
+                    <div><button type="button" class="cancel-button btn btn-primary btn-lg" style="width: 100px;"  (click)="closeModal()">Cancel</button></div>
+                        <div><button type="button" class="btn btn-danger" style="width: 100px;" (click)="delete()">Delete</button></div>
+                   </div>
+         </div>
+  </ng-template>

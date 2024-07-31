@@ -1,0 +1,14 @@
+.search-bar-home.resourc_search input{
+    background-color: #eaf1f800 !important;
+}
+
+.cat-filter-opt{
+    margin-bottom: 0 !important;
+    padding-left: 1rem;
+    font-family: 'LEMON MILK';
+    font-weight: 200;
+    letter-spacing: 2px;
+    font-size: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

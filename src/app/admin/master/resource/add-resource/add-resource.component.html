@@ -1,0 +1,330 @@
+<main role="main" class="main-body-sty mt-3">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="top_scne">
+                <div class="top_scne_in">
+                    <h1 class="add_heading_text">Resources</h1>
+                    <button class="btn btn-edtng-add" *ngIf="!resourceid">Creating</button>
+                    <button class="btn btn-edtng-add" *ngIf="resourceid">Editing</button>
+                </div>
+                <div class="top_scne_rt">
+                    <button class="btn btn-edtng"  (click)="previewResourcesDetails()">Preview</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="main-content-add">
+        <div class="main-content-inner">
+            <div class="row">
+
+                <div class="mb-3 col-md-4">
+                    <label class="form-label lebel-text">Name</label>
+                    <input type="text" class="form-control input-text" [(ngModel)]="Name" (keyup)="changeName()">
+                    <span class="error-msg" *ngIf="NameErr">Name required</span>
+                </div>
+
+                <div class="mb-3 col-md-4">
+                    <label class="form-label lebel-text">Level</label>
+                    <input type="number" class="form-control input-text" [(ngModel)]="Level" (keyup)="changeLevel()">
+                    <span class="error-msg" *ngIf="LevelErr">Level required</span>
+                </div>
+
+
+                <div class="mb-3 col-md-4">
+                    <label class="form-label lebel-text">Background Colour</label>
+                    <input type="text" class="form-control input-text" [(ngModel)]="backgroundColour"
+                        (keyup)="changebackgroundColour()">
+                    <span class="error-msg" *ngIf="backgroundColourErr">Background colour required</span>
+                </div>
+
+                <div class="mb-3 col-md-4">
+                    <label class="form-label lebel-text">Price</label>
+                    <input type="text" class="form-control input-text" [(ngModel)]="Price"
+                        (keyup)="changebackgroundColour()">
+                    <span class="error-msg" *ngIf="PriceErr">Price is required</span>
+                </div>
+
+                <div class="mb-3 col-md-4">
+                    <label class="form-label lebel-text">Category</label>
+                    <select [(ngModel)]="CategoryId" class="form-select input-text">
+                        <option value="">Select</option>
+                        <option *ngFor="let data of fetchResourceCategoryArr" [value]="data.ResourceCategoryId">
+                            {{data.ResourceCategoryName}}</option>
+                    </select>
+                    <span class="error-msg" *ngIf="CategoryIdErr">Category is required</span>
+                </div>
+
+                <div class="mb-3 col-md-4">
+                    <label class="form-label lebel-text">Age Range</label>
+                    <select [(ngModel)]="AgeRangeId" class="form-select input-text">
+                        <option value="">Select</option>
+                        <option *ngFor="let data of fetchAgeRangesArr" [value]="data.Id">{{data.Name}}</option>
+                    </select>
+                    <span class="error-msg" *ngIf="AgeRangeIdErr">Age range is required</span>
+                </div>
+
+                <div class="mb-3 col-md-12">
+                    <label for="name" class="form-label lebel-text">Schools </label>
+                    <input type="text" [(ngModel)]="schoolName" (keyup)="searchSchoolByName()" [matAutocomplete]="auto"
+                        class="form-control input-text" />
+                    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="getSchoolIdByName()">
+                        <mat-option *ngIf="schoolSpinner">
+                            <mat-spinner style="width:50px;"></mat-spinner>
+                        </mat-option>
+                        <mat-option *ngFor="let item of schoolArr" [value]="item.Name">
+                            {{ item.Name }}
+                        </mat-option>
+                    </mat-autocomplete>
+                    <span class="error-msg" *ngIf="schoolNameErr">School required</span>
+
+                    <div class="catgry_list_sc">
+                        <div *ngFor="let data of schoolList; let i = index">
+                            <span>{{data.name}}</span>
+                            <a (click)="schoolRemove(i)">X</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">Description</label>
+                    <ckeditor [(ngModel)]="Description" [editor]="Editor" (change)="changeDescription()"></ckeditor>
+                    <span class="error-msg" *ngIf="DescriptionErr">Description required</span>
+                </div>
+
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">Additional Description</label>
+                    <ckeditor [(ngModel)]="Description2" [editor]="Editor" (change)="changeDescription2()"></ckeditor>
+                    <span class="error-msg" *ngIf="Description2Err">Additional description required</span>
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        <label class="form-label lebel-text">Logo </label>
+                        <div class="row">
+                            <div *ngIf="logoURI" class="col-5">
+                                <img *ngIf="logoURI" [src]="this.common.imgCheck(logoURI)"
+                                    class="form-control profile_img" alt=""
+                                    [ngStyle]="{'background-color': backgroundColour ? backgroundColour : null }"
+                                    (click)="common.openImageModal(logoURI,backgroundColour)">
+                            </div>
+                            <div class="col-2">
+                                <div class="image-upload">
+                                    <label for="file-input-logoURI">
+                                        <button type="button" class="btn btn-upload-btn" (click)="uploadBtnlogoURI()">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
+                                                <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+                                                <path
+                                                    d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12" />
+                                            </svg>
+                                        </button>
+                                    </label>
+                                    <input id="file-input-logoURI" type="file" (change)="onFileChangedlogoURI($event)">
+                                </div>
+                                <span class="error-msg" *ngIf="logoURIErr">Logo required</span>
+                            </div>
+                            <div class="col-2">
+                                <button class="icondown" style="margin-left: 5px;"
+                                    (click)="viewImg(logoURI)">
+                                    <i class="fa fa-download" aria-hidden="true"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        <label class="form-label lebel-text">Resource Image </label>
+                        <div class="row">
+                            <div *ngIf="ImageURI" class="col-5">
+                                <img *ngIf="ImageURI" [src]="this.common.imgCheck(ImageURI)"
+                                    class="form-control profile_img" alt=""
+                                    (click)="common.openImageModal(ImageURI)">
+                            </div>
+                            <div class="col-2">
+                                <div class="image-upload">
+                                    <label for="file-input-ImageURI">
+                                        <button type="button" class="btn btn-upload-btn" (click)="uploadBtnImageURI()">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
+                                                <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+                                                <path
+                                                    d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12" />
+                                            </svg>
+                                        </button>
+                                    </label>
+                                    <input id="file-input-ImageURI" type="file"
+                                        (change)="onFileChangedImageURI($event)">
+                                </div>
+                                <span class="error-msg" *ngIf="ImageURIErr">Image required</span>
+
+                            </div>
+                            <div class="col-2">
+                                <button class="icondown" style="margin-left: 5px;"
+                                    (click)="viewImg(ImageURI)">
+                                    <i class="fa fa-download" aria-hidden="true"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        <label class="form-label lebel-text">Resource PDF </label>
+                        <div class="row">
+                            <!-- <div *ngFor="let data of resources; let i = index" style="padding: 10px;">{{data.Name}}
+                                <button class="btn btn-secondary mx-2" (click)="viewPdf(data)">View</button> <button
+                                    class="btn btn-primary mx-2" (click)="deletePdf(i)">Delete</button></div> -->
+                            <div class="col-4">
+                                <div class="image-upload">
+                                    <label for="file-input-pdf">
+                                        <button type="button" class="btn btn-upload-btn" (click)="uploadBtnPDF()">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-filetype-pdf" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5zM1.6 11.85H0v3.999h.791v-1.342h.803c.287 0 .531-.057.732-.173.203-.117.358-.275.463-.474a1.42 1.42 0 0 0 .161-.677c0-.25-.053-.476-.158-.677a1.176 1.176 0 0 0-.46-.477c-.2-.12-.443-.179-.732-.179Zm.545 1.333a.795.795 0 0 1-.085.38.574.574 0 0 1-.238.241.794.794 0 0 1-.375.082H.788V12.48h.66c.218 0 .389.06.512.181.123.122.185.296.185.522Zm1.217-1.333v3.999h1.46c.401 0 .734-.08.998-.237a1.45 1.45 0 0 0 .595-.689c.13-.3.196-.662.196-1.084 0-.42-.065-.778-.196-1.075a1.426 1.426 0 0 0-.589-.68c-.264-.156-.599-.234-1.005-.234H3.362Zm.791.645h.563c.248 0 .45.05.609.152a.89.89 0 0 1 .354.454c.079.201.118.452.118.753a2.3 2.3 0 0 1-.068.592 1.14 1.14 0 0 1-.196.422.8.8 0 0 1-.334.252 1.298 1.298 0 0 1-.483.082h-.563v-2.707Zm3.743 1.763v1.591h-.79V11.85h2.548v.653H7.896v1.117h1.606v.638H7.896Z" />
+                                            </svg>
+                                        </button>
+                                    </label>
+                                    <input id="file-input-pdf" type="file" (change)="onFileChangedPDF($event)"
+                                        accept="application/pdf" multiple>
+                                </div>
+                                <span class="error-msg" *ngIf="resourceErr">PDF required</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" *ngIf="resources.length>0">
+                    <div class="col-sm-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="width:50%;">Pdf name</th>
+                                    <th style="text-align:center;"></th>
+                                    <th style="text-align:center;">View</th>
+                                    <th style="text-align:center;">Download</th>
+                                    <th style="text-align:center;">Delete</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let data of resources; let i = index">
+                                    <td>{{data.Name}}</td>
+                                    <td style="text-align: center;">
+                                        <mat-spinner *ngIf="data.status == 0" [diameter]="30"></mat-spinner>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <button *ngIf="data.status == 1 || data.Id" class="btn btn-secondary"
+                                            (click)="viewPdf(data)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z" />
+                                                <path
+                                                    d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
+                                            </svg>
+                                        </button>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <button *ngIf="data.status == 1 || data.Id" class="btn btn-secondary"
+                                            (click)="downloadpdf(data)">
+                                            <i class="fa fa-download" aria-hidden="true"></i>
+                                        </button>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <button *ngIf="data.status == 1 || data.Id" class="btn btn-danger"
+                                            (click)="confirmDeleteResourcePDF(deletePDFModal, i, data.Id ? data.Id : null)">
+                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="bottom-secne" style="text-align: center;">
+        <button class="delete-button btn btn-primary" *ngIf="resourceid" (click)="onClickDelete()">Delete
+            Resource</button>
+        <div *ngIf="!resourceid"></div>
+        <div>
+            <button class="cancel-button btn btn-primary" (click)="resetForm()">Cancel</button>
+            <button class="submit-button btn btn-primary" *ngIf="resourceid == null" (click)="add()">Save</button>
+            <button class="submit-button btn btn-primary" *ngIf="resourceid != null" (click)="edit()">Save</button>
+        </div>
+
+    </div>
+    <a class="mt-2 a-back" style="color: #0366d6; cursor: pointer;" (click)="goBack()">Back to List</a>
+</main>
+
+<ng-template #deleteModal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-10 mt-3">
+                        <h3 class="modal-title d-inline-block align-middle ml" style="color: black !important;">
+                            Are you sure you want to delete this resource?
+                        </h3>
+                    </div>
+                    <div class="col-sm-2 d-flex justify-content-end">
+                        <button type="button" (click)="closeModal()" class="btn-close delteClose"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-secnedlt" style="text-align: center;">
+            <div><button type="button" class="cancel-button btn btn-primary btn-lg" style="width: 100px;"
+                    (click)="closeModal()">Cancel</button></div>
+            <div><button type="button" class="btn btn-danger" style="width: 100px;" (click)="delete()">Delete</button>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #deletePDFModal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-10 mt-3 text-center">
+                        <h3 class="modal-title d-inline-block align-middle ml" style="color: black !important;">
+                            Are you sure?
+                        </h3>
+                    </div>
+                    <div class="col-sm-2 d-flex justify-content-end">
+                        <button type="button" (click)="closeModal()" class="btn-close delteClose"></button>
+                    </div>
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8 text-center mt-2">
+                        <p>
+                            Are you sure you want to delete this document? This process can not be undone.
+                        </p>
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+
+            </div>
+        </div>
+        <div class="bottom-secnedlt" style="text-align: center;">
+            <div><button type="button" class="cancel-button btn btn-primary btn-lg" style="width: 100px;"
+                    (click)="closeModal()">Cancel</button></div>
+            <div><button type="button" class="btn btn-danger" style="width: 100px;"
+                    (click)="deleteResourcePDF()">Delete</button>
+            </div>
+        </div>
+    </div>
+</ng-template>

@@ -1,0 +1,167 @@
+<div class="display-none" id="p-loaded">
+</div>
+<div class="resource_package  bg-light-blue py-2 for-moblie">
+   <div class="container">
+      <div class="resource_package_inr">
+         <div class="paginat">
+            <ul class="cp">
+               <li><a href="">Home</a> /</li>
+               <li><a (click)="goto()">Resources</a> /</li>
+               <li (click)="gotoResourceFilter(resourcecategoryname)">{{resourcecategoryname}}</li>
+            </ul>
+         </div>
+         <div class="row align-items-start">
+            <div class="col-lg-5 col-md-12" id="slider">
+               <div id="myCarousel" class="carousel slide">
+                  <div class="carousel-inner">
+                     <div class="active carousel-item " data-slide-number="0" style="height: 465px; display: flex; justify-content: center; align-items: center; border-radius: 10px;"  [ngStyle]="{'background-color': backgroundColor}"> 
+                        <img  [src]="this.common.imgCheck(resourceimg)" onerror="this.onerror=null; this.src='assets/img/gray.png'" class="img-fluid border-rad">
+                      </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-7 col-md-12">
+               <div class="detaild_pays">
+                  <div class="desc_div">
+                     <!-- <p>Resources / {{resourcecategoryname}}</p> -->
+                     <h4>{{resourcename}}</h4>
+                     <div class="prod_dtls">
+                        <p class="mb-1">This pack would be suitable for the following schools
+                        </p>
+                        <ul *ngFor="let item of schoolListArr">
+                           <li>• {{item.schoolname}} :</li>
+                        </ul>
+                     </div>
+                     <div class="prod_brif_des">
+                        <div class="prod_brif_titl">
+                           <!-- <img src="assets/img/icon-5.png"> -->
+                           <!-- <h4>{{resourcecategoryname}}</h4> -->
+
+                        </div>
+                        <p id="DescResource" style="display: none;">
+
+                           &lt;p&gt;Maths Level 1 Pack 1 - Test&amp;nbsp;&lt;/p&gt;
+                           <br> &lt;p&gt;This is a level 1 pack for 11+ maths.&amp;nbsp;&lt;/p&gt;
+                        </p>
+                        <p id="TestP">
+                        <p [innerHTML]="resourcedesc1">&nbsp;</p>
+                        <p [innerHTML]="resourcedesc2">&nbsp;</p>
+                     </div>
+                  </div>
+                  <div class="pays_div">
+                     <p>Available: <span>In Stock</span></p>
+                     <div class="prout_price">
+                        <h3>£{{resourceprice}}</h3>
+                     </div>
+                     <div class="age_select">
+                        <h5>Age</h5>
+                        <div class="age">
+                           <div class='col-text-center'>
+                              <input type="radio" name="imgbackground" id="img1" class="d-none imgbgchk" value="">
+                              <label for="img1">
+                                 <strong>{{agerangename}}</strong>
+                              </label>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="age_select">
+                        <h5>Level</h5>
+                        <div class="age">
+                           <div class='col-text-center'>
+                              <input type="radio" name="imgbackground" id="img6" class="d-none imgbgchk" value="">
+                              <label for="img6">
+                                 <strong>{{resourcelevel}}</strong>
+                                 
+                              </label>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="qntty">
+                        <h5>Quantity</h5>
+                        <div class="qntty_innr">
+                           <input type="text" [(ngModel)]="quantity" ((keydown))="false" readonly>
+                           <button class="btn btn-addq"  (click)="incrementFun()">+</button>
+                           <button class="btn btn-subq" [disabled]="quantity <= 1" (click)="decrementFun()">-</button>
+                        </div>
+                     </div>
+                     <div class="add_bskt">
+                        <button class="btn enrol-btn btn-baskt" (click)="addCart()">ADD TO BASKET <img
+                              src="assets/img/cart-icon.png"></button>
+                        <button class="btn enrol-btn btn-paynw" (click)="gotoCheckout()">CHECK OUT</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+         </div>
+
+         <div class="row">
+            <div class="col-sm-12 courses-box resources_caro mb-0 mt-5 pb-5 mb-4">
+               <div class="card_tanb">
+                  <ul class="nav nav-tabs" role="tablist" style="border-bottom: 1px solid #dee2e6 !important;">
+                     <li class="nav-item"> <a class="nav-link active" style="background: none !important;"
+                           data-toggle="tab" href="#tabs-1" role="tab"><strong>SIMILAR RESOURCES</strong></a> </li>
+                  </ul>
+                  <div class="tab-content">
+                     <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                        <div class="courses-h-list">
+                           <div class="layer single-carousel-item"
+                              *ngFor="let data  of   furtherResourcesByCategoryArr">
+                              
+                                 <div class="layer component">
+                                    <div class="layer carousel-image">
+                                       <div class="zoomimg similar-res" [ngStyle]="{'background-color': data.backgroundColour}" (click)="gotoFurtherResourcesdetails(data.Id)">
+                                          <a class="carousel-link"><img  [src]="this.common.imgCheck(data.logoURI)" onerror="this.onerror=null; this.src='assets/img/gray.png'"></a></div>
+                                    </div>
+                                    <div class="layer course-tn-category"><img class="iconImag" [ngStyle]="{'background-color': data.backgroundColour}" [src]="this.common.imgCheck(data.logoURI)" onerror="this.onerror=null; this.src='assets/img/gray.png'">
+                                       <span>{{data.ResourceCategoryName}}</span>
+                                    </div>
+                                    <div class="layer course-tn-name ">{{data.Name}}</div>
+                                    <!-- <div class="add_card">
+                                       <button>ADD TO BASKET</button>
+                                       <strong>£{{data.Price}}</strong>
+                                    </div> -->
+                                 </div>
+                                 <div class="layer lay-cour-lst">
+                                    <div class="layer component lay-cour-lst-cmp">
+                                    </div>
+                                 </div>
+                              
+                           </div>
+
+                        </div>
+                     </div>
+                     <div class="tab-pane" id="tabs-2" role="tabpanel">sec</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<ng-template #alredyselected>
+   <div class="modal-content">
+      <div class="modal-header">
+         <div class="modal-title">
+            <h5 class="modal-title">Log In</h5>
+            <hr class="big-blue">
+         </div>
+      </div>
+
+      <form id="enrollForm">
+         <div class="modal-body">
+
+            <div class="row">
+
+               <div class="col-lg-12">
+                  <p>Don't have a UEG account yet? <a href="">Register</a></p>
+               </div>
+            </div>
+         </div>
+
+      </form>
+   </div>
+
+</ng-template>

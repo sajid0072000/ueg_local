@@ -1,0 +1,63 @@
+<main role="main" class="pb-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="top_scne">
+                    <h1>Wishlist</h1>
+                    <div class="wish_src">
+                        <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchText" (keyup)="search()" />
+                        <button>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path id="Path_1772" data-name="Path 1772"
+                                    d="M1331.641,1127.42h-1.084l-.384-.37a8.933,8.933,0,1,0-.96.96l.37.384v1.084l6.861,6.847,2.045-2.045Zm-8.234,0a6.175,6.175,0,1,1,6.175-6.175A6.167,6.167,0,0,1,1323.407,1127.42Z"
+                                    transform="translate(-1314.488 -1112.326)">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="card-nobd">
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <div class="courses-list">
+                            <div class="layer-inr" *ngFor="let data of wishList">
+                                <a class="carousel-link" (click)="goto(data.courseid)">
+                                    <div class="layer component">
+                                        <div class="layer carousel-image">
+                                            <div class="zoomimg"><img src={{FILE_URL+data.coursephoto}}
+                                                    style="height: 100%;"></div>
+                                        </div>
+                                        <div class="layer course-tn-category"> <img src="assets/img/course-icon-1.svg"
+                                                style="width: 20px;">
+                                            <span 
+                                                style="font-size: 10px; font-family: 'LEMON MILK'; font-weight: 300; letter-spacing: 1px; color: rgba(11,21,75,1.00);">
+                                                {{data.coursename}}
+                                            </span>
+                                        </div>
+                                        <div class="layer"
+                                            style=" height: 85px; width: 221px; top: 190px; left: 7px; background-color: rgba(211,38,38,0); font-size: 11px; font-family: 'LEMON MILK';font-weight: 400; letter-spacing: .1rem; color: rgba(11,21,75,1.00);">
+                                            <div class="layer"
+                                                style=" height: 85px; width: 221px; top: 0px; left: 0px; background-color: rgba(255,255,255,0.00); font-size: 11px; font-family: arial; color: rgba(11,21,75,1.00); ">
+                                                <div class="layer course-tn-name">
+                                                    <div [innerHTML]="data.shortdesc"></div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

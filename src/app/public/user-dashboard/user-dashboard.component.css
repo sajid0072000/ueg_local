@@ -1,0 +1,8 @@
+.popularConttor.dash-resor .layer.carousel-image.lay-img {
+    border-radius: 10px;
+    overflow: hidden;
+}
+.popularConttor.dash-resor .layer.carousel-image.lay-img .zoomimg{display: flex; align-items: center; justify-content: center;}
+.popularConttor.dash-resor .layer.carousel-image.lay-img .zoomimg img{
+    width: 94%;height: 94%;object-fit: inherit;
+}

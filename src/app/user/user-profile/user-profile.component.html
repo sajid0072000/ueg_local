@@ -1,0 +1,116 @@
+<main role="main" class="pb-3">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="top_scne">
+                <h1>Profile</h1>
+                </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="main-content-inner">
+        <div class="row">
+            <div class="col-md-2 col-sm-12">
+                <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <ul>
+                        <li><button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">General</button></li>
+                        <li><button class="nav-link" (click)="goto('/user/app/account')">Account</button></li>
+                        <li><button class="nav-link" (click)="goto('/user/app/achievement')">Achievements</button></li>
+                        <li><button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Password</button></li>
+                        <li><button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Notifications</button></li>
+                        <li><button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Delete Account</button></li>                                    
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10 col-sm-12">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                        <div class="profil_img_up">
+                            <div class="profil_img_up_img">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-person" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
+                                </svg>
+                            </div>
+                            <div class="profil_img_cont">
+                                <div id="newpicuplod" *ngIf="!isShow">
+                                    <button id="newpicuplodbtn" class="btn btn-upld" (click)="uploadImage()">Upload new picture</button>
+                                    <button class="btn btn-dlt" (click)="deleteProfile()">Delete</button>
+                                </div>
+                                <div id="choosepicuplod" class="hide" *ngIf="isShow">
+                                    <button class="btn btn-dlt">Delete</button>
+                                    <div class="choose_file"><button class="btn btn-choic">Choose File</button><span>abcd.png</span></div>
+                                    <p>JPG, PNG or SVG. Max size of 800k</p>
+                                    <button id="upldnewpicbtn" class="btn btn-upld">Upload new picture</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profil_form">
+                        <div class="form-group">
+                            <label class="control-label" for="Course_CourseName">Name</label>
+                            <input class="form-control" type="text" id="User-Name" name="">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="Course_CourseType">Location</label>
+                            <select class="form-control" data-val="true"
+                                data-val-required="The Course Type field is required." id="Course_CourseType"
+                                name="Course.CourseType">
+                                <option value="1" selected="selected">academic-development</option>
+                                <option value="3">professional-learning</option>
+                                <option value="2">skill-acquisition</option>
+                                <option value="5">undergraduates</option>
+                                <option value="4">wellbeing</option>
+                            </select>
+                            <span class="text-danger field-validation-valid" data-valmsg-for="Course.CourseType"
+                                data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="Course_ShortDescription">Bio</label>
+                            <textarea class="form-control" rows="3" id="Course_ShortDescription"
+                                name="Course.ShortDescription"></textarea>
+                            <span class="text-danger field-validation-valid"
+                                data-valmsg-for="Course.ShortDescription" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="Course_longDescription">Education</label>
+                            <textarea class="form-control" rows="7" id="Course_longDescription"
+                                name="Course.longDescription"></textarea>
+                            <span class="text-danger field-validation-valid"
+                                data-valmsg-for="Course.longDescription" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="Course_longDescription">Teaching Experience</label>
+                            <textarea class="form-control" rows="7" id="Course_longDescription"
+                                name="Course.longDescription"></textarea>
+                            <span class="text-danger field-validation-valid"
+                                data-valmsg-for="Course.longDescription" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="Course_longDescription">Subjects</label>
+                            <textarea class="form-control" rows="7" id="Course_longDescription"
+                                name="Course.longDescription"></textarea>
+                            <span class="text-danger field-validation-valid"
+                                data-valmsg-for="Course.longDescription" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">Password</div>
+                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">Notification</div>
+                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">Delete Account</div>
+                  </div>  
+        </div>
+        </div>
+       </div>
+       <div class="bottom-secne" style="text-align: center;">
+        <div>&nbsp;</div>
+        <div class="gap-4">
+            <button class="cancel-button btn btn-primary" >Cancel</button>
+            <button class="submit-button btn btn-primary" (click)="addProfiledetails()">Save</button>
+            
+        </div>
+
+    </div>
+    </div>
+</div>
+</main>

@@ -1,0 +1,318 @@
+
+
+<main role="main" class="main-body-sty mt-3">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="top_scne">
+                <div class="top_scne_in">
+                    <h1 class="add_heading_text">UK Schools</h1>
+                    <button class="btn btn-edtng-add" *ngIf="!schoolid">Creating</button>
+                    <button class="btn btn-edtng-add" *ngIf="schoolid">Editing</button>
+                </div>
+                    <div class="top_scne_rt"><button class="btn btn-edtng" 
+                        (click)="previewSchoolDetails()">Preview</button></div>
+            </div>
+
+        </div>
+    </div>
+    <div class="main-content-add">
+        <div class="main-content-inner">
+            <div class="row">
+
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">School Name</label>
+                    <input type="text" class="form-control input-text" [(ngModel)]="Name"
+                        (keyup)="changeSchoolName()">
+                    <span class="error-msg" *ngIf="NameErr">School name required</span>
+                </div>
+
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">Location</label>
+                    <input type="text" class="form-control input-text" [(ngModel)]="Location"
+                        (keyup)="changeLocation()">
+                    <span class="error-msg" *ngIf="LocationErr">Location required</span>
+                </div>
+
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">Main Information</label>
+                    <ckeditor [(ngModel)]="MainInformation" [editor]="Editor" (change)="changeMainInformation()"></ckeditor>
+                    <span class="error-msg" *ngIf="MainInformationErr">Main Information required</span>
+
+                </div>
+
+
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">School Information</label>
+                    <ckeditor [(ngModel)]="SchoolInformation" [editor]="Editor" (change)="changeSchoolInformation()"></ckeditor>
+                    <span class="error-msg" *ngIf="SchoolInformationErr">School Information required</span>
+
+                </div>
+
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">Additional Information</label>
+                    <ckeditor [(ngModel)]="AdditionalInformation" [editor]="Editor" (change)="changeAdditionalInformation()"></ckeditor>
+                    <span class="error-msg" *ngIf="AdditionalInformationErr">Additional Information required</span>
+
+                </div>
+
+                <div class="mb-3 col-md-12">
+                    <label class="form-label lebel-text">Admissions Policy</label>
+                    <ckeditor [(ngModel)]="AdmissionsPolicy" [editor]="Editor" (change)="changeAdmissionsPolicy()"></ckeditor>
+                    <span class="error-msg" *ngIf="AdmissionsPolicyErr">Admissions Policy required</span>
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        <label class="form-label lebel-text">Logo </label>
+                        <div class="row">
+                            <div *ngIf="logoURI" class="col-5">
+                                <img *ngIf="logoURI" [src]="this.common.imgCheck(logoURI)" class="form-control profile_img"
+                                    alt="" (click)="common.openImageModal(logoURI)">
+                            </div>
+                            <div class="col-4">
+                                <div class="image-upload">
+                                    <label for="file-input-logoURI">
+                                        <button type="button" class="btn btn-upload-btn" (click)="uploadBtnlogoURI()"> 
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
+                                                <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+                                                <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12"/>
+                                              </svg>
+                                        </button>
+                                        <button *ngIf="schoolid" type="button" class="icondown" style="margin-left:5px;" (click)="downloadImage(logoURI,0)">
+                                            <i class="fa fa-download"></i>
+                                          </button>
+                                    </label>
+                                    <input id="file-input-logoURI" type="file" (change)="onFileChangedlogoURI($event)">
+                                </div>
+                                <span class="error-msg" *ngIf="logoURIErr">Logo required</span>
+                               
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        <label class="form-label lebel-text">Image 1 </label>
+                        <div class="row">
+                            <div *ngIf="ImageUri1" class="col-5">
+                                <img *ngIf="ImageUri1" [src]="this.common.imgCheck(ImageUri1)" class="form-control profile_img"
+                                    alt="" 
+                                    (click)="common.openImageModal(ImageUri1)">
+                            </div>
+                            <div class="col-4">
+                                <div class="image-upload">
+                                    <label for="file-input-Image1">
+                                        <button type="button" class="btn btn-upload-btn" (click)="uploadBtnImage1()"> 
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
+                                                <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+                                                <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12"/>
+                                              </svg>
+                                        </button>
+                                        <button *ngIf="schoolid" type="button" class="icondown" style="margin-left:5px;" (click)="downloadImage(ImageUri1,1)">
+                                            <i class="fa fa-download"></i>
+                                          </button>
+                                    </label>
+                                    <input id="file-input-Image1" type="file" (change)="onFileChangedImage1($event)">
+                                </div>
+                                <span class="error-msg" *ngIf="ImageUri1Err">Image 1 required</span>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="mb-3 col-md-6">
+                        <label class="form-label lebel-text">Mobile ImageUri 1</label>
+                        <div class="row">
+                            <div *ngIf="mobImageUrl1" class="col-6">
+                                <img [src]="this.common.imgCheck(mobImageUrl1)"
+                                    class="form-control profile_img" alt="" (click)="common.openImageModal(mobImageUrl1)">
+                            </div>
+                            <div class="col-4">
+                                <div class="image-upload">
+                                    <label for="file1">
+                                        <button type="button" class="btn btn-upload-btn" (click)="uploadBtnMobImageUri('mobfile1')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
+                                                <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+                                                <path
+                                                    d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12" />
+                                            </svg>
+                                        </button>
+                                          <button class="icondown" style="margin-left: 5px;" *ngIf="schoolid"
+                                          (click)="downloadImage(mobImageUrl1,0)">
+                                            <i class="fa fa-download" aria-hidden="true"></i>
+                                        </button>
+                                    </label>
+                                    <input id="mobfile1" type="file" (change)="onFileChangedMobImage1($event , 5)">
+                                </div>
+                                <span class="error-msg" *ngIf="mobimg1Err">Mobile ImageUri 1 required</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        <label class="form-label lebel-text">Image 2 </label>
+                        <div class="row">
+                            <div *ngIf="ImageUri2" class="col-5">
+                                <img *ngIf="ImageUri2" [src]="this.common.imgCheck(ImageUri2)" class="form-control profile_img"
+                                    alt="" (click)="common.openImageModal(ImageUri2)">
+                            </div>
+                            <div class="col-4">
+                                <div class="image-upload">
+                                    <label for="file-input-Image2">
+                                        <button type="button" class="btn btn-upload-btn" (click)="uploadBtnImage2()"> 
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
+                                                <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+                                                <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12"/>
+                                              </svg>
+                                        </button>
+                                        <button *ngIf="schoolid" type="button" class="icondown" style="margin-left:5px;" (click)="downloadImage(ImageUri2,2)">
+                                            <i class="fa fa-download"></i>
+                                          </button>
+                                    </label>
+                                    <input id="file-input-Image2" type="file" (change)="onFileChangedImage2($event)">
+                                </div>
+                                <span class="error-msg" *ngIf="ImageUri2Err">Image 2 required</span>
+                               
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="mb-3 col-md-6">
+                        <label class="form-label lebel-text">Mobile ImageUri 2</label>
+                        <div class="row">
+                            <div *ngIf="mobImageUrl2" class="col-6">
+                                <img [src]="this.common.imgCheck(mobImageUrl2)"
+                                    class="form-control profile_img" alt="" (click)="common.openImageModal(mobImageUrl2)">
+                            </div>
+                            <div class="col-4">
+                                <div class="image-upload">
+                                    <label for="file1">
+                                        <button type="button" class="btn btn-upload-btn" (click)="uploadBtnMobImageUri('mobfile2')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
+                                                <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+                                                <path
+                                                    d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12" />
+                                            </svg>
+                                        </button>
+                                          <button class="icondown" style="margin-left: 5px;" *ngIf="schoolid"
+                                          (click)="downloadImage(mobImageUrl2,0)">
+                                            <i class="fa fa-download" aria-hidden="true"></i>
+                                        </button>
+                                    </label>
+                                    <input id="mobfile2" type="file" (change)="onFileChangedMobImage1($event , 6)">
+                                </div>
+                                <span class="error-msg" *ngIf="mobimg2Err">Mobile ImageUri 2 required</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        <label class="form-label lebel-text">Image 3 </label>
+                        <div class="row">
+                            <div *ngIf="ImageUri3" class="col-5">
+                                <img *ngIf="ImageUri3" [src]="this.common.imgCheck(ImageUri3)" class="form-control profile_img"
+                                    alt="" (click)="common.openImageModal(ImageUri3)">
+                            </div>
+                            <div class="col-4">
+                                <div class="image-upload">
+                                    <label for="file-input-Image3">
+                                        <button type="button" class="btn btn-upload-btn" (click)="uploadBtnImage3()"> 
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
+                                                <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+                                                <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12"/>
+                                              </svg>
+                                        </button>
+                                        <button *ngIf="schoolid" type="button" class="icondown" style="margin-left:5px;" (click)="downloadImage(ImageUri3,3)">
+                                            <i class="fa fa-download"></i>
+                                          </button>
+                                    </label>
+                                    <input id="file-input-Image3" type="file" (change)="onFileChangedImage3($event)">
+                                </div>
+                                <span class="error-msg" *ngIf="ImageUri3Err">Image 3 required</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 col-md-6">
+                        <label class="form-label lebel-text">Mobile ImageUri 3</label>
+                        <div class="row">
+                            <div *ngIf="mobImageUrl3" class="col-6">
+                                <img [src]="this.common.imgCheck(mobImageUrl3)"
+                                    class="form-control profile_img" alt="" (click)="common.openImageModal(mobImageUrl3)">
+                            </div>
+                            <div class="col-4">
+                                <div class="image-upload">
+                                    <label for="file1">
+                                        <button type="button" class="btn btn-upload-btn" (click)="uploadBtnMobImageUri('mobfile3')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
+                                                <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+                                                <path
+                                                    d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12" />
+                                            </svg>
+                                        </button>
+                                          <button class="icondown" style="margin-left: 5px;" *ngIf="schoolid"
+                                          (click)="downloadImage(mobImageUrl3,0)">
+                                            <i class="fa fa-download" aria-hidden="true"></i>
+                                        </button>
+                                    </label>
+                                    <input id="mobfile3" type="file" (change)="onFileChangedMobImage1($event , 7)">
+                                </div>
+                                <span class="error-msg" *ngIf="mobimg3Err">Mobile ImageUri 3 required</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="bottom-secne" style="text-align: center">
+        <button class="delete-button btn btn-primary" *ngIf="schoolid" (click)="onClickDelete()">Delete School</button>
+        <div *ngIf="!schoolid"></div>
+        <div>
+            <button class="cancel-button btn btn-primary" (click)="resetForm()">Cancel</button>
+            <button class="submit-button btn btn-primary" *ngIf="schoolid == null" (click)="add()">Save</button>
+            <button class="submit-button btn btn-primary" *ngIf="schoolid != null" (click)="edit()">Save</button>
+        </div>
+
+    </div>
+    <a class="mt-2 a-back" style="color: #0366d6; cursor: pointer;" (click)="goBack()">Back to List</a>
+</main>
+
+<ng-template #deleteModal>
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-10 mt-3">
+                        <h3 class="modal-title d-inline-block align-middle ml" style="color: black !important;">
+                            Are you sure you want to delete this school?
+                        </h3>
+                    </div>
+                    <div class="col-sm-2 d-flex justify-content-end">
+                        <button type="button" (click)="closeModal()" class="btn-close delteClose"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="bottom-secnedlt" style="text-align: center;">
+                    <div><button type="button" class="cancel-button btn btn-primary btn-lg" style="width: 100px;"  (click)="closeModal()">Cancel</button></div>
+                        <div><button type="button" class="btn btn-danger" style="width: 100px;" (click)="delete()">Delete</button></div>
+                   </div>
+         </div>
+  </ng-template>

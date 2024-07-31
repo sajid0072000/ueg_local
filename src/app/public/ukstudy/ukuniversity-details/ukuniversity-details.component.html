@@ -1,0 +1,175 @@
+<div class="display-none" id="p-loaded">
+</div>
+<div class="container">
+    <div class="school-page">
+        <div class="title-banner" [ngStyle]="{'background-image': 'url('+this.common.imgCheck(showImageUri1)+')'} ">
+            <div class="title-banner-blue-arrow">
+                <img class="display-off-mobile" src="assets/img/blue-round-triangle.png">
+            <img class="display-on-mobile" src="assets/img/blue-round-triangle-mobile.png">
+            </div>
+            <div class="title-banner-text">
+                <div class="row">
+                    <div class="title-banner-text-left w-75">
+                        <h1 class="w-90 font-size-new" [ngClass]="{'detailsText': Name.length >= 19}">{{Name}}</h1>
+                        <!-- <h1 class="w-90 font-size-new">{{Name.substring(0,19) + ' ... ' }}</h1> -->
+                        <div class="dark-blue-divider my-5"></div>
+                        <button class="button-yellow" (click)="scrollToSection('other-universities')">
+                            {{isLondonLoc ? 'Universities in London' : 'UNIVERSITIES OUTSIDE OF LONDON'}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="school-intro bg-white">
+            <div class="school-logo">
+                <img [src]="this.common.imgCheck(LogoUri)" />
+            </div>
+            <div class="school-intro-text">
+                <p [innerHTML]="MainInformation"></p>
+            </div>
+        </div>
+
+        <div class="school-info-1" [ngStyle]="{'background-image': 'url('+this.common.imgCheck(showImageUri2)+')'} ">
+            <div class="schools-info-trapezoid">
+                <img class="trapezoid banner-display-off-mobile" src="assets/img/white-slope-divider.png" alt="">
+            <img class="trapezoid banner-display-on-mobile" src="assets/img/white-slope-divider-mobile.png" alt="">
+
+            </div>
+            <div class="school-info-1-text">
+                <div class="row">
+                    <div class="info-1-left">
+                        <h2 class="info-title-text">
+                            UNIVERSITY INFORMATION
+                        </h2>
+                        <div class="light-blue-divider my-5"></div>
+                        <p class="info-1-p" [innerHTML]="UniversityInformation">
+
+                        </p>
+                    </div>
+                    <div class="info-1-right"></div>
+                </div>
+            </div>
+        </div>
+        <div class="school-info-2" [ngStyle]="{'background-image': 'url('+this.common.imgCheck(showImageUri3)+')'} ">
+            <div class="school-info-cutout">
+                <img class="cutout display-off-mobile" src="assets/img/blue-arrow-cutout.png" alt="">
+            <img class="cutout display-on-mobile" src="assets/img/blue-arrow-cutout-mobile.png" alt="">
+            </div>
+            <div class="school-info-2-text">
+                <div class="info-2-left"></div>
+                <div class="info-2-right">
+                    <p [innerHTML]="AdditionalInformation">{{AdditionalInformation}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="container admissions">
+            <h4>ADMISSIONS</h4>
+            <p [innerHTML]="AdmissionsPolicy"></p>
+        </div>
+        <!-- new design -->
+
+        <div class="courses-card container-fluid bg-light-blue further-course educator-experience container-flex section-padding"
+            id="further-course">
+            <div class="container">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-sm-12 courses-box popularConttor">
+                            <div *ngIf="getUniversityEducatorList.length > 0">
+                                <!-- POPULAR UNIVERSITIES -->
+                                <div class="lmtitle">EDUCATORS WHO WENT TO University of {{Name}}</div>
+                            
+                                <div class="containerforall">
+                                    <div *ngIf="getUniversityEducatorList.length > 0">
+                                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfigeducatorwho">
+                                            <div ngxSlickItem class="slide carousel-cell prerecorded_caro owl-carousel owl-theme course-dtls" *ngFor="let data of getUniversityEducatorList">
+                                                <div class="items">
+                                                    <div class="layer single-carousel-item mx-2">
+                                                        <a class="carousel-link" (click)="goto('/educator-details/'+data.educatorid)">
+                                                            <div class="layer component lay-bdy">
+                                                                <div class="layer carousel-image lay-img">
+                                                                    <div class="zoomimg"><img [src]="this.common.imgCheck(data.userphotourl)" onerror="this.onerror=null; this.src='assets/img/gray.png'"></div>
+                                                                </div>
+                                                                <div class="layer course-tn-category">
+                                                                    <img [src]="this.common.imgCheck(data.educatoricon)" onerror="this.onerror=null; this.src='assets/img/gray.png'" style="width: 20px; margin-right: 5px;">
+                                                                    <span style="font-size: 10px; font-family: 'LEMON MILK'; font-weight: 300; letter-spacing: 1px; color: rgba(11,21,75,1.00);">{{data.name}}</span>
+                                                                </div>
+                                                                <div class="layer lay-cou-bdy">
+                                                                    <div class="layer lay-cou-nam">
+                                                                        <div class="layer course-tn-name cour-lay-h3" [innerHTML]="data.educatorsubheading"></div>
+                                                                        <div class="layer lay-edu-nam cour-lay-h4">{{data.subjectList}}</div>
+                                                                        <div class="layer lay-cour-lst">
+                                                                            <div class="layer component lay-cour-lst-cmp"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ngx-slick-carousel>
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+                            <!-- other university-->
+                          
+                            <div class="lmtitle mt-2" id="other-universities">
+                                {{isLondonLoc ? 'Other Universities in London' : 'UNIVERSITIES OUTSIDE OF LONDON'}}
+                            </div>
+                            <div class="containerforall">
+                                <div *ngIf="getotherUniversityEducatorList.length>0">
+                                    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
+                                        [config]="slideConfigeotheruniversity">
+                                        <div ngxSlickItem
+                                            class="slide carousel-cell prerecorded_caro owl-carousel owl-theme course-dtls"
+                                            *ngFor="let data of getotherUniversityEducatorList">
+                                            <div class="items">
+                                                <div class="layer single-carousel-item mx-2">
+                                                    <a class="carousel-link"
+                                                        (click)="gotoOther('/ukuniversityDetails/'+data.Id)">
+                                                        <div class="layer component lay-bdy">
+                                                            <div class="layer carousel-image lay-img">
+                                                                <div class="zoomimg"><img
+                                                                        [src]="this.common.imgCheck(data.ImageUri1)"
+                                                                        onerror="this.onerror=null; this.src='assets/img/gray.png'">
+                                                                </div>
+                                                            </div>
+                                                            <div class="layer course-tn-category">
+                                                                <img [src]="this.common.imgCheck(data.LogoUri)"
+                                                                    onerror="this.onerror=null; this.src='assets/img/gray.png'"
+                                                                    style="width: 20px; margin-right: 5px;">
+                                                                <span
+                                                                    style="font-size: 10px; font-family: 'LEMON MILK'; font-weight: 300; letter-spacing: 1px; color: rgba(11,21,75,1.00);">{{data.Name}}</span>
+                                                            </div>
+                                                            <div class="layer lay-cou-bdy">
+                                                                <div class="layer lay-cou-nam">
+                                                                    <div class="layer course-tn-name cour-lay-h3">
+                                                                        {{data.Name}}
+                                                                    </div>
+                                                                    <div class="layer lay-cour-lst">
+                                                                        <div class="layer component lay-cour-lst-cmp">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ngx-slick-carousel>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  -->
+
+<app-get-tonow></app-get-tonow>

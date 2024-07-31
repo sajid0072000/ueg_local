@@ -1,0 +1,43 @@
+.single-team-card .team-img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    border-radius: 100%;
+    border: 6px solid var(--ueg-dark-blue);
+}
+
+.content-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+h1.title,
+h3.title {
+    font-family: 'LEMON MILK';
+    color: var(--ueg-dark-blue);
+    font-weight: 400;
+    letter-spacing: .2rem;
+}
+
+.virtual-class-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.virtual-class-img {
+    width: 80%;
+    height: auto;
+    border-radius: 100%;
+    border: 10px solid var(--ueg-dark-blue);
+}
+
+p.content,
+.why-ueg-section .why-item .content {
+    font-size: 15px;
+}
+
+.why-ueg-section .why-item .title {
+    font-size: 1.75rem;
+}

@@ -1,0 +1,126 @@
+<!-- main content -->
+<div class="">
+    <div class="banner home-banner banner-contact-us" [ngStyle]="{'background-image': 'url('+bannerImg+')'} "
+        style=" position: relative;">
+        <div class="home-banner-blue-arrow">
+            <img class="display-off-mobile" src="assets/img/blue-round-triangle.png">
+            <img class="display-on-mobile" src="assets/img/blue-round-triangle-mobile.png">
+        </div>
+        <div class="container home-banner-text">
+            <div class="row">
+                <div class="col-lg-6 home-banner-left">
+                    <h1>Contact Us</h1>
+                    <div class="home-banner-header-divider"></div>
+                    <h2>Have some questions?</h2>
+                    <h2>Our team at UEG are happy to hear from you.</h2>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container-flex contact-form" style="background-color: rgba(154,189,221,0.2) !important;">
+    <div class="container">
+        <p class="content"
+            style="font-weight: 700; font-size: 1.5rem; letter-spacing: .1rem; margin-bottom: 1rem; margin-top: 2rem;">
+            Please fill in the form below.</p>
+        <div>
+            <div class="row">
+                <div class="col-md-6 row">
+                    <div class="col-md-6 contact-item">
+                        <input type="text" name="Contactfirstname" id="contactFName" placeholder="First Name"
+                            class="form-control" required="" [(ngModel)]="firstname"
+                            (keypress)="onKeyPressfirstname($event)">
+                        <span class="error-msg" *ngIf="firstnameErr">First name required</span>
+                        <span class="error-msg" *ngIf="validfirstnameErr && firstnameErr == false">Valid name
+                            required</span>
+                    </div>
+                    <div class="col-md-6 contact-item">
+                        <input type="text" name="Contactlastname" id="contactLName" placeholder="Last Name"
+                            class="form-control" required="" [(ngModel)]="lastname"
+                            (keypress)="onKeyPresslastname($event)">
+                        <span class="error-msg" *ngIf="lastnameErr">Last name required</span>
+                        <span class="error-msg" *ngIf="validlastnameErr && lastnameErr == false">Valid name
+                            required</span>
+                    </div>
+                    <div class="col-md-6 contact-item">
+                        <input type="text" name="ContactNumber" id="contactPhone" placeholder="Phone Number"
+                            class="form-control" [(ngModel)]="mobile" (keypress)="onKeyPressMobile($event)"
+                            (keyup)="mobileFun()">
+                        <span class="error-msg" *ngIf="mobileErr">Phone number required</span>
+                        <span class="error-msg" *ngIf="validMobileErr && mobileErr==false">Valid number required</span>
+                    </div>
+                    <div class="col-md-6 contact-item">
+                        <input type="text" name="ContactEmail" id="contactEmail" placeholder="Email Address"
+                            class="form-control" required="" [(ngModel)]="email" (keyup)="emailFun()">
+                        <span class="error-msg" *ngIf="emailErr">Email required</span>
+                        <span class="error-msg" *ngIf="validEmailErr">Valid email required</span>
+                    </div>
+                </div>
+                <div class="col-md-6 contact-item">
+                    <textarea name="contactMessage" rows="5" cols="50" id="contactMessage" class="form-control"
+                        placeholder="Message" style="height: 100%;" [(ngModel)]="message"
+                        (keyup)="messageFun()"></textarea>
+                    <span class="error-msg " *ngIf="messageErr">Message required</span>
+                </div>
+                <div class="col-md-12 row mt-4 contact-item contact-item-checkbox" style="padding-bottom: 1rem;">
+                    <p>
+                        <input type="checkbox" name="gdprSubmit" required=""
+                            style="margin:0 0.5rem 0 0; width: 12px; position:relative;" [(ngModel)]="checkTerm"
+                            (click)="checkTermFun()"><span>By clicking Submit, I agree to
+                            UEG's Terms &amp; Conditions and Privacy Policy, and I agree to abide by the
+                            Code of Conduct.</span>
+                    </p>
+                    <span class="error-msg termCheck" *ngIf="checkTermErr">Please check this box if you want to proceed
+                    </span>
+                </div>
+                <div class="w-100"></div>
+                <div class="col-md-2">
+                    <button class="btn btn-yellow w-100 btn-ipad-padding"
+                        style="border-radius: 0 !important; font-size: 16px;" (click)="contactUs()">Submit</button>
+                </div>
+                <div class="w-100"></div>
+                <div id="notification" class="mt-4"></div>
+            </div>
+            <input name="__RequestVerificationToken" type="hidden"
+                value="CfDJ8HNI9nvlVP9KsnTxGSCm--8sg0afiU3V4wirw0KuZ-DUvkVTyy608sS5s5ywS1_H1t3g54IBgh0EVVqsZ5J4G3j6zEvy4ahElL0d49AQn_o9SF93rAqhyJhfwWiccUzUpbtxja8V22_hh9sTtf8Zx2o">
+        </div>
+
+    </div>
+</div>
+<div class="container-flex partnerships-banner contact contact-us"
+    style="background-image: url('assets/img/get-to-know-us.png');">
+    <img class="display-on-mobile" src="assets/img/blue-arrow-cutout-mobile.png">
+    <div class="container">
+        <div class="row margin-none partnerships-banner-content partnerships-banner-row">
+            <div class="col-lg-5 main-content p-0 shadow-none">
+                <h1 class="main-title dark-indigo">Get to <br>know us</h1>
+                <hr class="main-banner-line">
+                <div class="col-lg-10 pl-0 pt-5">
+                    <p class="main-content-para">We are always ready to help so give us a call or email if you prefer.
+                        We look forward to hearing from you.</p>
+                </div>
+
+                <div class="contact-info col-md-12 row pt-4" style="z-index: 0;">
+                    <div class="yellow-tag" style="z-index: 0; width: auto;">
+                        <div class="tag-title">Email</div>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-md-6 pl-0 pt-2" style="margin-bottom: 2rem;">
+                        <a href="mailto:info@unioneducationgroup.com"
+                            class="email contact">info@unioneducationgroup.com</a>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="yellow-tag" style="z-index: 0; width: auto;">
+                        <div class="tag-title">or call us on</div>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-md-6 pl-0 pt-3">
+                        <a href="tel:+4402034883805" class="email contact">+44 (0) 20 3488 3805</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- main content end-->

@@ -1,0 +1,141 @@
+<main role="main" class="main-body-sty mt-3">
+  <div class="row spc-row">
+    <div class="col-md-12">
+      <div class="top_scne">
+        <div class="top_scne_iii">
+          <div class="top_scne_in">
+            <h1 class="add_heading_text">My Jobs</h1>
+          </div>
+          <div class="btns-mid">
+            <button class="btn btn-edtng" (click)="add()">Create New Job</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12" style="padding: 10px 10px 20px;">
+      <input type="text" [(ngModel)]="searchText" class="form-control search-bar" placeholder="Search..." (keyup)="search()">
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="main-content-inner-list">
+      <div class="row">
+        <div class="col-md-12">
+          <div>
+            <div id="datatables-reponsive_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+              <div class="d-md-flex align-items-center mb-3"></div>
+              <div class="table-responsive">
+                <table id="datatables-column-search-select-inputs" class="table table-no-striped dataTable" style="width: 100%;" aria-describedby="datatables-column-search-select-inputs_info">
+                  <thead class="thead-dark">
+                    <tr role="row">
+                      <th>Job Name</th>
+                      <th>Tutor Rate</th>
+                      <th>Client Name</th>
+                      <th>Child Name</th>
+                      <th>Total Hours</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngIf="myJobs.length == 0">
+                      <td class="text-center" colspan="7">
+                        <h4>No Data Found!</h4>
+                      </td>
+                    </tr>
+                    <tr role="row" class="odd" *ngFor="let job of myJobs">
+                      <td>{{ job.JobName }}</td>
+                      <td>{{ job.TutorRate }}</td>
+                      <td>{{ job.clientFirstName }} {{ job.clientLastName }}</td>
+                      <td>{{ job.childName }}</td>
+                      <td>{{ job.TotalHours }}</td>
+                      <td>{{ job.StatusText }}</td>
+                      <td>
+                        <button (click)="openLessonModal(job)" class="btn btn-sm btn-primary">Add Lesson</button>
+                        <button (click)="viewLessons(job.Id)" class="btn btn-sm btn-secondary">View Lessons</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="d-xl-flex align-items-center mt-3 pegin_sec" *ngIf="myJobs.length > 0">
+                <div class="col-auto d-block">
+                  <div class="text-center">
+                    <div class="dataTables_length">
+                      <label>
+                        Jobs per page
+                        <select name="datatables-reponsive_length" aria-controls="datatables-reponsive" class="form-select form-select-sm" (change)="changePagelimit($event)" [(ngModel)]="selectedVal">
+                          <option *ngFor="let item of pageList" [value]="item.value">{{ item.name }}</option>
+                        </select>
+                        {{ offset + 1 }} - {{ offset + limit }}
+                      </label>
+                      <div class="mx-2" style="display: inline-block;">
+                        <button class="btn btn-dark text-white" [disabled]="previousBtnDesable" (click)="previousPage()">
+                          <img src="assets/img/chevron-left.svg" alt="chevron-left">
+                        </button>
+                        <button class="btn btn-dark text-white mx-3" [disabled]="nextBtnDesable" (click)="nextPage()">
+                          <img src="assets/img/chevron-right.svg" alt="chevron-right">
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="lessonModal" class="modal" tabindex="-1" role="dialog" (click)="hideModal('lessonModal')">
+    <div class="modal-dialog" role="document" (click)="$event.stopPropagation()">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Create Lesson for {{ selectedMyJob?.JobName }}</h5>
+          <button type="button" class="close" (click)="hideModal('lessonModal')" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form (ngSubmit)="saveLesson()">
+            <div class="form-group">
+              <label for="startTime">Start Time</label>
+              <input type="datetime-local" class="form-control" [(ngModel)]="newLesson.StartTime" name="StartTime" required>
+            </div>
+            <div class="form-group">
+              <label for="endTime">End Time</label>
+              <input type="datetime-local" class="form-control" [(ngModel)]="newLesson.EndTime" name="EndTime" required>
+            </div>
+            <div class="form-group">
+              <label for="topic">Topic</label>
+              <input type="text" class="form-control" [(ngModel)]="newLesson.Topic" name="Topic" required>
+            </div>
+            <div class="form-group">
+              <label for="location">Location</label>
+              <input type="text" class="form-control" [(ngModel)]="newLesson.Location" name="Location" required>
+            </div>
+            <div class="form-group">
+              <label for="status">Status</label>
+              <select class="form-control" [(ngModel)]="newLesson.Status" name="Status">
+                <option value="Planned">Planned</option>
+                <option value="Completed">Completed</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="notes">Notes</label>
+              <textarea class="form-control" [(ngModel)]="newLesson.Notes" name="Notes"></textarea>
+            </div>
+            <input type="hidden" [(ngModel)]="newLesson.ChildId" name="ChildId"> <!-- Hidden field for Child ID -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" (click)="hideModal('lessonModal')">Cancel</button>
+              <button type="submit" class="btn btn-primary">Save Lesson</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
